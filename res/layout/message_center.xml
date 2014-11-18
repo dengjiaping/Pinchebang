@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg1"
+    android:orientation="vertical" >
+
+    <!-- 标题 -->
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <!-- 数据列表 -->
+
+    <com.lepin.widget.PcbListView
+        android:id="@+id/message_center_data_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/item_layout_default"
+        android:divider="@color/item_devider"
+        android:dividerHeight="@dimen/dp_0point4"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/message_center_data_is_null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:text="@string/message_center_no_data"
+        android:textSize="@dimen/sp_16"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/message_center_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:text="@string/message_center_error"
+        android:textSize="@dimen/sp_16"
+        android:visibility="gone" />
+
+</LinearLayout>

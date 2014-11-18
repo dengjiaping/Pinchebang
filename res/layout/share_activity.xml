@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg1"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <ImageView
+        style="@style/wrap_content"
+        android:layout_marginTop="@dimen/dp_55"
+        android:contentDescription="@string/des"
+        android:src="@drawable/pcb_share_ic" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_marginTop="@dimen/dp_25"
+        android:text="@string/line_has_been_published"
+        android:textColor="@color/basic_info_text_color"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="@string/share_2_friends_now"
+        android:textColor="@color/basic_info_text_color"
+        android:textSize="@dimen/sp_14" />
+
+    <Button
+        android:id="@+id/share_activity_share"
+        style="@style/submit_btn"
+        android:layout_width="@dimen/dp_160"
+        android:layout_height="@dimen/dp_44"
+        android:layout_marginTop="@dimen/dp_22"
+        android:text="@string/share_now" />
+
+</LinearLayout>

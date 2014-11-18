@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_back_operate_title" />
+    <TextView 
+        style="@style/item_box_title"
+        android:text="@string/my_change_pay_psw_tip"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_5"
+        />
+    <LinearLayout
+        android:id="@+id/my_change_pay_psw_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_10"
+        android:background="@drawable/item_layout_default"
+       >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout style="@style/match_warp"
+                          android:orientation="horizontal">
+            <TextView style="@style/wrap_content"
+                      android:text="@string/entry_pay_psw"
+			          android:layout_marginLeft="@dimen/dp_10"
+				      android:textColor="@color/item_left_color"
+				      android:textSize="@dimen/sp_16" />
+
+            <EditText
+                android:id="@+id/entry_pay_pass_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@null"
+                android:hint="@string/entry_pay_psw_hint"
+                android:inputType="textPassword"
+                android:maxLength="18"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_10"
+                android:textSize="@dimen/sp_12"
+                android:textColorHint="@color/text_gray"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.4dp"
+                android:layout_marginLeft="@dimen/dp_11"
+                android:background="@color/item_devider" />
+            <LinearLayout style="@style/match_warp"
+                          android:orientation="horizontal">
+            <TextView style="@style/wrap_content"
+                      android:text="@string/sure_pay_psw"
+			          android:layout_marginLeft="@dimen/dp_10"
+				      android:textColor="@color/item_left_color"
+				      android:textSize="@dimen/sp_16" />
+
+            <EditText
+                android:id="@+id/sure_pay_pass_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@null"
+                android:hint="@string/sure_pay_psw_hint"
+                android:inputType="textPassword"
+                android:maxLength="18"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_10"
+                android:textSize="@dimen/sp_12"
+                android:textColorHint="@color/text_gray"/>
+            </LinearLayout>
+            
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.4dp"
+                android:layout_marginLeft="@dimen/dp_11"
+                android:background="@color/item_devider" />
+            <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_44" 
+                        >
+
+                        <!-- 验证码输入框 -->
+
+                        <EditText
+                            android:id="@+id/entry_verification_code_edit"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@null"
+                            android:hint="@string/register_validate_code"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textSize="@dimen/sp_12"
+                            android:textColorHint="@color/text_gray" />
+
+                        <!-- 获取验证码按钮 -->
+
+                        <View
+                            android:layout_width="0.4dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/item_devider" />
+
+                        <TextView
+                            android:id="@+id/send_verification_code"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/background_verify_code"
+                            android:gravity="center"
+                            android:text="@string/register_get_validate_code"
+                            android:textSize="@dimen/sp_14" />
+                    </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+            <Button
+                android:id="@+id/submitPass"
+                style="@style/submit_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/sure_change_pay_psw" />
+
+</LinearLayout>

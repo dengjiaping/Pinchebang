@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <LinearLayout
+        android:id="@+id/update_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <EditText
+            android:id="@+id/uedate_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/textinput"
+            android:inputType="text"
+            android:maxLength="16"
+            android:paddingBottom="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_10"
+            android:text="@string/app_name"
+            android:textColorHint="@color/text_gray"
+             />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="8dip"
+            android:text="输入您的称呼，如“拼车帮”。限制在16个字符以内。"
+            android:textColor="#929292"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp" >
+
+            <TextView
+                android:id="@+id/submit_update_name"
+                style="@style/submit_btn"
+                android:text="@string/dialog_confirm" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/update_pass_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/update_old_pass"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/item_layout_default"
+            android:hint="@string/input_old_pwd"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:paddingBottom="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_10"
+            android:textColorHint="@color/text_gray"
+             />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/item_layout_default"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/update_new_pass"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@null"
+                android:hint="@string/input_new_pwd"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_10"
+                android:textColorHint="@color/text_gray"
+                 />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.4dp"
+                android:layout_marginLeft="@dimen/dp_11"
+                android:background="@color/item_devider" />
+
+            <EditText
+                android:id="@+id/update_repeat_pass"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@null"
+                android:hint="@string/input_new_pwd_re"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_10" 
+                android:textColorHint="@color/text_gray"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/pwd_rule" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp" >
+
+            <TextView
+                android:id="@+id/submitPass"
+                style="@style/submit_btn"
+                android:text="@string/comfirm_modify" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

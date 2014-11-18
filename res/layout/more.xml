@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical" >
+
+    <!-- 更多标题栏 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <include layout="@layout/common_back_operate_title" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_186" >
+
+            <ImageView
+                android:id="@+id/more_logo"
+                style="@style/wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_37"
+                android:background="@drawable/logo"
+                android:contentDescription="@string/des" />
+
+            <TextView
+                android:id="@+id/more_version_code"
+                style="@style/wrap_content"
+                android:layout_below="@+id/more_logo"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/deep_gray"
+                android:textSize="@dimen/dp_14" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/item_layout_default"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_1"
+            android:paddingRight="@dimen/dp_1"
+            android:paddingTop="@dimen/dp_1" 
+            android:paddingLeft="@dimen/dp_1"
+            >
+
+            <!-- 使用条款 -->
+
+            <RelativeLayout
+                android:id="@+id/more_use_clause"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:background="@drawable/white_gray_selector"
+                android:orientation="horizontal" 
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="@string/register_use_clause"
+                    android:textSize="@dimen/sp_16"
+                    android:layout_marginLeft="@dimen/dp_11"
+                     />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/pcb_right_arrow" />
+            </RelativeLayout>
+
+            <View
+                style="@style/item_divider"
+                android:layout_marginLeft="@dimen/dp_11"
+                 />
+            <!-- 关于我们 -->
+
+            <RelativeLayout
+                android:id="@+id/more_about"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:background="@drawable/white_gray_selector"
+                android:orientation="horizontal"
+                 >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="@string/more_about_txt"
+                    android:textSize="@dimen/sp_16"
+                    android:layout_marginLeft="@dimen/dp_11"
+                     />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/pcb_right_arrow" />
+            </RelativeLayout>
+
+            <View style="@style/item_divider"
+                android:layout_marginLeft="@dimen/dp_11"
+                 />
+            <!-- 反馈意见 -->
+
+            <RelativeLayout
+                android:id="@+id/more_idea_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:background="@drawable/white_gray_selector"
+                android:orientation="horizontal"
+                 >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="@string/more_idea_feedback_txt"
+                    android:textSize="@dimen/sp_16"
+                    android:layout_marginLeft="@dimen/dp_11"
+                     />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/pcb_right_arrow" />
+            </RelativeLayout>
+
+            <View style="@style/item_divider"
+                android:layout_marginLeft="@dimen/dp_11"
+                 />
+
+            <!-- 分享好友 -->
+
+            <RelativeLayout
+                android:id="@+id/more_share"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:background="@drawable/white_gray_selector"
+                android:orientation="horizontal"
+                 >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="@string/share_2_friends"
+                    android:textSize="@dimen/sp_16" 
+                    android:layout_marginLeft="@dimen/dp_11"
+                    />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/pcb_right_arrow" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/publish_istView"
+        style="@style/publish_listview"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/item_layout_default"
+        android:divider="@color/list_devider"
+        android:dividerHeight="@dimen/dp_1"
+        android:scrollbars="none" />
+
+    <LinearLayout
+        android:id="@+id/publish_info_no"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_marginTop="@dimen/dp_79"
+            android:text="@string/publish_no_info_1"
+            android:textColor="@color/basic_info_text_color"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@string/publish_no_info_2"
+            android:textColor="@color/basic_info_text_color"
+            android:textSize="@dimen/sp_16" />
+
+        <Button
+            android:id="@+id/publish_new_info"
+            android:layout_width="@dimen/dp_160"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_23"
+            android:background="@drawable/btn_blue_selector"
+            android:text="@string/publishNow"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18" />
+    </LinearLayout>
+
+</LinearLayout>

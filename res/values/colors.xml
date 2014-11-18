@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="normal_btn_bg">#576bd7</color>
+    <color name="normal_dbtn_bg">#dcdbd4</color>
+    <color name="press_btn_bg">#5467cd</color>
+    <color name="press_dbtn_bg">#c2bdb9</color>
+    <color name="bg">#f4f4f3</color>
+    <color name="search_top_layout_bg">#f6f6f6</color>
+    <color name="exbandable_group_bg">#eaeaed</color>
+    <color name="exbandable_group_text">#585956</color>
+    <color name="exbandable_divider">#9e9e9e</color>
+    <color name="btn_green_no">#1bc07f</color>
+    <color name="btn_green_p">#1ab879</color>
+    <color name="btn_green_text_color">#ffffff</color>
+    <color name="myself_text">#606060</color>
+    <color name="list_devider">#e8e8e8</color>
+    <color name="list_item_press">#e8e9f3</color>
+    <color name="btn_dred_no">#f59339</color>
+    <color name="btn_dred_p">#e68836</color>
+    <color name="stroke_color">#d6d6d6</color>
+    <color name="item_divier">#e5e5e5</color>
+    <!-- 取消按鈕文字顏色 -->
+    <color name="cancel_btn_text_color">#c7c7c7</color>
+
+    <!-- 取消按钮按下时颜色 -->
+    <color name="white_btn_press_color">#efefef</color>
+
+    <!-- 支付 -->
+    <color name="pay_num_color">#fe6b20</color>
+    <!-- <color name="pay_note_color">#c1c1c1</color> -->
+    <color name="pay_over_color">#8b8b8b</color>
+    <color name="pay_note_color">#ababab</color>
+    <!-- 按钮灰色 -->
+    <color name="btn_gray">#a9a9a9</color>
+    <!-- 银色 -->
+    <color name="silver">#F9F9F6</color>
+    <!-- 浅黑色 -->
+    <color name="ligth_black">#666666</color>
+    <!-- 黑色 -->
+    <color name="black">#606060</color>
+    <!-- 灰色 -->
+    <color name="layout_bg">#f2f2f2</color>
+    <color name="dialog_btn_tx">#9f9c9d</color>
+    <color name="message_center_readed_tx">#ababab</color>
+    <!-- 浅灰 -->
+    <color name="ligth_gray">#9b9b9b</color>
+    <!-- 红色 -->
+    <color name="red">#ec7c7f</color>
+    <color name="red_pressed">#ff3333</color>
+    <!-- 深灰色 -->
+    <color name="deep_gray">#858585</color>
+    <!-- 蓝色 -->
+    <color name="blue">#5893B5</color>
+    <color name="item_blue">#586ad7</color>
+    <!-- 白色 -->
+    <color name="white">#fbfbfb</color>
+    <!-- 黄色 -->
+    <color name="yellow">#f9c161</color>
+    
+
+    <!-- top_tab -->
+    <color name="money_num_borader">#586ad7</color>
+    <!-- 个人中心 -->
+    <color name="layout_bg1">#f2f2f2</color>
+    <color name="basic_info_text_color">#929292</color>
+    <color name="item_left_color">#3c3c3c</color>
+    <color name="item_right_color">#8b8b8b</color>
+    <color name="item_devider">#b7b7b7</color>
+    <color name="phone_color">#279be4</color>
+    <color name="item_pressed_color">#d9d9d9</color>
+    <!-- 蓝色按钮 -->
+    <color name="btn_blue_normal">#289be5</color>
+    <color name="btn_blue_pressed">#2389ca</color>
+    <!-- 灰色按钮 -->
+    <color name="btn_grey_normal">#dfdfdf</color>
+    <color name="btn_grey_pressed">#c4c4c4</color>
+    <color name="text_gray">#bdbdbd</color>
+    <!-- 订单－付款 -->
+    <color name="order_pay_btn_normal">#ec7c7f</color>
+    <color name="order_pay_btn_pressed">#ee5357</color>
+    <!-- 主页 -->
+    <color name="home_phone_color">#279be4</color>
+     <color name="home_menu_item_pressed">#3a3a3a</color>
+     <color name="text_color">#373737</color>
+     <!-- 订单详情起点终点 -->
+     <color name="blue_title">#289be5</color>
+     
+     
+       <!-- 途经点line -->
+     <color name="line">#dedede</color>
+     <!--  -->
+     <color name="blue_light">#289be5</color>
+</resources>

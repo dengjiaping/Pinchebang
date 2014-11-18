@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+    <TextView
+            android:id="@+id/item_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="25dp"
+            android:text="成都市"
+            android:textColor="@color/black"
+            android:textSize="16sp" >
+        </TextView>
+
+</RelativeLayout>

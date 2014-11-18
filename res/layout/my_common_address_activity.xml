@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <RelativeLayout
+        style="@style/match_warp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/item_layout_default"
+        android:paddingLeft="@dimen/dp_20" >
+
+        <TextView
+            android:id="@+id/my_common_address_home_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_44"
+            android:gravity="center_vertical"
+            android:text="@string/common_home_address"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/my_common_address_home"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_42"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_1"
+            android:layout_toRightOf="@+id/my_common_address_home_title"
+            android:gravity="center_vertical"
+            android:text="@string/choice_common_home_address"
+            android:textColor="@color/item_devider"
+            android:textSize="@dimen/sp_16" />
+
+        <View
+            android:id="@+id/my_common_address_home_divider"
+            style="@style/item_divider"
+            android:layout_below="@+id/my_common_address_home_title" />
+
+        <TextView
+            android:id="@+id/my_common_address_company_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_44"
+            android:layout_below="@+id/my_common_address_home_divider"
+            android:gravity="center_vertical"
+            android:text="@string/common_company_address"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/my_common_address_company"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_below="@+id/my_common_address_home"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_toRightOf="@+id/my_common_address_company_title"
+            android:gravity="center_vertical"
+            android:text="@string/choice_common_company_address"
+            android:textColor="@color/item_devider"
+            android:textSize="@dimen/sp_16" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/my_common_address_submit"
+        style="@style/submit_btn"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_22"
+        android:text="@string/confirm" />
+
+</LinearLayout>

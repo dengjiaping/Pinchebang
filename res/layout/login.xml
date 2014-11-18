@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_15"
+        android:orientation="vertical" >
+
+        <!-- 手机号码 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_gravity="center"
+            android:background="@drawable/item_layout_default" >
+
+            <ImageView
+                style="@style/ic_img"
+                android:layout_marginLeft="@dimen/dp_9"
+                android:contentDescription="@string/des"
+                android:src="@drawable/pcb_login_account" />
+
+            <!-- 手机或邮箱输入框 -->
+
+            <EditText
+                android:id="@+id/login_et_mobile"
+                style="@style/table_edit"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:hint="@string/input_phone_num"
+                android:inputType="number"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+
+        <!-- 密码 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/item_layout_default" >
+
+            <ImageView
+                style="@style/ic_img"
+                android:layout_marginLeft="@dimen/dp_9"
+                android:contentDescription="@string/des"
+                android:src="@drawable/pcb_login_password" />
+
+            <!-- 密码输入框 -->
+
+            <EditText
+                android:id="@+id/login_et_pwd"
+                style="@style/table_edit_pwd"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:hint="@string/input_pwd"
+                android:maxLength="16"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15" >
+
+        <!-- 忘记密码 -->
+
+        <TextView
+            android:id="@+id/reg_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/forget_pwd"
+            android:text="@string/reg_btn"
+            android:textColor="@color/btn_blue_normal"
+            android:textSize="@dimen/sp_14" />
+
+        <!-- 忘记密码 -->
+
+        <TextView
+            android:id="@+id/forget_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/forget_pwd"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+    <!-- 登录按钮 -->
+
+    <TextView
+        android:id="@+id/login_btn"
+        style="@style/submit_btn"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:text="@string/login_btn" />
+
+</LinearLayout>

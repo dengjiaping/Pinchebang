@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/common_back_operate_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/layout_bg"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_135"
+                android:background="@drawable/pcb_home_bg" >
+
+                <com.lepin.widget.CircleImageView
+                    android:id="@+id/my_picture"
+                    android:layout_width="@dimen/dp_70"
+                    android:layout_height="@dimen/dp_70"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/pcb_home_photo"
+                    app:border_color="@color/white"
+                    app:border_width="2dp" />
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/my_picture"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/pcb_home_blue_bg"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/personal_info_nick_name"
+                        style="@style/wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:id="@+id/my_personal_centre_indentification"
+                        style="@style/wrap_content"
+                        android:contentDescription="@string/des"
+                        android:src="@drawable/pcb_home_ic_v"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="true"
+                android:stretchColumns="true" >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <include
+                        android:id="@+id/my_info_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        layout="@layout/my_info_imageview_tex_vertical" />
+
+                    <View
+                        android:layout_width="@dimen/dp_0point4"
+                        android:layout_height="match_parent"
+                        android:background="@color/item_divier" />
+
+                    <include
+                        android:id="@+id/my_balance_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        layout="@layout/my_info_imageview_tex_vertical" />
+
+                    <View
+                        android:layout_width="@dimen/dp_0point4"
+                        android:layout_height="match_parent"
+                        android:background="@color/item_divier" />
+
+                    <include
+                        android:id="@+id/my_pinche_coin_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        layout="@layout/my_info_imageview_tex_vertical" />
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0point4"
+                    android:background="@color/item_divier" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <include
+                        android:id="@+id/my_commonly_used_address_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        layout="@layout/my_info_imageview_tex_vertical" />
+
+                    <View
+                        android:layout_width="@dimen/dp_0point4"
+                        android:layout_height="match_parent"
+                        android:background="@color/item_divier" />
+
+                    <include
+                        android:id="@+id/my_love_car_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        layout="@layout/my_info_imageview_tex_vertical" />
+
+                    <View
+                        android:layout_width="@dimen/dp_0point4"
+                        android:layout_height="match_parent"
+                        android:background="@color/item_divier" />
+
+                    <RelativeLayout
+                        android:id="@+id/nothing"
+                        style="@style/wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+                    </RelativeLayout>
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0point4"
+                    android:background="@color/item_divier" />
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/listview_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout style="@style/baseStyle" >
+
+        <ImageView
+            android:id="@+id/icon_start"
+            style="@style/wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_12"
+            android:contentDescription="@string/des"
+            android:src="@drawable/ic_starting" />
+
+        <TextView
+            android:id="@+id/item_start_addr"
+            style="@style/info_item"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/icon_start" />
+
+        <ImageView
+            android:id="@+id/new_item_driver_verified"
+            style="@style/wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/des"
+            android:src="@drawable/pcb_driver_verified"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/baseStyle"
+        android:layout_marginTop="@dimen/dp_5" >
+
+        <ImageView
+            android:id="@+id/icon_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:contentDescription="@string/des"
+            android:src="@drawable/ic_end" />
+
+        <TextView
+            android:id="@+id/item_end_addr"
+            style="@style/info_item"
+            android:layout_toRightOf="@+id/icon_end" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/new_item_driver_passenger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:gravity="right"
+        android:textColor="@color/btn_blue_normal"
+        android:textSize="@dimen/sp_10" />
+
+    <RelativeLayout style="@style/baseStyle" >
+
+        <ImageView
+            android:id="@+id/item_ic_time"
+            style="@style/wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:contentDescription="@string/des"
+            android:src="@drawable/ic_time" />
+
+        <TextView
+            android:id="@+id/item_text_date"
+            style="@style/wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_toRightOf="@+id/item_ic_time"
+            android:textColor="@color/deep_gray"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+    
+    <RelativeLayout style="@style/baseStyle"
+                  android:layout_marginTop="@dimen/dp_15"
+                  android:id="@+id/pathway_point_layout"
+                  android:visibility="gone"
+                  >
+            <View android:id="@+id/line"
+                  android:layout_width="wrap_content"
+                  android:layout_height="@dimen/dp_0point4"
+                  android:layout_marginLeft="@dimen/dp_15"
+                  android:layout_marginRight="@dimen/dp_15"
+                  android:background="@color/line"
+                  />
+            <TextView android:id="@+id/point1"
+                      style="@style/baseStyle"
+                      android:textSize="@dimen/sp_14"
+                      android:textColor="@color/blue_light"
+                      android:layout_below="@id/line"
+                      android:layout_marginLeft="@dimen/dp_15"
+                      android:layout_marginTop="@dimen/dp_10"
+                      android:paddingBottom="@dimen/dp_10"
+                      android:singleLine="true"
+                      android:visibility="gone"/>
+            <TextView android:id="@+id/point2"
+                      style="@style/baseStyle"
+                      android:textSize="@dimen/sp_14"
+                      android:textColor="@color/blue_light"
+                      android:layout_below="@id/point1"
+                      android:layout_marginLeft="@dimen/dp_15"
+                      android:layout_marginBottom="@dimen/dp_10"
+                      android:paddingBottom="@dimen/dp_10"
+                      android:singleLine="true"
+                      android:visibility="gone"/>
+    </RelativeLayout>
+
+</LinearLayout>

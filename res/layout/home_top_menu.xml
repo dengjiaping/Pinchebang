@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_fillet_shape"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/home_top_menu_personal_layout"
+        style="@style/match_warp"
+        android:background="@drawable/home_menu_item_pressed"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/home_top_menu_name"
+            style="@style/top_menu"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_16"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/home_top_menu_phone"
+            style="@style/top_menu"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@color/home_phone_color"
+            android:textSize="@dimen/sp_16" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/home_top_menu_no_login_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="请登录"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_18"
+        android:visibility="gone" />
+
+    <View style="@style/home_menu_divider" />
+
+    <include
+        android:id="@+id/home_top_menu_msg_layout"
+        style="@style/top_menu"
+        layout="@layout/item_home_menu" />
+
+    <View style="@style/home_menu_divider" />
+
+    <include
+        android:id="@+id/home_top_menu_publish_layout"
+        style="@style/top_menu"
+        layout="@layout/item_home_menu" />
+
+    <View style="@style/home_menu_divider" />
+
+    <include
+        android:id="@+id/home_top_menu_carservice_layout"
+        style="@style/top_menu"
+        layout="@layout/item_home_menu" />
+
+    <View style="@style/home_menu_divider" />
+
+    <include
+        android:id="@+id/home_top_menu_activities_layout"
+        style="@style/top_menu"
+        layout="@layout/item_home_menu" />
+
+    <View style="@style/home_menu_divider" />
+
+    <include
+        android:id="@+id/home_top_menu_setting_layout"
+        style="@style/top_menu"
+        layout="@layout/item_home_menu" />
+
+    <View style="@style/home_menu_divider" />
+
+    <include
+        android:id="@+id/home_top_menu_more_layout"
+        style="@style/top_menu"
+        layout="@layout/item_home_menu" />
+
+</LinearLayout>

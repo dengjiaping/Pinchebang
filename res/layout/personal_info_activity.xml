@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <include
+        layout="@layout/common_back_operate_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/layout_bg"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10" >
+
+                <TextView
+                    style="@style/item_box_title"
+                    android:text="@string/basic_information" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp_1"
+                    android:paddingLeft="@dimen/dp_11"
+                    android:paddingRight="@dimen/dp_1"
+                    android:paddingTop="@dimen/dp_1" >
+                    
+                    <include
+                        android:id="@+id/personal_info_nickname_layout"
+                        layout="@layout/item_image_text_text_divider" />
+
+                    <include
+                        android:id="@+id/personal_info_nick_sex_layout"
+                        layout="@layout/item_image_text_text_divider" />
+
+                    <include
+                        android:id="@+id/personal_info_nick_phone_layout"
+                        layout="@layout/item_image_text_text_divider" />
+
+                    <include
+                        android:id="@+id/personal_info_nick_birthday_layout"
+                        layout="@layout/item_image_text_text_divider" />
+
+                    <include
+                        android:id="@+id/personal_info_nick_drivaege_layout"
+                        layout="@layout/text_pic_no_divider_item" />
+                </LinearLayout>
+                
+                <!-- 密码管理 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/my_manage_password"
+                    android:textColor="@color/basic_info_text_color"
+                    android:textSize="@dimen/sp_14" />
+                  <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp_1"
+                    android:paddingLeft="@dimen/dp_11"
+                    android:paddingRight="@dimen/dp_1"
+                    android:paddingTop="@dimen/dp_1" >
+                    
+                     <include
+                        android:id="@+id/my_login_password_layout"
+                        layout="@layout/item_image_text_text_arrow_divider" />
+
+                     <include
+                        android:id="@+id/my_pay_password_layout"
+                        layout="@layout/item_image_text_text_arrow_no_divider" />
+                </LinearLayout>
+                
+                  <!-- 账户管理 -->
+                   <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/my_manage_account"
+                    android:textColor="@color/basic_info_text_color"
+                    android:textSize="@dimen/sp_14" />
+                  <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp_1"
+                    android:paddingLeft="@dimen/dp_11"
+                    android:paddingRight="@dimen/dp_1"
+                    android:paddingTop="@dimen/dp_1" >
+                   <include
+                        android:id="@+id/my_cash_account_layout"
+                        layout="@layout/item_image_text_text_arrow_no_divider" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/personal_info_nick_logout"
+                    style="@style/red_btn"
+                    android:layout_marginBottom="@dimen/dp_25"
+                    android:layout_marginTop="@dimen/dp_25"
+                    android:text="@string/exit_login" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_warp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/match_warp"
+        android:orientation="horizontal" >
+
+        <CheckedTextView
+            android:id="@+id/my_order_top_item_all"
+            style="@style/order_tab_item"
+            android:drawableTop="@drawable/pcb_order_all"
+            android:text="@string/all" />
+
+        <View style="@style/top_menu_item_divider" />
+
+        <CheckedTextView
+            android:id="@+id/my_order_top_item_wait_pay"
+            style="@style/order_tab_item"
+            android:drawableTop="@drawable/pcb_order_pending_payment"
+            android:text="@string/wait_pay" />
+
+        <View
+            android:id="@+id/my_order_top_item_wait_pay_divider"
+            style="@style/top_menu_item_divider" />
+
+        <CheckedTextView
+            android:id="@+id/my_order_top_item_wait_confirm"
+            style="@style/order_tab_item"
+            android:drawableTop="@drawable/pcb_order_aboard"
+            android:text="@string/to_be_get_in_car" />
+
+        <View style="@style/top_menu_item_divider" />
+
+        <CheckedTextView
+            android:id="@+id/my_order_top_item_ok"
+            style="@style/order_tab_item"
+            android:drawableTop="@drawable/pcb_order_complete"
+            android:text="@string/has_ben_confirm" />
+    </LinearLayout>
+
+    <View style="@style/item_divider" />
+
+</LinearLayout>

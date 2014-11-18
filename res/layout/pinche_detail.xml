@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <include
+        android:id="@+id/pinche_details_title"
+        style="@style/match_warp"
+        layout="@layout/common_back_operate_title" />
+
+    <ScrollView
+        style="@style/match_parent"
+        android:layout_below="@id/pinche_details_title"
+        android:layout_marginBottom="@dimen/dp_50"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="none" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10" >
+
+            <!-- 招司机 -->
+
+            <LinearLayout
+                android:id="@+id/find_driver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/work_fragemnt_layout"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default" >
+
+                    <include
+                        android:id="@+id/detail_car_type"
+                        layout="@layout/item_text_text" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:background="@color/item_devider" />
+
+                    <include
+                        android:id="@+id/detail_car_verify"
+                        layout="@layout/item_text_text" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:background="@color/item_devider" />
+
+                    <include
+                        android:id="@+id/detail_car_num"
+                        layout="@layout/item_text_text" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:background="@color/item_devider" />
+
+                    <include
+                        android:id="@+id/detail_car_driver_age"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/work_fragemnt_layout"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default" >
+
+                    <include
+                        android:id="@+id/detail_start"
+                        layout="@layout/item_text_text" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:background="@color/item_devider" />
+
+                    <include
+                        android:id="@+id/detail_end"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/work_fragemnt_layout"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default" >
+
+                    <include
+                        android:id="@+id/detail_depart"
+                        layout="@layout/item_text_text" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:background="@color/item_devider" />
+
+                    <include
+                        android:id="@+id/detail_back"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/work_fragemnt_layout"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default" >
+
+                    <include
+                        android:id="@+id/detail_cost"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/work_fragemnt_layout"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default" >
+
+                    <include
+                        android:id="@+id/detail_passager_num"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+
+                <!-- 预约不需要产生费用 -->
+
+                <LinearLayout
+                    android:id="@+id/detail_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_5" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pick_details_explain"
+                        android:textColor="@color/ligth_gray" />
+                </LinearLayout>
+
+                <!-- 预约成功后显示司机姓名和电话 -->
+
+                <LinearLayout
+                    android:id="@+id/detail_driver_info"
+                    style="@style/work_fragemnt_layout"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default"
+                    android:visibility="gone" >
+
+                    <include
+                        android:id="@+id/detail_driver_name"
+                        layout="@layout/item_text_text" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:background="@color/item_devider" />
+
+                    <include
+                        android:id="@+id/detail_driver_tel"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 找乘客 -->
+
+            <LinearLayout
+                android:id="@+id/find_passager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/work_fragemnt_layout"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default" >
+
+                    <include
+                        android:id="@+id/detail_name"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/work_fragemnt_layout"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default" >
+
+                    <include
+                        android:id="@+id/detail_start_find_passager"
+                        layout="@layout/item_text_text" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:background="@color/item_devider" />
+
+                    <include
+                        android:id="@+id/detail_end_find_passager"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/work_fragemnt_layout"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default" >
+
+                    <include
+                        android:id="@+id/detail_depart_find_passager"
+                        layout="@layout/item_text_text" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:background="@color/item_devider" />
+
+                    <include
+                        android:id="@+id/detail_cost_find_passager"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+
+                <!-- 乘客联系方式 -->
+
+                <LinearLayout
+                    android:id="@+id/detail_passager_info"
+                    style="@style/work_fragemnt_layout"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/item_layout_default"
+                    android:visibility="gone" >
+
+                    <include
+                        android:id="@+id/detail_passager_tel"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/pick_layout_btn_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+        android:orientation="vertical" >
+
+        <View style="@style/item_divider" />
+
+        <Button
+            android:id="@+id/pick_details_btn_book"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="@drawable/btn_white_gray_selector"
+            android:text="@string/pick_details_book"
+            android:textColor="@color/btn_blue_normal"
+            android:textSize="@dimen/sp_16" />
+    </LinearLayout>
+
+</RelativeLayout>

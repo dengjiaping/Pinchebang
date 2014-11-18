@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_match"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <EditText
+        android:id="@+id/recharge_money_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/item_layout_default"
+        android:hint="@string/input_recharge_num"
+        android:inputType="number"
+        android:paddingLeft="@dimen/dp_5" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/choice_recharge_type"
+        android:textColor="@color/item_devider" />
+
+    <Button
+        android:id="@+id/recharge_money_recharge_btn"
+        style="@style/submit_btn"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/alipay_recharge" />
+
+</LinearLayout>

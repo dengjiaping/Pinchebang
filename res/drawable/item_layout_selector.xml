@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true"><shape>
+            <solid android:color="@color/item_pressed_color" />
+
+            <stroke android:dashWidth="@dimen/dp_0point4" android:width="@dimen/dp_0point4" android:color="@color/item_pressed_color" />
+
+        </shape></item>
+    <item android:state_pressed="false"><shape>
+            <solid android:color="@android:color/white" />
+
+            <stroke android:dashWidth="@dimen/dp_0point4" android:width="@dimen/dp_0point4" android:color="@color/item_devider" />
+
+        </shape></item>
+
+</selector>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tab="http://schemas.android.com/apk/res/com.lepin.activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <com.lepin.widget.TopTabIndicator
+        android:id="@+id/publish_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_61"
+        tab:top_left_text="@string/square_work"
+        tab:top_right_text="@string/square_long" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/publish_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

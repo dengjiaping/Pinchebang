@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <!-- 更改后布局 -->
+    <RelativeLayout style="@style/baseStyle">
+    <!-- 起点 -->
+      <RelativeLayout style="@style/wrap_content"
+                      android:id="@+id/start_layout"
+                      android:paddingTop="@dimen/dp_10"
+                      >
+        <ImageView
+            android:id="@+id/icon_start"
+            style="@style/wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_12"
+            android:contentDescription="@string/des"
+            android:src="@drawable/ic_starting" />
+        <TextView
+            android:id="@+id/item_mypublish_start"
+            style="@style/info_item"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/icon_start" />
+        <ImageView
+            android:id="@+id/new_item_driver_verified"
+            style="@style/wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/des"
+            android:src="@drawable/pcb_driver_verified"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+      <!-- 终点 -->
+    <RelativeLayout
+        style="@style/wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_below="@id/start_layout"
+        android:paddingBottom="@dimen/dp_10"
+         >
+        <ImageView
+            android:id="@+id/icon_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:contentDescription="@string/des"
+            android:src="@drawable/ic_end" />
+        <TextView
+            android:id="@+id/item_mypublish_end"
+            style="@style/info_item"
+            android:layout_toRightOf="@+id/icon_end" />
+    </RelativeLayout>
+    
+     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_weight="1.5"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/item_mypublish_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pcb_sitting_on"
+            android:contentDescription="@string/des" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/new_item_driver_passenger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:gravity="right"
+        android:textColor="@color/btn_blue_normal"
+        android:textSize="@dimen/sp_10" />
+    </RelativeLayout>
+    <RelativeLayout style="@style/baseStyle"
+                  android:id="@+id/pathway_point_layout"
+                  android:visibility="gone"
+                  >
+            <View android:id="@+id/line1"
+                  android:layout_width="wrap_content"
+                  android:layout_height="@dimen/dp_0point4"
+                  android:layout_marginLeft="@dimen/dp_15"
+                  android:layout_marginRight="@dimen/dp_15"
+                  android:background="@color/line"/>
+            <TextView android:id="@+id/point1"
+                      style="@style/baseStyle"
+                      android:textSize="@dimen/sp_14"
+                      android:textColor="@color/blue_light"
+                      android:layout_below="@id/line1"
+                      android:layout_marginLeft="@dimen/dp_15"
+                      android:layout_marginTop="@dimen/dp_10"
+                      android:paddingBottom="@dimen/dp_10"
+                      android:singleLine="true"
+                      android:visibility="gone"/>
+            <TextView android:id="@+id/point2"
+                      style="@style/baseStyle"
+                      android:textSize="@dimen/sp_14"
+                      android:textColor="@color/blue_light"
+                      android:layout_below="@id/point1"
+                      android:layout_marginLeft="@dimen/dp_15"
+                      android:layout_marginBottom="@dimen/dp_15"
+                      android:paddingBottom="@dimen/dp_10"
+                      android:singleLine="true"
+                      android:visibility="gone"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <LinearLayout
+        android:id="@+id/search_with_map_search_layout"
+        style="@style/match_warp"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <EditText
+            android:id="@+id/search_with_map_start"
+            style="@style/search_with_map_auto_edittext"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/item_layout_default"
+            android:hint="@string/search_start_point_hint" />
+
+        <EditText
+            android:id="@+id/search_with_map_end"
+            style="@style/search_with_map_auto_edittext"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@drawable/item_layout_default"
+            android:hint="@string/search_end_point_hint" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/search_with_map_show_addr_layout"
+        style="@style/match_warp"
+        android:paddingTop="@dimen/dp_15"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/search_with_map_start_img"
+            style="@style/wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:contentDescription="@string/des"
+            android:src="@drawable/ic_starting" />
+
+        <TextView
+            android:id="@+id/search_with_map_only_show_start"
+            style="@style/order_details_start_end"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_toRightOf="@+id/search_with_map_start_img"
+            android:ellipsize="start"
+            android:singleLine="true"
+            android:text="成都双流香榭国际大开发急啊看大家发卡的积分看大家发" />
+
+        <ImageView
+            android:id="@+id/search_with_map_end_img"
+            style="@style/wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/search_with_map_start_img"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_10"
+            android:contentDescription="@string/des"
+            android:src="@drawable/ic_end" />
+
+        <TextView
+            android:id="@+id/search_with_map_only_show_end"
+            style="@style/order_details_start_end"
+            android:layout_below="@+id/search_with_map_only_show_start"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_toRightOf="@+id/search_with_map_end_img"
+            android:ellipsize="start"
+            android:singleLine="true"
+            android:text="成都双流香榭国际大开发急啊看大家发卡的积分看大家发" />
+
+        <View
+            android:id="@+id/search_with_map_only_show_divider"
+            style="@style/item_divider"
+            android:layout_below="@+id/search_with_map_end_img"
+            android:layout_marginTop="@dimen/dp_15"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/search_with_map_only_show_throuth_point_first"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_34"
+            android:layout_below="@+id/search_with_map_only_show_divider"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:ellipsize="start"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="途经点1:火车北站"
+            android:textColor="@color/blue_title"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/search_with_map_only_show_throuth_point_divider"
+            style="@style/item_divider"
+            android:layout_below="@+id/search_with_map_only_show_throuth_point_first"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/search_with_map_only_show_throuth_point_second"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_34"
+            android:layout_below="@+id/search_with_map_only_show_throuth_point_divider"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:ellipsize="start"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="途经点1:火车北站"
+            android:textColor="@color/blue_title"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <FrameLayout style="@style/match_match" >
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/search_with_map_mapview"
+            style="@style/match_match"
+            android:clickable="true" />
+
+        <ListView
+            android:id="@+id/search_with_map_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/item_layout_default"
+            android:divider="@color/list_devider"
+            android:dividerHeight="@dimen/dp_0point4"
+            android:scrollbars="none"
+            android:visibility="gone" >
+        </ListView>
+    </FrameLayout>
+
+</LinearLayout>

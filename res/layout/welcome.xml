@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_match"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/welcome_normal_loading_view"
+        style="@style/match_match"
+        android:background="@drawable/welcome_bg"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/welcome_head"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_50"
+            android:contentDescription="@string/des"
+            android:src="@drawable/welcome_text" />
+
+        <ImageView
+            android:id="@+id/welcome_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/welcome_bottom_layout"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/des"
+            android:src="@drawable/welcome_head" />
+
+        <LinearLayout
+            android:id="@+id/welcome_bottom_layout"
+            style="@style/match_warp"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_5" >
+
+            <LinearLayout
+                style="@style/match_warp"
+                android:layout_marginTop="@dimen/dp_13"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/welcome_logo_left" />
+
+                <View
+                    android:layout_width="@dimen/dp_0point4"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/welcome_logo_right" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/welcome_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_17"
+                android:background="@drawable/welcome_logo_text"
+                android:contentDescription="@string/des" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/welcome_loading"
+        style="@style/match_match"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/des"
+        android:visibility="visible" />
+
+</LinearLayout>

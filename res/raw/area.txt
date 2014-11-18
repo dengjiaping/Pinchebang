@@ -1,0 +1,2764 @@
+{
+    "success": true,
+    "data": [
+        {
+            "areaId": 131,
+            "pid": 1,
+            "areaName": "北京",
+            "orderid": 1,
+            "subAreas": []
+        },
+        {
+            "areaId": 289,
+            "pid": 1,
+            "areaName": "上海",
+            "orderid": 2,
+            "subAreas": []
+        },
+        {
+            "areaId": 332,
+            "pid": 1,
+            "areaName": "天津",
+            "orderid": 3,
+            "subAreas": []
+        },
+        {
+            "areaId": 132,
+            "pid": 1,
+            "areaName": "重庆",
+            "orderid": 4,
+            "subAreas": []
+        },
+        {
+            "areaId": 25,
+            "pid": 1,
+            "areaName": "河北",
+            "orderid": 5,
+            "subAreas": [
+                {
+                    "areaId": 150,
+                    "pid": 25,
+                    "areaName": "石家庄",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 265,
+                    "pid": 25,
+                    "areaName": "唐山",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 148,
+                    "pid": 25,
+                    "areaName": "秦皇岛",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 151,
+                    "pid": 25,
+                    "areaName": "邯郸",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 266,
+                    "pid": 25,
+                    "areaName": "邢台",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 307,
+                    "pid": 25,
+                    "areaName": "保定",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 264,
+                    "pid": 25,
+                    "areaName": "张家口",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 207,
+                    "pid": 25,
+                    "areaName": "承德",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 149,
+                    "pid": 25,
+                    "areaName": "沧州",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 191,
+                    "pid": 25,
+                    "areaName": "廊坊",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 208,
+                    "pid": 25,
+                    "areaName": "衡水",
+                    "orderid": 11,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 10,
+            "pid": 1,
+            "areaName": "山西",
+            "orderid": 6,
+            "subAreas": [
+                {
+                    "areaId": 176,
+                    "pid": 10,
+                    "areaName": "太原",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 355,
+                    "pid": 10,
+                    "areaName": "大同",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 357,
+                    "pid": 10,
+                    "areaName": "阳泉",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 356,
+                    "pid": 10,
+                    "areaName": "长治",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 290,
+                    "pid": 10,
+                    "areaName": "晋城",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 237,
+                    "pid": 10,
+                    "areaName": "朔州",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 367,
+                    "pid": 10,
+                    "areaName": "忻州",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 327,
+                    "pid": 10,
+                    "areaName": "吕梁",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 238,
+                    "pid": 10,
+                    "areaName": "晋中",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 368,
+                    "pid": 10,
+                    "areaName": "临汾",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 328,
+                    "pid": 10,
+                    "areaName": "运城",
+                    "orderid": 11,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 30,
+            "pid": 1,
+            "areaName": "河南",
+            "orderid": 7,
+            "subAreas": [
+                {
+                    "areaId": 268,
+                    "pid": 30,
+                    "areaName": "郑州",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 210,
+                    "pid": 30,
+                    "areaName": "开封",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 153,
+                    "pid": 30,
+                    "areaName": "洛阳",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 213,
+                    "pid": 30,
+                    "areaName": "平顶山",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 267,
+                    "pid": 30,
+                    "areaName": "安阳",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 215,
+                    "pid": 30,
+                    "areaName": "鹤壁",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 152,
+                    "pid": 30,
+                    "areaName": "新乡",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 211,
+                    "pid": 30,
+                    "areaName": "焦作",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 209,
+                    "pid": 30,
+                    "areaName": "濮阳",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 155,
+                    "pid": 30,
+                    "areaName": "许昌",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 344,
+                    "pid": 30,
+                    "areaName": "漯河",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 212,
+                    "pid": 30,
+                    "areaName": "三门峡",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 154,
+                    "pid": 30,
+                    "areaName": "商丘",
+                    "orderid": 13,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 308,
+                    "pid": 30,
+                    "areaName": "周口",
+                    "orderid": 14,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 269,
+                    "pid": 30,
+                    "areaName": "驻马店",
+                    "orderid": 15,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 309,
+                    "pid": 30,
+                    "areaName": "南阳",
+                    "orderid": 16,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 214,
+                    "pid": 30,
+                    "areaName": "信阳",
+                    "orderid": 17,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 19,
+            "pid": 1,
+            "areaName": "辽宁",
+            "orderid": 8,
+            "subAreas": [
+                {
+                    "areaId": 58,
+                    "pid": 19,
+                    "areaName": "沈阳",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 167,
+                    "pid": 19,
+                    "areaName": "大连",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 320,
+                    "pid": 19,
+                    "areaName": "鞍山",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 184,
+                    "pid": 19,
+                    "areaName": "抚顺",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 227,
+                    "pid": 19,
+                    "areaName": "本溪",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 282,
+                    "pid": 19,
+                    "areaName": "丹东",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 166,
+                    "pid": 19,
+                    "areaName": "锦州",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 281,
+                    "pid": 19,
+                    "areaName": "营口",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 59,
+                    "pid": 19,
+                    "areaName": "阜新",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 351,
+                    "pid": 19,
+                    "areaName": "辽阳",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 228,
+                    "pid": 19,
+                    "areaName": "盘锦",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 60,
+                    "pid": 19,
+                    "areaName": "铁岭",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 280,
+                    "pid": 19,
+                    "areaName": "朝阳",
+                    "orderid": 13,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 319,
+                    "pid": 19,
+                    "areaName": "葫芦岛",
+                    "orderid": 14,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 9,
+            "pid": 1,
+            "areaName": "吉林",
+            "orderid": 9,
+            "subAreas": [
+                {
+                    "areaId": 53,
+                    "pid": 9,
+                    "areaName": "长春",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 55,
+                    "pid": 9,
+                    "areaName": "吉林市",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 56,
+                    "pid": 9,
+                    "areaName": "四平",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 183,
+                    "pid": 9,
+                    "areaName": "辽源",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 165,
+                    "pid": 9,
+                    "areaName": "通化",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 57,
+                    "pid": 9,
+                    "areaName": "白山",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 51,
+                    "pid": 9,
+                    "areaName": "白城",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 54,
+                    "pid": 9,
+                    "areaName": "延边朝鲜族自治州",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 52,
+                    "pid": 9,
+                    "areaName": "松原",
+                    "orderid": 9,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 2,
+            "pid": 1,
+            "areaName": "黑龙江",
+            "orderid": 10,
+            "subAreas": [
+                {
+                    "areaId": 48,
+                    "pid": 2,
+                    "areaName": "哈尔滨",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 41,
+                    "pid": 2,
+                    "areaName": "齐齐哈尔",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 42,
+                    "pid": 2,
+                    "areaName": "佳木斯",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 49,
+                    "pid": 2,
+                    "areaName": "牡丹江",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 50,
+                    "pid": 2,
+                    "areaName": "大庆",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 40,
+                    "pid": 2,
+                    "areaName": "伊春",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 46,
+                    "pid": 2,
+                    "areaName": "鸡西",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 43,
+                    "pid": 2,
+                    "areaName": "鹤岗",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 45,
+                    "pid": 2,
+                    "areaName": "双鸭山",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 47,
+                    "pid": 2,
+                    "areaName": "七台河",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 44,
+                    "pid": 2,
+                    "areaName": "绥化",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 39,
+                    "pid": 2,
+                    "areaName": "黑河",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 38,
+                    "pid": 2,
+                    "areaName": "大兴安岭地区",
+                    "orderid": 12,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 22,
+            "pid": 1,
+            "areaName": "内蒙古",
+            "orderid": 11,
+            "subAreas": [
+                {
+                    "areaId": 321,
+                    "pid": 22,
+                    "areaName": "呼和浩特",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 229,
+                    "pid": 22,
+                    "areaName": "包头",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 123,
+                    "pid": 22,
+                    "areaName": "乌海",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 297,
+                    "pid": 22,
+                    "areaName": "赤峰",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 61,
+                    "pid": 22,
+                    "areaName": "呼伦贝尔",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 62,
+                    "pid": 22,
+                    "areaName": "兴安盟",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 64,
+                    "pid": 22,
+                    "areaName": "通辽",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 63,
+                    "pid": 22,
+                    "areaName": "锡林郭勒盟",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 168,
+                    "pid": 22,
+                    "areaName": "乌兰察布",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 283,
+                    "pid": 22,
+                    "areaName": "鄂尔多斯",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 169,
+                    "pid": 22,
+                    "areaName": "巴彦淖尔",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 230,
+                    "pid": 22,
+                    "areaName": "阿拉善盟",
+                    "orderid": 12,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 8,
+            "pid": 1,
+            "areaName": "山东",
+            "orderid": 12,
+            "subAreas": [
+                {
+                    "areaId": 288,
+                    "pid": 8,
+                    "areaName": "济南",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 236,
+                    "pid": 8,
+                    "areaName": "青岛",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 354,
+                    "pid": 8,
+                    "areaName": "淄博",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 172,
+                    "pid": 8,
+                    "areaName": "枣庄",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 174,
+                    "pid": 8,
+                    "areaName": "东营",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 326,
+                    "pid": 8,
+                    "areaName": "烟台",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 287,
+                    "pid": 8,
+                    "areaName": "潍坊",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 286,
+                    "pid": 8,
+                    "areaName": "济宁",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 325,
+                    "pid": 8,
+                    "areaName": "泰安",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 175,
+                    "pid": 8,
+                    "areaName": "威海",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 173,
+                    "pid": 8,
+                    "areaName": "日照",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 235,
+                    "pid": 8,
+                    "areaName": "滨州",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 372,
+                    "pid": 8,
+                    "areaName": "德州",
+                    "orderid": 13,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 366,
+                    "pid": 8,
+                    "areaName": "聊城",
+                    "orderid": 14,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 234,
+                    "pid": 8,
+                    "areaName": "临沂",
+                    "orderid": 15,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 353,
+                    "pid": 8,
+                    "areaName": "菏泽",
+                    "orderid": 16,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 124,
+                    "pid": 8,
+                    "areaName": "莱芜",
+                    "orderid": 17,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 23,
+            "pid": 1,
+            "areaName": "安徽",
+            "orderid": 13,
+            "subAreas": [
+                {
+                    "areaId": 127,
+                    "pid": 23,
+                    "areaName": "合肥",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 129,
+                    "pid": 23,
+                    "areaName": "芜湖",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 126,
+                    "pid": 23,
+                    "areaName": "蚌埠",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 250,
+                    "pid": 23,
+                    "areaName": "淮南",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 358,
+                    "pid": 23,
+                    "areaName": "马鞍山",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 253,
+                    "pid": 23,
+                    "areaName": "淮北",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 337,
+                    "pid": 23,
+                    "areaName": "铜陵",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 130,
+                    "pid": 23,
+                    "areaName": "安庆",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 252,
+                    "pid": 23,
+                    "areaName": "黄山",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 128,
+                    "pid": 23,
+                    "areaName": "阜阳",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 370,
+                    "pid": 23,
+                    "areaName": "宿州",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 189,
+                    "pid": 23,
+                    "areaName": "滁州",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 298,
+                    "pid": 23,
+                    "areaName": "六安",
+                    "orderid": 13,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 190,
+                    "pid": 23,
+                    "areaName": "宣城",
+                    "orderid": 14,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 251,
+                    "pid": 23,
+                    "areaName": "巢湖",
+                    "orderid": 15,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 299,
+                    "pid": 23,
+                    "areaName": "池州",
+                    "orderid": 16,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 188,
+                    "pid": 23,
+                    "areaName": "亳州",
+                    "orderid": 17,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 29,
+            "pid": 1,
+            "areaName": "浙江",
+            "orderid": 14,
+            "subAreas": [
+                {
+                    "areaId": 179,
+                    "pid": 29,
+                    "areaName": "杭州",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 180,
+                    "pid": 29,
+                    "areaName": "宁波",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 178,
+                    "pid": 29,
+                    "areaName": "温州",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 293,
+                    "pid": 29,
+                    "areaName": "绍兴",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 294,
+                    "pid": 29,
+                    "areaName": "湖州",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 334,
+                    "pid": 29,
+                    "areaName": "嘉兴",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 333,
+                    "pid": 29,
+                    "areaName": "金华",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 243,
+                    "pid": 29,
+                    "areaName": "衢州",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 244,
+                    "pid": 29,
+                    "areaName": "台州",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 292,
+                    "pid": 29,
+                    "areaName": "丽水",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 245,
+                    "pid": 29,
+                    "areaName": "舟山",
+                    "orderid": 11,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 18,
+            "pid": 1,
+            "areaName": "江苏",
+            "orderid": 15,
+            "subAreas": [
+                {
+                    "areaId": 315,
+                    "pid": 18,
+                    "areaName": "南京",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 317,
+                    "pid": 18,
+                    "areaName": "无锡",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 316,
+                    "pid": 18,
+                    "areaName": "徐州",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 348,
+                    "pid": 18,
+                    "areaName": "常州",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 224,
+                    "pid": 18,
+                    "areaName": "苏州",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 161,
+                    "pid": 18,
+                    "areaName": "南通",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 347,
+                    "pid": 18,
+                    "areaName": "连云港",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 162,
+                    "pid": 18,
+                    "areaName": "淮安",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 223,
+                    "pid": 18,
+                    "areaName": "盐城",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 346,
+                    "pid": 18,
+                    "areaName": "扬州",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 160,
+                    "pid": 18,
+                    "areaName": "镇江",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 276,
+                    "pid": 18,
+                    "areaName": "泰州",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 277,
+                    "pid": 18,
+                    "areaName": "宿迁",
+                    "orderid": 13,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 16,
+            "pid": 1,
+            "areaName": "福建",
+            "orderid": 16,
+            "subAreas": [
+                {
+                    "areaId": 300,
+                    "pid": 16,
+                    "areaName": "福州",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 195,
+                    "pid": 16,
+                    "areaName": "莆田",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 134,
+                    "pid": 16,
+                    "areaName": "泉州",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 194,
+                    "pid": 16,
+                    "areaName": "厦门",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 255,
+                    "pid": 16,
+                    "areaName": "漳州",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 193,
+                    "pid": 16,
+                    "areaName": "龙岩",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 254,
+                    "pid": 16,
+                    "areaName": "三明",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 133,
+                    "pid": 16,
+                    "areaName": "南平",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 192,
+                    "pid": 16,
+                    "areaName": "宁德",
+                    "orderid": 9,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 15,
+            "pid": 1,
+            "areaName": "湖北",
+            "orderid": 17,
+            "subAreas": [
+                {
+                    "areaId": 218,
+                    "pid": 15,
+                    "areaName": "武汉",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 311,
+                    "pid": 15,
+                    "areaName": "黄石",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 216,
+                    "pid": 15,
+                    "areaName": "十堰",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 157,
+                    "pid": 15,
+                    "areaName": "荆州",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 270,
+                    "pid": 15,
+                    "areaName": "宜昌",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 156,
+                    "pid": 15,
+                    "areaName": "襄阳",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 122,
+                    "pid": 15,
+                    "areaName": "鄂州",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 217,
+                    "pid": 15,
+                    "areaName": "荆门",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 271,
+                    "pid": 15,
+                    "areaName": "黄冈",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 310,
+                    "pid": 15,
+                    "areaName": "孝感",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 362,
+                    "pid": 15,
+                    "areaName": "咸宁",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 1713,
+                    "pid": 15,
+                    "areaName": "仙桃",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 1293,
+                    "pid": 15,
+                    "areaName": "潜江",
+                    "orderid": 13,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 2734,
+                    "pid": 15,
+                    "areaName": "神农架林区",
+                    "orderid": 14,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 373,
+                    "pid": 15,
+                    "areaName": "恩施土家族苗族自治州",
+                    "orderid": 15,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 2654,
+                    "pid": 15,
+                    "areaName": "天门",
+                    "orderid": 16,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 371,
+                    "pid": 15,
+                    "areaName": "随州",
+                    "orderid": 17,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 26,
+            "pid": 1,
+            "areaName": "湖南",
+            "orderid": 18,
+            "subAreas": [
+                {
+                    "areaId": 158,
+                    "pid": 26,
+                    "areaName": "长沙",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 222,
+                    "pid": 26,
+                    "areaName": "株洲",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 313,
+                    "pid": 26,
+                    "areaName": "湘潭",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 159,
+                    "pid": 26,
+                    "areaName": "衡阳",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 273,
+                    "pid": 26,
+                    "areaName": "邵阳",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 220,
+                    "pid": 26,
+                    "areaName": "岳阳",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 312,
+                    "pid": 26,
+                    "areaName": "张家界",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 272,
+                    "pid": 26,
+                    "areaName": "益阳",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 219,
+                    "pid": 26,
+                    "areaName": "常德",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 221,
+                    "pid": 26,
+                    "areaName": "娄底",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 275,
+                    "pid": 26,
+                    "areaName": "郴州",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 314,
+                    "pid": 26,
+                    "areaName": "永州",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 363,
+                    "pid": 26,
+                    "areaName": "怀化",
+                    "orderid": 13,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 274,
+                    "pid": 26,
+                    "areaName": "湘西土家族苗族自治州",
+                    "orderid": 14,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 7,
+            "pid": 1,
+            "areaName": "广东",
+            "orderid": 19,
+            "subAreas": [
+                {
+                    "areaId": 257,
+                    "pid": 7,
+                    "areaName": "广州",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 340,
+                    "pid": 7,
+                    "areaName": "深圳",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 140,
+                    "pid": 7,
+                    "areaName": "珠海",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 303,
+                    "pid": 7,
+                    "areaName": "汕头",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 138,
+                    "pid": 7,
+                    "areaName": "佛山",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 137,
+                    "pid": 7,
+                    "areaName": "韶关",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 198,
+                    "pid": 7,
+                    "areaName": "湛江",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 338,
+                    "pid": 7,
+                    "areaName": "肇庆",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 302,
+                    "pid": 7,
+                    "areaName": "江门",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 139,
+                    "pid": 7,
+                    "areaName": "茂名",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 301,
+                    "pid": 7,
+                    "areaName": "惠州",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 141,
+                    "pid": 7,
+                    "areaName": "梅州",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 339,
+                    "pid": 7,
+                    "areaName": "汕尾",
+                    "orderid": 13,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 200,
+                    "pid": 7,
+                    "areaName": "河源",
+                    "orderid": 14,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 199,
+                    "pid": 7,
+                    "areaName": "阳江",
+                    "orderid": 15,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 197,
+                    "pid": 7,
+                    "areaName": "清远",
+                    "orderid": 16,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 119,
+                    "pid": 7,
+                    "areaName": "东莞",
+                    "orderid": 17,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 187,
+                    "pid": 7,
+                    "areaName": "中山",
+                    "orderid": 18,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 201,
+                    "pid": 7,
+                    "areaName": "潮州",
+                    "orderid": 19,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 259,
+                    "pid": 7,
+                    "areaName": "揭阳",
+                    "orderid": 20,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 258,
+                    "pid": 7,
+                    "areaName": "云浮",
+                    "orderid": 21,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 17,
+            "pid": 1,
+            "areaName": "广西",
+            "orderid": 20,
+            "subAreas": [
+                {
+                    "areaId": 261,
+                    "pid": 17,
+                    "areaName": "南宁",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 305,
+                    "pid": 17,
+                    "areaName": "柳州",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 142,
+                    "pid": 17,
+                    "areaName": "桂林",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 304,
+                    "pid": 17,
+                    "areaName": "梧州",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 295,
+                    "pid": 17,
+                    "areaName": "北海",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 144,
+                    "pid": 17,
+                    "areaName": "崇左",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 202,
+                    "pid": 17,
+                    "areaName": "来宾",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 260,
+                    "pid": 17,
+                    "areaName": "贺州",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 361,
+                    "pid": 17,
+                    "areaName": "玉林",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 203,
+                    "pid": 17,
+                    "areaName": "百色",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 143,
+                    "pid": 17,
+                    "areaName": "河池",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 145,
+                    "pid": 17,
+                    "areaName": "钦州",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 204,
+                    "pid": 17,
+                    "areaName": "防城港",
+                    "orderid": 13,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 341,
+                    "pid": 17,
+                    "areaName": "贵港",
+                    "orderid": 14,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 31,
+            "pid": 1,
+            "areaName": "江西",
+            "orderid": 21,
+            "subAreas": [
+                {
+                    "areaId": 163,
+                    "pid": 31,
+                    "areaName": "南昌",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 365,
+                    "pid": 31,
+                    "areaName": "赣州",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 278,
+                    "pid": 31,
+                    "areaName": "宜春",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 318,
+                    "pid": 31,
+                    "areaName": "吉安",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 364,
+                    "pid": 31,
+                    "areaName": "上饶",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 226,
+                    "pid": 31,
+                    "areaName": "抚州",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 349,
+                    "pid": 31,
+                    "areaName": "九江",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 225,
+                    "pid": 31,
+                    "areaName": "景德镇",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 350,
+                    "pid": 31,
+                    "areaName": "萍乡",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 164,
+                    "pid": 31,
+                    "areaName": "新余",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 279,
+                    "pid": 31,
+                    "areaName": "鹰潭",
+                    "orderid": 11,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 32,
+            "pid": 1,
+            "areaName": "四川",
+            "orderid": 22,
+            "subAreas": [
+                {
+                    "areaId": 75,
+                    "pid": 32,
+                    "areaName": "成都",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 240,
+                    "pid": 32,
+                    "areaName": "绵阳",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 78,
+                    "pid": 32,
+                    "areaName": "自贡",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 81,
+                    "pid": 32,
+                    "areaName": "攀枝花",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 331,
+                    "pid": 32,
+                    "areaName": "泸州",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 74,
+                    "pid": 32,
+                    "areaName": "德阳",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 329,
+                    "pid": 32,
+                    "areaName": "广元",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 330,
+                    "pid": 32,
+                    "areaName": "遂宁",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 248,
+                    "pid": 32,
+                    "areaName": "内江",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 79,
+                    "pid": 32,
+                    "areaName": "乐山",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 242,
+                    "pid": 32,
+                    "areaName": "资阳",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 186,
+                    "pid": 32,
+                    "areaName": "宜宾",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 291,
+                    "pid": 32,
+                    "areaName": "南充",
+                    "orderid": 13,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 369,
+                    "pid": 32,
+                    "areaName": "达州",
+                    "orderid": 14,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 76,
+                    "pid": 32,
+                    "areaName": "雅安",
+                    "orderid": 15,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 185,
+                    "pid": 32,
+                    "areaName": "阿坝藏族羌族自治州",
+                    "orderid": 16,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 73,
+                    "pid": 32,
+                    "areaName": "甘孜藏族自治州",
+                    "orderid": 17,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 80,
+                    "pid": 32,
+                    "areaName": "凉山彝族自治州",
+                    "orderid": 18,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 241,
+                    "pid": 32,
+                    "areaName": "广安",
+                    "orderid": 19,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 239,
+                    "pid": 32,
+                    "areaName": "巴中",
+                    "orderid": 20,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 77,
+                    "pid": 32,
+                    "areaName": "眉山",
+                    "orderid": 21,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 21,
+            "pid": 1,
+            "areaName": "海南",
+            "orderid": 23,
+            "subAreas": [
+                {
+                    "areaId": 125,
+                    "pid": 21,
+                    "areaName": "海口",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 121,
+                    "pid": 21,
+                    "areaName": "三亚",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 2358,
+                    "pid": 21,
+                    "areaName": "琼海",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 1644,
+                    "pid": 21,
+                    "areaName": "五指山",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 1214,
+                    "pid": 21,
+                    "areaName": "定安",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 1215,
+                    "pid": 21,
+                    "areaName": "儋州",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 1216,
+                    "pid": 21,
+                    "areaName": "万宁",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 1217,
+                    "pid": 21,
+                    "areaName": "保亭黎族苗族自治",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 1641,
+                    "pid": 21,
+                    "areaName": "屯昌",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 1642,
+                    "pid": 21,
+                    "areaName": "昌江黎族自治",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 1643,
+                    "pid": 21,
+                    "areaName": "陵水黎族自治",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 2031,
+                    "pid": 21,
+                    "areaName": "琼中黎族苗族自治",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 2032,
+                    "pid": 21,
+                    "areaName": "乐东黎族自治",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 2033,
+                    "pid": 21,
+                    "areaName": "临高",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 2359,
+                    "pid": 21,
+                    "areaName": "白沙黎族自治",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 2634,
+                    "pid": 21,
+                    "areaName": "东方",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 2757,
+                    "pid": 21,
+                    "areaName": "澄迈",
+                    "orderid": 99,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 2758,
+                    "pid": 21,
+                    "areaName": "文昌",
+                    "orderid": 99,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 24,
+            "pid": 1,
+            "areaName": "贵州",
+            "orderid": 24,
+            "subAreas": [
+                {
+                    "areaId": 146,
+                    "pid": 24,
+                    "areaName": "贵阳",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 147,
+                    "pid": 24,
+                    "areaName": "六盘水",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 262,
+                    "pid": 24,
+                    "areaName": "遵义",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 205,
+                    "pid": 24,
+                    "areaName": "铜仁地区",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 343,
+                    "pid": 24,
+                    "areaName": "黔西南布依族苗族自治州",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 206,
+                    "pid": 24,
+                    "areaName": "毕节地区",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 263,
+                    "pid": 24,
+                    "areaName": "安顺",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 342,
+                    "pid": 24,
+                    "areaName": "黔东南苗族侗族自治州",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 306,
+                    "pid": 24,
+                    "areaName": "黔南布依族苗族自治州",
+                    "orderid": 9,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 28,
+            "pid": 1,
+            "areaName": "云南",
+            "orderid": 25,
+            "subAreas": [
+                {
+                    "areaId": 104,
+                    "pid": 28,
+                    "areaName": "昆明",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 336,
+                    "pid": 28,
+                    "areaName": "昭通",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 249,
+                    "pid": 28,
+                    "areaName": "曲靖",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 105,
+                    "pid": 28,
+                    "areaName": "楚雄彝族自治州",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 106,
+                    "pid": 28,
+                    "areaName": "玉溪",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 107,
+                    "pid": 28,
+                    "areaName": "红河哈尼族彝族自治州",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 177,
+                    "pid": 28,
+                    "areaName": "文山壮族苗族自治州",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 109,
+                    "pid": 28,
+                    "areaName": "西双版纳傣族自治州",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 111,
+                    "pid": 28,
+                    "areaName": "大理白族自治州",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 112,
+                    "pid": 28,
+                    "areaName": "保山",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 116,
+                    "pid": 28,
+                    "areaName": "德宏傣族景颇族自治州",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 114,
+                    "pid": 28,
+                    "areaName": "丽江",
+                    "orderid": 13,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 113,
+                    "pid": 28,
+                    "areaName": "怒江傈僳族自治州",
+                    "orderid": 14,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 115,
+                    "pid": 28,
+                    "areaName": "迪庆藏族自治州",
+                    "orderid": 15,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 110,
+                    "pid": 28,
+                    "areaName": "临沧",
+                    "orderid": 16,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 108,
+                    "pid": 28,
+                    "areaName": "普洱",
+                    "orderid": 17,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 13,
+            "pid": 1,
+            "areaName": "西藏",
+            "orderid": 26,
+            "subAreas": [
+                {
+                    "areaId": 100,
+                    "pid": 13,
+                    "areaName": "拉萨",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 99,
+                    "pid": 13,
+                    "areaName": "昌都地区",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 97,
+                    "pid": 13,
+                    "areaName": "山南地区",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 102,
+                    "pid": 13,
+                    "areaName": "日喀则地区",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 101,
+                    "pid": 13,
+                    "areaName": "那曲地区",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 103,
+                    "pid": 13,
+                    "areaName": "阿里地区",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 98,
+                    "pid": 13,
+                    "areaName": "林芝地区",
+                    "orderid": 7,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 27,
+            "pid": 1,
+            "areaName": "陕西",
+            "orderid": 27,
+            "subAreas": [
+                {
+                    "areaId": 233,
+                    "pid": 27,
+                    "areaName": "西安",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 232,
+                    "pid": 27,
+                    "areaName": "铜川",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 171,
+                    "pid": 27,
+                    "areaName": "宝鸡",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 323,
+                    "pid": 27,
+                    "areaName": "咸阳",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 170,
+                    "pid": 27,
+                    "areaName": "渭南",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 352,
+                    "pid": 27,
+                    "areaName": "汉中",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 324,
+                    "pid": 27,
+                    "areaName": "安康",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 285,
+                    "pid": 27,
+                    "areaName": "商洛",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 284,
+                    "pid": 27,
+                    "areaName": "延安",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 231,
+                    "pid": 27,
+                    "areaName": "榆林",
+                    "orderid": 10,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 6,
+            "pid": 1,
+            "areaName": "甘肃",
+            "orderid": 28,
+            "subAreas": [
+                {
+                    "areaId": 36,
+                    "pid": 6,
+                    "areaName": "兰州",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 33,
+                    "pid": 6,
+                    "areaName": "嘉峪关",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 34,
+                    "pid": 6,
+                    "areaName": "金昌",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 35,
+                    "pid": 6,
+                    "areaName": "白银",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 196,
+                    "pid": 6,
+                    "areaName": "天水",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 37,
+                    "pid": 6,
+                    "areaName": "酒泉",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 117,
+                    "pid": 6,
+                    "areaName": "张掖",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 118,
+                    "pid": 6,
+                    "areaName": "武威",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 136,
+                    "pid": 6,
+                    "areaName": "定西",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 256,
+                    "pid": 6,
+                    "areaName": "陇南",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 359,
+                    "pid": 6,
+                    "areaName": "平凉",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 135,
+                    "pid": 6,
+                    "areaName": "庆阳",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 182,
+                    "pid": 6,
+                    "areaName": "临夏回族自治州",
+                    "orderid": 13,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 247,
+                    "pid": 6,
+                    "areaName": "甘南藏族自治州",
+                    "orderid": 14,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 11,
+            "pid": 1,
+            "areaName": "青海",
+            "orderid": 29,
+            "subAreas": [
+                {
+                    "areaId": 66,
+                    "pid": 11,
+                    "areaName": "西宁",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 69,
+                    "pid": 11,
+                    "areaName": "海东地区",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 67,
+                    "pid": 11,
+                    "areaName": "海北藏族自治州",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 70,
+                    "pid": 11,
+                    "areaName": "黄南藏族自治州",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 68,
+                    "pid": 11,
+                    "areaName": "海南藏族自治州",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 72,
+                    "pid": 11,
+                    "areaName": "果洛藏族自治州",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 71,
+                    "pid": 11,
+                    "areaName": "玉树藏族自治州",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 65,
+                    "pid": 11,
+                    "areaName": "海西蒙古族藏族自治州",
+                    "orderid": 8,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 20,
+            "pid": 1,
+            "areaName": "宁夏",
+            "orderid": 30,
+            "subAreas": [
+                {
+                    "areaId": 360,
+                    "pid": 20,
+                    "areaName": "银川",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 335,
+                    "pid": 20,
+                    "areaName": "石嘴山",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 322,
+                    "pid": 20,
+                    "areaName": "吴忠",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 246,
+                    "pid": 20,
+                    "areaName": "固原",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 181,
+                    "pid": 20,
+                    "areaName": "中卫",
+                    "orderid": 5,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 12,
+            "pid": 1,
+            "areaName": "新疆",
+            "orderid": 31,
+            "subAreas": [
+                {
+                    "areaId": 92,
+                    "pid": 12,
+                    "areaName": "乌鲁木齐",
+                    "orderid": 1,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 93,
+                    "pid": 12,
+                    "areaName": "昌吉回族自治州",
+                    "orderid": 2,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 770,
+                    "pid": 12,
+                    "areaName": "石河子",
+                    "orderid": 3,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 88,
+                    "pid": 12,
+                    "areaName": "博尔塔拉蒙古自治州",
+                    "orderid": 4,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 90,
+                    "pid": 12,
+                    "areaName": "伊犁哈萨克自治州",
+                    "orderid": 5,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 94,
+                    "pid": 12,
+                    "areaName": "塔城地区",
+                    "orderid": 6,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 96,
+                    "pid": 12,
+                    "areaName": "阿勒泰地区",
+                    "orderid": 7,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 95,
+                    "pid": 12,
+                    "areaName": "克拉玛依",
+                    "orderid": 8,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 89,
+                    "pid": 12,
+                    "areaName": "吐鲁番地区",
+                    "orderid": 9,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 91,
+                    "pid": 12,
+                    "areaName": "哈密地区",
+                    "orderid": 10,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 86,
+                    "pid": 12,
+                    "areaName": "巴音郭楞蒙古自治州",
+                    "orderid": 11,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 85,
+                    "pid": 12,
+                    "areaName": "阿克苏地区",
+                    "orderid": 12,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 84,
+                    "pid": 12,
+                    "areaName": "克孜勒苏柯尔克孜自治州",
+                    "orderid": 13,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 83,
+                    "pid": 12,
+                    "areaName": "喀什地区",
+                    "orderid": 14,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 82,
+                    "pid": 12,
+                    "areaName": "和田地区",
+                    "orderid": 15,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 731,
+                    "pid": 12,
+                    "areaName": "阿拉尔",
+                    "orderid": 16,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 789,
+                    "pid": 12,
+                    "areaName": "五家渠",
+                    "orderid": 17,
+                    "subAreas": null
+                },
+                {
+                    "areaId": 792,
+                    "pid": 12,
+                    "areaName": "图木舒克",
+                    "orderid": 18,
+                    "subAreas": null
+                }
+            ]
+        },
+        {
+            "areaId": 2912,
+            "pid": 1,
+            "areaName": "香港特别行政区",
+            "orderid": 32,
+            "subAreas": []
+        },
+        {
+            "areaId": 2911,
+            "pid": 1,
+            "areaName": "澳门特别行政区",
+            "orderid": 33,
+            "subAreas": []
+        }
+    ],
+    "errorMsg": null,
+    "errorType": null
+}{"success":true,"data":[{"areaId":131,"pid":1,"areaName":"����","orderid":1,"subAreas":[]},{"areaId":289,"pid":1,"areaName":"�Ϻ�","orderid":2,"subAreas":[]},{"areaId":332,"pid":1,"areaName":"���","orderid":3,"subAreas":[]},{"areaId":132,"pid":1,"areaName":"����","orderid":4,"subAreas":[]},{"areaId":25,"pid":1,"areaName":"�ӱ�","orderid":5,"subAreas":[{"areaId":150,"pid":25,"areaName":"ʯ��ׯ","orderid":1,"subAreas":null},{"areaId":265,"pid":25,"areaName":"��ɽ","orderid":2,"subAreas":null},{"areaId":148,"pid":25,"areaName":"�ػʵ�","orderid":3,"subAreas":null},{"areaId":151,"pid":25,"areaName":"����","orderid":4,"subAreas":null},{"areaId":266,"pid":25,"areaName":"��̨","orderid":5,"subAreas":null},{"areaId":307,"pid":25,"areaName":"����","orderid":6,"subAreas":null},{"areaId":264,"pid":25,"areaName":"�żҿ�","orderid":7,"subAreas":null},{"areaId":207,"pid":25,"areaName":"�е�","orderid":8,"subAreas":null},{"areaId":149,"pid":25,"areaName":"����","orderid":9,"subAreas":null},{"areaId":191,"pid":25,"areaName":"�ȷ�","orderid":10,"subAreas":null},{"areaId":208,"pid":25,"areaName":"��ˮ","orderid":11,"subAreas":null}]},{"areaId":10,"pid":1,"areaName":"ɽ��","orderid":6,"subAreas":[{"areaId":176,"pid":10,"areaName":"̫ԭ","orderid":1,"subAreas":null},{"areaId":355,"pid":10,"areaName":"��ͬ","orderid":2,"subAreas":null},{"areaId":357,"pid":10,"areaName":"��Ȫ","orderid":3,"subAreas":null},{"areaId":356,"pid":10,"areaName":"����","orderid":4,"subAreas":null},{"areaId":290,"pid":10,"areaName":"���","orderid":5,"subAreas":null},{"areaId":237,"pid":10,"areaName":"˷��","orderid":6,"subAreas":null},{"areaId":367,"pid":10,"areaName":"����","orderid":7,"subAreas":null},{"areaId":327,"pid":10,"areaName":"����","orderid":8,"subAreas":null},{"areaId":238,"pid":10,"areaName":"����","orderid":9,"subAreas":null},{"areaId":368,"pid":10,"areaName":"�ٷ�","orderid":10,"subAreas":null},{"areaId":328,"pid":10,"areaName":"�˳�","orderid":11,"subAreas":null}]},{"areaId":30,"pid":1,"areaName":"����","orderid":7,"subAreas":[{"areaId":268,"pid":30,"areaName":"֣��","orderid":1,"subAreas":null},{"areaId":210,"pid":30,"areaName":"����","orderid":2,"subAreas":null},{"areaId":153,"pid":30,"areaName":"����","orderid":3,"subAreas":null},{"areaId":213,"pid":30,"areaName":"ƽ��ɽ","orderid":4,"subAreas":null},{"areaId":267,"pid":30,"areaName":"����","orderid":5,"subAreas":null},{"areaId":215,"pid":30,"areaName":"�ױ�","orderid":6,"subAreas":null},{"areaId":152,"pid":30,"areaName":"����","orderid":7,"subAreas":null},{"areaId":211,"pid":30,"areaName":"����","orderid":8,"subAreas":null},{"areaId":209,"pid":30,"areaName":"���","orderid":9,"subAreas":null},{"areaId":155,"pid":30,"areaName":"���","orderid":10,"subAreas":null},{"areaId":344,"pid":30,"areaName":"���","orderid":11,"subAreas":null},{"areaId":212,"pid":30,"areaName":"����Ͽ","orderid":12,"subAreas":null},{"areaId":154,"pid":30,"areaName":"����","orderid":13,"subAreas":null},{"areaId":308,"pid":30,"areaName":"�ܿ�","orderid":14,"subAreas":null},{"areaId":269,"pid":30,"areaName":"פ���","orderid":15,"subAreas":null},{"areaId":309,"pid":30,"areaName":"����","orderid":16,"subAreas":null},{"areaId":214,"pid":30,"areaName":"����","orderid":17,"subAreas":null}]},{"areaId":19,"pid":1,"areaName":"����","orderid":8,"subAreas":[{"areaId":58,"pid":19,"areaName":"����","orderid":1,"subAreas":null},{"areaId":167,"pid":19,"areaName":"����","orderid":2,"subAreas":null},{"areaId":320,"pid":19,"areaName":"��ɽ","orderid":3,"subAreas":null},{"areaId":184,"pid":19,"areaName":"��˳","orderid":4,"subAreas":null},{"areaId":227,"pid":19,"areaName":"��Ϫ","orderid":5,"subAreas":null},{"areaId":282,"pid":19,"areaName":"����","orderid":6,"subAreas":null},{"areaId":166,"pid":19,"areaName":"����","orderid":7,"subAreas":null},{"areaId":281,"pid":19,"areaName":"Ӫ��","orderid":8,"subAreas":null},{"areaId":59,"pid":19,"areaName":"����","orderid":9,"subAreas":null},{"areaId":351,"pid":19,"areaName":"����","orderid":10,"subAreas":null},{"areaId":228,"pid":19,"areaName":"�̽�","orderid":11,"subAreas":null},{"areaId":60,"pid":19,"areaName":"����","orderid":12,"subAreas":null},{"areaId":280,"pid":19,"areaName":"����","orderid":13,"subAreas":null},{"areaId":319,"pid":19,"areaName":"��«��","orderid":14,"subAreas":null}]},{"areaId":9,"pid":1,"areaName":"����","orderid":9,"subAreas":[{"areaId":53,"pid":9,"areaName":"����","orderid":1,"subAreas":null},{"areaId":55,"pid":9,"areaName":"������","orderid":2,"subAreas":null},{"areaId":56,"pid":9,"areaName":"��ƽ","orderid":3,"subAreas":null},{"areaId":183,"pid":9,"areaName":"��Դ","orderid":4,"subAreas":null},{"areaId":165,"pid":9,"areaName":"ͨ��","orderid":5,"subAreas":null},{"areaId":57,"pid":9,"areaName":"��ɽ","orderid":6,"subAreas":null},{"areaId":51,"pid":9,"areaName":"�׳�","orderid":7,"subAreas":null},{"areaId":54,"pid":9,"areaName":"�ӱ߳�����������","orderid":8,"subAreas":null},{"areaId":52,"pid":9,"areaName":"��ԭ","orderid":9,"subAreas":null}]},{"areaId":2,"pid":1,"areaName":"����","orderid":10,"subAreas":[{"areaId":48,"pid":2,"areaName":"�����","orderid":1,"subAreas":null},{"areaId":41,"pid":2,"areaName":"�������","orderid":2,"subAreas":null},{"areaId":42,"pid":2,"areaName":"��ľ˹","orderid":3,"subAreas":null},{"areaId":49,"pid":2,"areaName":"ĵ����","orderid":3,"subAreas":null},{"areaId":50,"pid":2,"areaName":"����","orderid":4,"subAreas":null},{"areaId":40,"pid":2,"areaName":"����","orderid":5,"subAreas":null},{"areaId":46,"pid":2,"areaName":"����","orderid":6,"subAreas":null},{"areaId":43,"pid":2,"areaName":"�׸�","orderid":7,"subAreas":null},{"areaId":45,"pid":2,"areaName":"˫Ѽɽ","orderid":8,"subAreas":null},{"areaId":47,"pid":2,"areaName":"��̨��","orderid":9,"subAreas":null},{"areaId":44,"pid":2,"areaName":"�绯","orderid":10,"subAreas":null},{"areaId":39,"pid":2,"areaName":"�ں�","orderid":11,"subAreas":null},{"areaId":38,"pid":2,"areaName":"���˰������","orderid":12,"subAreas":null}]},{"areaId":22,"pid":1,"areaName":"���ɹ�","orderid":11,"subAreas":[{"areaId":321,"pid":22,"areaName":"���ͺ���","orderid":1,"subAreas":null},{"areaId":229,"pid":22,"areaName":"��ͷ","orderid":2,"subAreas":null},{"areaId":123,"pid":22,"areaName":"�ں�","orderid":3,"subAreas":null},{"areaId":297,"pid":22,"areaName":"���","orderid":4,"subAreas":null},{"areaId":61,"pid":22,"areaName":"���ױ���","orderid":5,"subAreas":null},{"areaId":62,"pid":22,"areaName":"�˰���","orderid":6,"subAreas":null},{"areaId":64,"pid":22,"areaName":"ͨ��","orderid":7,"subAreas":null},{"areaId":63,"pid":22,"areaName":"���ֹ�����","orderid":8,"subAreas":null},{"areaId":168,"pid":22,"areaName":"�����첼","orderid":9,"subAreas":null},{"areaId":283,"pid":22,"areaName":"�����˹","orderid":10,"subAreas":null},{"areaId":169,"pid":22,"areaName":"�����׶�","orderid":11,"subAreas":null},{"areaId":230,"pid":22,"areaName":"��������","orderid":12,"subAreas":null}]},{"areaId":8,"pid":1,"areaName":"ɽ��","orderid":12,"subAreas":[{"areaId":288,"pid":8,"areaName":"����","orderid":1,"subAreas":null},{"areaId":236,"pid":8,"areaName":"�ൺ","orderid":2,"subAreas":null},{"areaId":354,"pid":8,"areaName":"�Ͳ�","orderid":3,"subAreas":null},{"areaId":172,"pid":8,"areaName":"��ׯ","orderid":4,"subAreas":null},{"areaId":174,"pid":8,"areaName":"��Ӫ","orderid":5,"subAreas":null},{"areaId":326,"pid":8,"areaName":"��̨","orderid":6,"subAreas":null},{"areaId":287,"pid":8,"areaName":"Ϋ��","orderid":7,"subAreas":null},{"areaId":286,"pid":8,"areaName":"����","orderid":8,"subAreas":null},{"areaId":325,"pid":8,"areaName":"̩��","orderid":9,"subAreas":null},{"areaId":175,"pid":8,"areaName":"����","orderid":10,"subAreas":null},{"areaId":173,"pid":8,"areaName":"����","orderid":11,"subAreas":null},{"areaId":235,"pid":8,"areaName":"����","orderid":12,"subAreas":null},{"areaId":372,"pid":8,"areaName":"����","orderid":13,"subAreas":null},{"areaId":366,"pid":8,"areaName":"�ĳ�","orderid":14,"subAreas":null},{"areaId":234,"pid":8,"areaName":"����","orderid":15,"subAreas":null},{"areaId":353,"pid":8,"areaName":"����","orderid":16,"subAreas":null},{"areaId":124,"pid":8,"areaName":"����","orderid":17,"subAreas":null}]},{"areaId":23,"pid":1,"areaName":"����","orderid":13,"subAreas":[{"areaId":127,"pid":23,"areaName":"�Ϸ�","orderid":1,"subAreas":null},{"areaId":129,"pid":23,"areaName":"�ߺ�","orderid":2,"subAreas":null},{"areaId":126,"pid":23,"areaName":"����","orderid":3,"subAreas":null},{"areaId":250,"pid":23,"areaName":"����","orderid":4,"subAreas":null},{"areaId":358,"pid":23,"areaName":"�?ɽ","orderid":5,"subAreas":null},{"areaId":253,"pid":23,"areaName":"����","orderid":6,"subAreas":null},{"areaId":337,"pid":23,"areaName":"ͭ��","orderid":7,"subAreas":null},{"areaId":130,"pid":23,"areaName":"����","orderid":8,"subAreas":null},{"areaId":252,"pid":23,"areaName":"��ɽ","orderid":9,"subAreas":null},{"areaId":128,"pid":23,"areaName":"����","orderid":10,"subAreas":null},{"areaId":370,"pid":23,"areaName":"����","orderid":11,"subAreas":null},{"areaId":189,"pid":23,"areaName":"����","orderid":12,"subAreas":null},{"areaId":298,"pid":23,"areaName":"��","orderid":13,"subAreas":null},{"areaId":190,"pid":23,"areaName":"���","orderid":14,"subAreas":null},{"areaId":251,"pid":23,"areaName":"����","orderid":15,"subAreas":null},{"areaId":299,"pid":23,"areaName":"����","orderid":16,"subAreas":null},{"areaId":188,"pid":23,"areaName":"����","orderid":17,"subAreas":null}]},{"areaId":29,"pid":1,"areaName":"�㽭","orderid":14,"subAreas":[{"areaId":179,"pid":29,"areaName":"����","orderid":1,"subAreas":null},{"areaId":180,"pid":29,"areaName":"����","orderid":2,"subAreas":null},{"areaId":178,"pid":29,"areaName":"����","orderid":3,"subAreas":null},{"areaId":293,"pid":29,"areaName":"����","orderid":4,"subAreas":null},{"areaId":294,"pid":29,"areaName":"����","orderid":5,"subAreas":null},{"areaId":334,"pid":29,"areaName":"����","orderid":6,"subAreas":null},{"areaId":333,"pid":29,"areaName":"��","orderid":7,"subAreas":null},{"areaId":243,"pid":29,"areaName":"����","orderid":8,"subAreas":null},{"areaId":244,"pid":29,"areaName":"̨��","orderid":9,"subAreas":null},{"areaId":292,"pid":29,"areaName":"��ˮ","orderid":10,"subAreas":null},{"areaId":245,"pid":29,"areaName":"��ɽ","orderid":11,"subAreas":null}]},{"areaId":18,"pid":1,"areaName":"����","orderid":15,"subAreas":[{"areaId":315,"pid":18,"areaName":"�Ͼ�","orderid":1,"subAreas":null},{"areaId":317,"pid":18,"areaName":"����","orderid":2,"subAreas":null},{"areaId":316,"pid":18,"areaName":"����","orderid":3,"subAreas":null},{"areaId":348,"pid":18,"areaName":"����","orderid":4,"subAreas":null},{"areaId":224,"pid":18,"areaName":"����","orderid":5,"subAreas":null},{"areaId":161,"pid":18,"areaName":"��ͨ","orderid":6,"subAreas":null},{"areaId":347,"pid":18,"areaName":"���Ƹ�","orderid":7,"subAreas":null},{"areaId":162,"pid":18,"areaName":"����","orderid":8,"subAreas":null},{"areaId":223,"pid":18,"areaName":"�γ�","orderid":9,"subAreas":null},{"areaId":346,"pid":18,"areaName":"����","orderid":10,"subAreas":null},{"areaId":160,"pid":18,"areaName":"��","orderid":11,"subAreas":null},{"areaId":276,"pid":18,"areaName":"̩��","orderid":12,"subAreas":null},{"areaId":277,"pid":18,"areaName":"��Ǩ","orderid":13,"subAreas":null}]},{"areaId":16,"pid":1,"areaName":"����","orderid":16,"subAreas":[{"areaId":300,"pid":16,"areaName":"����","orderid":1,"subAreas":null},{"areaId":195,"pid":16,"areaName":"����","orderid":2,"subAreas":null},{"areaId":134,"pid":16,"areaName":"Ȫ��","orderid":3,"subAreas":null},{"areaId":194,"pid":16,"areaName":"����","orderid":4,"subAreas":null},{"areaId":255,"pid":16,"areaName":"����","orderid":5,"subAreas":null},{"areaId":193,"pid":16,"areaName":"����","orderid":6,"subAreas":null},{"areaId":254,"pid":16,"areaName":"����","orderid":7,"subAreas":null},{"areaId":133,"pid":16,"areaName":"��ƽ","orderid":8,"subAreas":null},{"areaId":192,"pid":16,"areaName":"����","orderid":9,"subAreas":null}]},{"areaId":15,"pid":1,"areaName":"����","orderid":17,"subAreas":[{"areaId":218,"pid":15,"areaName":"�人","orderid":1,"subAreas":null},{"areaId":311,"pid":15,"areaName":"��ʯ","orderid":2,"subAreas":null},{"areaId":216,"pid":15,"areaName":"ʮ��","orderid":3,"subAreas":null},{"areaId":157,"pid":15,"areaName":"����","orderid":4,"subAreas":null},{"areaId":270,"pid":15,"areaName":"�˲�","orderid":5,"subAreas":null},{"areaId":156,"pid":15,"areaName":"����","orderid":6,"subAreas":null},{"areaId":122,"pid":15,"areaName":"����","orderid":7,"subAreas":null},{"areaId":217,"pid":15,"areaName":"����","orderid":8,"subAreas":null},{"areaId":271,"pid":15,"areaName":"�Ƹ�","orderid":9,"subAreas":null},{"areaId":310,"pid":15,"areaName":"Т��","orderid":10,"subAreas":null},{"areaId":362,"pid":15,"areaName":"����","orderid":11,"subAreas":null},{"areaId":1713,"pid":15,"areaName":"����","orderid":12,"subAreas":null},{"areaId":1293,"pid":15,"areaName":"Ǳ��","orderid":13,"subAreas":null},{"areaId":2734,"pid":15,"areaName":"��ũ������","orderid":14,"subAreas":null},{"areaId":373,"pid":15,"areaName":"��ʩ����������������","orderid":15,"subAreas":null},{"areaId":2654,"pid":15,"areaName":"����","orderid":16,"subAreas":null},{"areaId":371,"pid":15,"areaName":"����","orderid":17,"subAreas":null}]},{"areaId":26,"pid":1,"areaName":"����","orderid":18,"subAreas":[{"areaId":158,"pid":26,"areaName":"��ɳ","orderid":1,"subAreas":null},{"areaId":222,"pid":26,"areaName":"����","orderid":2,"subAreas":null},{"areaId":313,"pid":26,"areaName":"��̶","orderid":3,"subAreas":null},{"areaId":159,"pid":26,"areaName":"����","orderid":4,"subAreas":null},{"areaId":273,"pid":26,"areaName":"����","orderid":5,"subAreas":null},{"areaId":220,"pid":26,"areaName":"����","orderid":6,"subAreas":null},{"areaId":312,"pid":26,"areaName":"�żҽ�","orderid":7,"subAreas":null},{"areaId":272,"pid":26,"areaName":"����","orderid":8,"subAreas":null},{"areaId":219,"pid":26,"areaName":"����","orderid":9,"subAreas":null},{"areaId":221,"pid":26,"areaName":"¦��","orderid":10,"subAreas":null},{"areaId":275,"pid":26,"areaName":"����","orderid":11,"subAreas":null},{"areaId":314,"pid":26,"areaName":"����","orderid":12,"subAreas":null},{"areaId":363,"pid":26,"areaName":"����","orderid":13,"subAreas":null},{"areaId":274,"pid":26,"areaName":"��������������������","orderid":14,"subAreas":null}]},{"areaId":7,"pid":1,"areaName":"�㶫","orderid":19,"subAreas":[{"areaId":257,"pid":7,"areaName":"����","orderid":1,"subAreas":null},{"areaId":340,"pid":7,"areaName":"����","orderid":2,"subAreas":null},{"areaId":140,"pid":7,"areaName":"�麣","orderid":3,"subAreas":null},{"areaId":303,"pid":7,"areaName":"��ͷ","orderid":4,"subAreas":null},{"areaId":138,"pid":7,"areaName":"��ɽ","orderid":5,"subAreas":null},{"areaId":137,"pid":7,"areaName":"�ع�","orderid":6,"subAreas":null},{"areaId":198,"pid":7,"areaName":"տ��","orderid":7,"subAreas":null},{"areaId":338,"pid":7,"areaName":"����","orderid":8,"subAreas":null},{"areaId":302,"pid":7,"areaName":"����","orderid":9,"subAreas":null},{"areaId":139,"pid":7,"areaName":"ï��","orderid":10,"subAreas":null},{"areaId":301,"pid":7,"areaName":"����","orderid":11,"subAreas":null},{"areaId":141,"pid":7,"areaName":"÷��","orderid":12,"subAreas":null},{"areaId":339,"pid":7,"areaName":"��β","orderid":13,"subAreas":null},{"areaId":200,"pid":7,"areaName":"��Դ","orderid":14,"subAreas":null},{"areaId":199,"pid":7,"areaName":"����","orderid":15,"subAreas":null},{"areaId":197,"pid":7,"areaName":"��Զ","orderid":16,"subAreas":null},{"areaId":119,"pid":7,"areaName":"��ݸ","orderid":17,"subAreas":null},{"areaId":187,"pid":7,"areaName":"��ɽ","orderid":18,"subAreas":null},{"areaId":201,"pid":7,"areaName":"����","orderid":19,"subAreas":null},{"areaId":259,"pid":7,"areaName":"����","orderid":20,"subAreas":null},{"areaId":258,"pid":7,"areaName":"�Ƹ�","orderid":21,"subAreas":null}]},{"areaId":17,"pid":1,"areaName":"����","orderid":20,"subAreas":[{"areaId":261,"pid":17,"areaName":"����","orderid":1,"subAreas":null},{"areaId":305,"pid":17,"areaName":"����","orderid":2,"subAreas":null},{"areaId":142,"pid":17,"areaName":"����","orderid":3,"subAreas":null},{"areaId":304,"pid":17,"areaName":"����","orderid":4,"subAreas":null},{"areaId":295,"pid":17,"areaName":"����","orderid":5,"subAreas":null},{"areaId":144,"pid":17,"areaName":"����","orderid":6,"subAreas":null},{"areaId":202,"pid":17,"areaName":"����","orderid":7,"subAreas":null},{"areaId":260,"pid":17,"areaName":"����","orderid":8,"subAreas":null},{"areaId":361,"pid":17,"areaName":"����","orderid":9,"subAreas":null},{"areaId":203,"pid":17,"areaName":"��ɫ","orderid":10,"subAreas":null},{"areaId":143,"pid":17,"areaName":"�ӳ�","orderid":11,"subAreas":null},{"areaId":145,"pid":17,"areaName":"����","orderid":12,"subAreas":null},{"areaId":204,"pid":17,"areaName":"���Ǹ�","orderid":13,"subAreas":null},{"areaId":341,"pid":17,"areaName":"���","orderid":14,"subAreas":null}]},{"areaId":31,"pid":1,"areaName":"����","orderid":21,"subAreas":[{"areaId":163,"pid":31,"areaName":"�ϲ�","orderid":1,"subAreas":null},{"areaId":365,"pid":31,"areaName":"����","orderid":2,"subAreas":null},{"areaId":278,"pid":31,"areaName":"�˴�","orderid":3,"subAreas":null},{"areaId":318,"pid":31,"areaName":"����","orderid":4,"subAreas":null},{"areaId":364,"pid":31,"areaName":"����","orderid":5,"subAreas":null},{"areaId":226,"pid":31,"areaName":"����","orderid":6,"subAreas":null},{"areaId":349,"pid":31,"areaName":"�Ž�","orderid":7,"subAreas":null},{"areaId":225,"pid":31,"areaName":"������","orderid":8,"subAreas":null},{"areaId":350,"pid":31,"areaName":"Ƽ��","orderid":9,"subAreas":null},{"areaId":164,"pid":31,"areaName":"����","orderid":10,"subAreas":null},{"areaId":279,"pid":31,"areaName":"ӥ̶","orderid":11,"subAreas":null}]},{"areaId":32,"pid":1,"areaName":"�Ĵ�","orderid":22,"subAreas":[{"areaId":75,"pid":32,"areaName":"�ɶ�","orderid":1,"subAreas":null},{"areaId":240,"pid":32,"areaName":"����","orderid":2,"subAreas":null},{"areaId":78,"pid":32,"areaName":"�Թ�","orderid":3,"subAreas":null},{"areaId":81,"pid":32,"areaName":"��֦��","orderid":4,"subAreas":null},{"areaId":331,"pid":32,"areaName":"����","orderid":5,"subAreas":null},{"areaId":74,"pid":32,"areaName":"����","orderid":6,"subAreas":null},{"areaId":329,"pid":32,"areaName":"��Ԫ","orderid":7,"subAreas":null},{"areaId":330,"pid":32,"areaName":"����","orderid":8,"subAreas":null},{"areaId":248,"pid":32,"areaName":"�ڽ�","orderid":9,"subAreas":null},{"areaId":79,"pid":32,"areaName":"��ɽ","orderid":10,"subAreas":null},{"areaId":242,"pid":32,"areaName":"����","orderid":11,"subAreas":null},{"areaId":186,"pid":32,"areaName":"�˱�","orderid":12,"subAreas":null},{"areaId":291,"pid":32,"areaName":"�ϳ�","orderid":13,"subAreas":null},{"areaId":369,"pid":32,"areaName":"����","orderid":14,"subAreas":null},{"areaId":76,"pid":32,"areaName":"�Ű�","orderid":15,"subAreas":null},{"areaId":185,"pid":32,"areaName":"���Ӳ���Ǽ��������","orderid":16,"subAreas":null},{"areaId":73,"pid":32,"areaName":"���β���������","orderid":17,"subAreas":null},{"areaId":80,"pid":32,"areaName":"��ɽ����������","orderid":18,"subAreas":null},{"areaId":241,"pid":32,"areaName":"�㰲","orderid":19,"subAreas":null},{"areaId":239,"pid":32,"areaName":"����","orderid":20,"subAreas":null},{"areaId":77,"pid":32,"areaName":"üɽ","orderid":21,"subAreas":null}]},{"areaId":21,"pid":1,"areaName":"����","orderid":23,"subAreas":[{"areaId":125,"pid":21,"areaName":"����","orderid":1,"subAreas":null},{"areaId":121,"pid":21,"areaName":"����","orderid":2,"subAreas":null},{"areaId":2358,"pid":21,"areaName":"�?","orderid":3,"subAreas":null},{"areaId":1644,"pid":21,"areaName":"��ָɽ","orderid":4,"subAreas":null},{"areaId":1214,"pid":21,"areaName":"����","orderid":99,"subAreas":null},{"areaId":1215,"pid":21,"areaName":"����","orderid":99,"subAreas":null},{"areaId":1216,"pid":21,"areaName":"����","orderid":99,"subAreas":null},{"areaId":1217,"pid":21,"areaName":"��ͤ������������","orderid":99,"subAreas":null},{"areaId":1641,"pid":21,"areaName":"�Ͳ�","orderid":99,"subAreas":null},{"areaId":1642,"pid":21,"areaName":"����������","orderid":99,"subAreas":null},{"areaId":1643,"pid":21,"areaName":"��ˮ��������","orderid":99,"subAreas":null},{"areaId":2031,"pid":21,"areaName":"����������������","orderid":99,"subAreas":null},{"areaId":2032,"pid":21,"areaName":"�ֶ���������","orderid":99,"subAreas":null},{"areaId":2033,"pid":21,"areaName":"�ٸ�","orderid":99,"subAreas":null},{"areaId":2359,"pid":21,"areaName":"��ɳ��������","orderid":99,"subAreas":null},{"areaId":2634,"pid":21,"areaName":"����","orderid":99,"subAreas":null},{"areaId":2757,"pid":21,"areaName":"����","orderid":99,"subAreas":null},{"areaId":2758,"pid":21,"areaName":"�Ĳ�","orderid":99,"subAreas":null}]},{"areaId":24,"pid":1,"areaName":"����","orderid":24,"subAreas":[{"areaId":146,"pid":24,"areaName":"����","orderid":1,"subAreas":null},{"areaId":147,"pid":24,"areaName":"����ˮ","orderid":2,"subAreas":null},{"areaId":262,"pid":24,"areaName":"����","orderid":3,"subAreas":null},{"areaId":205,"pid":24,"areaName":"ͭ�ʵ���","orderid":4,"subAreas":null},{"areaId":343,"pid":24,"areaName":"ǭ���ϲ���������������","orderid":5,"subAreas":null},{"areaId":206,"pid":24,"areaName":"�Ͻڵ���","orderid":6,"subAreas":null},{"areaId":263,"pid":24,"areaName":"��˳","orderid":7,"subAreas":null},{"areaId":342,"pid":24,"areaName":"ǭ�������嶱��������","orderid":8,"subAreas":null},{"areaId":306,"pid":24,"areaName":"ǭ�ϲ���������������","orderid":9,"subAreas":null}]},{"areaId":28,"pid":1,"areaName":"����","orderid":25,"subAreas":[{"areaId":104,"pid":28,"areaName":"����","orderid":1,"subAreas":null},{"areaId":336,"pid":28,"areaName":"��ͨ","orderid":2,"subAreas":null},{"areaId":249,"pid":28,"areaName":"��","orderid":3,"subAreas":null},{"areaId":105,"pid":28,"areaName":"��������������","orderid":4,"subAreas":null},{"areaId":106,"pid":28,"areaName":"��Ϫ","orderid":5,"subAreas":null},{"areaId":107,"pid":28,"areaName":"��ӹ���������������","orderid":6,"subAreas":null},{"areaId":177,"pid":28,"areaName":"��ɽ׳������������","orderid":7,"subAreas":null},{"areaId":109,"pid":28,"areaName":"��˫���ɴ���������","orderid":9,"subAreas":null},{"areaId":111,"pid":28,"areaName":"�������������","orderid":10,"subAreas":null},{"areaId":112,"pid":28,"areaName":"��ɽ","orderid":11,"subAreas":null},{"areaId":116,"pid":28,"areaName":"�º���徰����������","orderid":12,"subAreas":null},{"areaId":114,"pid":28,"areaName":"����","orderid":13,"subAreas":null},{"areaId":113,"pid":28,"areaName":"ŭ��������������","orderid":14,"subAreas":null},{"areaId":115,"pid":28,"areaName":"�������������","orderid":15,"subAreas":null},{"areaId":110,"pid":28,"areaName":"�ٲ�","orderid":16,"subAreas":null},{"areaId":108,"pid":28,"areaName":"�ն�","orderid":17,"subAreas":null}]},{"areaId":13,"pid":1,"areaName":"����","orderid":26,"subAreas":[{"areaId":100,"pid":13,"areaName":"����","orderid":1,"subAreas":null},{"areaId":99,"pid":13,"areaName":"�����","orderid":2,"subAreas":null},{"areaId":97,"pid":13,"areaName":"ɽ�ϵ���","orderid":3,"subAreas":null},{"areaId":102,"pid":13,"areaName":"�տ������","orderid":4,"subAreas":null},{"areaId":101,"pid":13,"areaName":"�������","orderid":5,"subAreas":null},{"areaId":103,"pid":13,"areaName":"�������","orderid":6,"subAreas":null},{"areaId":98,"pid":13,"areaName":"��֥����","orderid":7,"subAreas":null}]},{"areaId":27,"pid":1,"areaName":"����","orderid":27,"subAreas":[{"areaId":233,"pid":27,"areaName":"����","orderid":1,"subAreas":null},{"areaId":232,"pid":27,"areaName":"ͭ��","orderid":2,"subAreas":null},{"areaId":171,"pid":27,"areaName":"����","orderid":3,"subAreas":null},{"areaId":323,"pid":27,"areaName":"����","orderid":4,"subAreas":null},{"areaId":170,"pid":27,"areaName":"μ��","orderid":5,"subAreas":null},{"areaId":352,"pid":27,"areaName":"����","orderid":6,"subAreas":null},{"areaId":324,"pid":27,"areaName":"����","orderid":7,"subAreas":null},{"areaId":285,"pid":27,"areaName":"����","orderid":8,"subAreas":null},{"areaId":284,"pid":27,"areaName":"�Ӱ�","orderid":9,"subAreas":null},{"areaId":231,"pid":27,"areaName":"����","orderid":10,"subAreas":null}]},{"areaId":6,"pid":1,"areaName":"����","orderid":28,"subAreas":[{"areaId":36,"pid":6,"areaName":"����","orderid":1,"subAreas":null},{"areaId":33,"pid":6,"areaName":"�����","orderid":2,"subAreas":null},{"areaId":34,"pid":6,"areaName":"���","orderid":3,"subAreas":null},{"areaId":35,"pid":6,"areaName":"����","orderid":4,"subAreas":null},{"areaId":196,"pid":6,"areaName":"��ˮ","orderid":5,"subAreas":null},{"areaId":37,"pid":6,"areaName":"��Ȫ","orderid":6,"subAreas":null},{"areaId":117,"pid":6,"areaName":"��Ҵ","orderid":7,"subAreas":null},{"areaId":118,"pid":6,"areaName":"����","orderid":8,"subAreas":null},{"areaId":136,"pid":6,"areaName":"����","orderid":9,"subAreas":null},{"areaId":256,"pid":6,"areaName":"¤��","orderid":10,"subAreas":null},{"areaId":359,"pid":6,"areaName":"ƽ��","orderid":11,"subAreas":null},{"areaId":135,"pid":6,"areaName":"����","orderid":12,"subAreas":null},{"areaId":182,"pid":6,"areaName":"���Ļ���������","orderid":13,"subAreas":null},{"areaId":247,"pid":6,"areaName":"���ϲ���������","orderid":14,"subAreas":null}]},{"areaId":11,"pid":1,"areaName":"�ຣ","orderid":29,"subAreas":[{"areaId":66,"pid":11,"areaName":"����","orderid":1,"subAreas":null},{"areaId":69,"pid":11,"areaName":"��������","orderid":2,"subAreas":null},{"areaId":67,"pid":11,"areaName":"��������������","orderid":3,"subAreas":null},{"areaId":70,"pid":11,"areaName":"���ϲ���������","orderid":4,"subAreas":null},{"areaId":68,"pid":11,"areaName":"���ϲ���������","orderid":5,"subAreas":null},{"areaId":72,"pid":11,"areaName":"�������������","orderid":6,"subAreas":null},{"areaId":71,"pid":11,"areaName":"��������������","orderid":7,"subAreas":null},{"areaId":65,"pid":11,"areaName":"�����ɹ������������","orderid":8,"subAreas":null}]},{"areaId":20,"pid":1,"areaName":"����","orderid":30,"subAreas":[{"areaId":360,"pid":20,"areaName":"��","orderid":1,"subAreas":null},{"areaId":335,"pid":20,"areaName":"ʯ��ɽ","orderid":2,"subAreas":null},{"areaId":322,"pid":20,"areaName":"����","orderid":3,"subAreas":null},{"areaId":246,"pid":20,"areaName":"��ԭ","orderid":4,"subAreas":null},{"areaId":181,"pid":20,"areaName":"����","orderid":5,"subAreas":null}]},{"areaId":12,"pid":1,"areaName":"�½�","orderid":31,"subAreas":[{"areaId":92,"pid":12,"areaName":"��³ľ��","orderid":1,"subAreas":null},{"areaId":93,"pid":12,"areaName":"�����������","orderid":2,"subAreas":null},{"areaId":770,"pid":12,"areaName":"ʯ����","orderid":3,"subAreas":null},{"areaId":88,"pid":12,"areaName":"���������ɹ�������","orderid":4,"subAreas":null},{"areaId":90,"pid":12,"areaName":"��������������","orderid":5,"subAreas":null},{"areaId":94,"pid":12,"areaName":"���ǵ���","orderid":6,"subAreas":null},{"areaId":96,"pid":12,"areaName":"����̩����","orderid":7,"subAreas":null},{"areaId":95,"pid":12,"areaName":"��������","orderid":8,"subAreas":null},{"areaId":89,"pid":12,"areaName":"��³������","orderid":9,"subAreas":null},{"areaId":91,"pid":12,"areaName":"���ܵ���","orderid":10,"subAreas":null},{"areaId":86,"pid":12,"areaName":"���������ɹ�������","orderid":11,"subAreas":null},{"areaId":85,"pid":12,"areaName":"�����յ���","orderid":12,"subAreas":null},{"areaId":84,"pid":12,"areaName":"�������տ¶����������","orderid":13,"subAreas":null},{"areaId":83,"pid":12,"areaName":"��ʲ����","orderid":14,"subAreas":null},{"areaId":82,"pid":12,"areaName":"�������","orderid":15,"subAreas":null},{"areaId":731,"pid":12,"areaName":"������","orderid":16,"subAreas":null},{"areaId":789,"pid":12,"areaName":"�����","orderid":17,"subAreas":null},{"areaId":792,"pid":12,"areaName":"ͼľ���","orderid":18,"subAreas":null}]},{"areaId":2912,"pid":1,"areaName":"����ر�������","orderid":32,"subAreas":[]},{"areaId":2911,"pid":1,"areaName":"�����ر�������","orderid":33,"subAreas":[]}],"errorMsg":null,"errorType":null}

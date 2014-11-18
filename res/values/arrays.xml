@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+	<!-- 驾龄 -->
+    <string-array name="year">
+        <item>1年</item>
+        <item>2年</item>
+        <item>3年</item>
+        <item>4年</item>
+        <item>5年以上</item>
+    </string-array>
+    
+    <string-array name="gender">
+        <item >男</item>
+        <item >女</item>
+    </string-array>
+    
+    <string-array name="cartype">
+        <item>小型汽车</item>
+        <item>中型汽车</item>
+        <item>大型汽车</item>
+        <item>其它汽车</item>
+    </string-array>
+        <string-array name="peopnum">
+        <item>1人</item>
+        <item>2人</item>
+        <item>3人</item>
+        <item>4人</item>
+        <item>5人</item>
+        <item>6人</item>
+    </string-array>
+    
+       
+    <string-array name="get_image_way">
+        <item >拍照</item>
+        <item >相册</item>
+    </string-array>
+    
+     <string-array name="show_licence_tip">
+        <item >您的驾驶证正本尚未选择，请选择后重试</item>
+        <item >您的驾驶证副本尚未选择，请选择后重试</item>
+        <item >您的行驶证正本尚未选择，请选择后重试</item>
+        <item >您的行驶证副本尚未选择，请选择后重试</item>
+    </string-array>
+    
+     
+     
+</resources>

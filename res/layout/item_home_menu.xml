@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_49"
+    android:background="@drawable/home_menu_item_pressed"
+    android:paddingLeft="@dimen/dp_21" >
+
+    <ImageView
+        android:id="@+id/item_home_menu_img"
+        style="@style/wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/des" />
+
+    <TextView
+        android:id="@+id/item_home_menu_title"
+        style="@style/wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@+id/item_home_menu_img"
+        android:text="消息中心"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:id="@+id/item_home_menu_num"
+        style="@style/wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_12"
+        android:text="2"
+        android:textColor="@color/red"
+        android:textSize="@dimen/sp_16"
+        android:visibility="gone" />
+
+</RelativeLayout>

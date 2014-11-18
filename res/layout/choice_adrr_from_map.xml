@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/choice_adrr_satrt"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_toLeftOf="@+id/search_refresh"
+            android:background="@null"
+            android:focusable="true"
+            android:inputType="text"
+            android:paddingLeft="@dimen/dp_10"
+            android:singleLine="true"
+            android:textSize="@dimen/sp_14" />
+
+        <ImageView
+            android:id="@+id/search_refresh"
+            style="@style/wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_2"
+            android:clickable="false"
+            android:contentDescription="@string/des"
+            android:src="@drawable/action_refresh_pressed" />
+    </RelativeLayout>
+
+    <View style="@style/item_divider" />
+
+    <ListView
+        android:id="@+id/adrr_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginRight="@dimen/dp_4"
+        android:divider="@color/list_devider"
+        android:dividerHeight="@dimen/dp_0point4"
+        android:scrollbars="none" >
+    </ListView>
+
+</LinearLayout>

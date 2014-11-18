@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/layout_bg"
+        android:padding="@dimen/dp_8" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_39"
+            android:background="@drawable/pcb_search_box"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:layout_marginRight="@dimen/dp_5"
+                android:contentDescription="@string/des"
+                android:src="@drawable/search_icon" />
+
+            <EditText
+                android:id="@+id/search_input"
+                style="@style/table_text_m"
+                android:gravity="left|center_vertical"
+                android:hint="@string/search_brand_hint"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- 边框字母索引框 -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/layout"
+            android:background="#ffffff"
+            android:paddingLeft="@dimen/dp_23" >
+
+            <!-- 结果列表 -->
+
+            <ListView
+                android:id="@+id/search_brand_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cacheColorHint="#00000000"
+                android:divider="@color/item_devider"
+                android:dividerHeight="@dimen/dp_0point4"
+                android:fadingEdge="none"
+                android:scrollbars="none" >
+            </ListView>
+            <!-- 选择字母的提示 -->
+
+            <TextView
+                android:id="@+id/showTv"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/search_circel"
+                android:gravity="center"
+                android:textColor="@color/item_blue"
+                android:textSize="30sp"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="@dimen/dp_29"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

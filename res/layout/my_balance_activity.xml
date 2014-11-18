@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_match"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <RelativeLayout
+        style="@style/match_warp"
+        android:background="@android:color/white"
+        android:paddingTop="@dimen/dp_20" >
+
+        <TextView
+            android:id="@+id/my_balance_title"
+            style="@style/wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/current_cash"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/my_balance_value"
+            style="@style/wrap_content"
+            android:layout_below="@+id/my_balance_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_16" />
+
+        <LinearLayout
+            android:id="@+id/my_balance_btn_layout"
+            style="@style/match_warp"
+            android:layout_below="@+id/my_balance_value"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/my_balance_recharge"
+                style="@style/submit_btn"
+                android:layout_width="@dimen/dp_82"
+                android:layout_height="@dimen/dp_29"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/recharge_title" />
+
+            <Button
+                android:id="@+id/my_balance_apply_to_cash"
+                style="@style/submit_btn"
+                android:layout_width="@dimen/dp_82"
+                android:layout_height="@dimen/dp_29"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@drawable/btn_gray_selector"
+                android:text="@string/apply_to_cash"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <View
+            style="@style/item_divider"
+            android:layout_below="@+id/my_balance_btn_layout"
+            android:layout_marginTop="@dimen/dp_20" />
+    </RelativeLayout>
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/account_details"
+        android:textSize="@dimen/sp_14" />
+
+    <TextView
+        android:id="@+id/my_balance_details_title"
+        style="@style/wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_15"
+        android:text="@string/no_account_details"
+        android:textColor="@color/basic_info_text_color"
+        android:textSize="@dimen/sp_14"
+        android:visibility="gone" />
+
+    <com.lepin.widget.PcbListView
+        android:id="@+id/my_balance_listview"
+        style="@style/listView"
+        android:layout_marginTop="@dimen/dp_15"
+        android:divider="@color/list_devider"
+        android:dividerHeight="@dimen/dp_1"
+        android:visibility="gone" />
+
+</LinearLayout>

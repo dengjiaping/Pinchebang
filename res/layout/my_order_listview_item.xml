@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_warp"
+    android:descendantFocusability="blocksDescendants"
+    android:padding="@dimen/dp_15" >
+
+    <ImageView
+        android:id="@+id/my_order_listview_item_start_img"
+        style="@style/wrap_content"
+        android:contentDescription="@string/des"
+        android:src="@drawable/ic_starting" />
+    <!-- 起点 -->
+
+    <TextView
+        android:id="@+id/my_order_listview_item_start"
+        style="@style/order_details_start_end"
+        android:layout_toRightOf="@+id/my_order_listview_item_start_img"
+        android:text="双流县香榭国际" />
+
+    <ImageView
+        android:id="@+id/my_order_listview_item_end_img"
+        style="@style/wrap_content"
+        android:layout_below="@+id/my_order_listview_item_start_img"
+        android:layout_marginTop="@dimen/dp_15"
+        android:contentDescription="@string/des"
+        android:src="@drawable/ic_end" />
+    <!-- 终点 -->
+
+    <TextView
+        android:id="@+id/my_order_listview_item_end"
+        style="@style/order_details_start_end"
+        android:layout_below="@+id/my_order_listview_item_start_img"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_toRightOf="@+id/my_order_listview_item_end_img"
+        android:text="天府二街蜀都中心" />
+
+    <Button
+        android:id="@+id/my_order_listview_item_operate_btn"
+        android:layout_width="@dimen/dp_81"
+        android:layout_height="@dimen/dp_30"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/my_order_listview_item_end"
+        android:background="@drawable/btn_red_selector"
+        android:text="立即付款"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_14" />
+
+    <CheckedTextView
+        android:id="@+id/my_order_listview_item_time"
+        style="@style/wrap_content"
+        android:layout_alignBottom="@+id/my_order_listview_item_operate_btn"
+        android:layout_alignParentLeft="true"
+        android:drawableLeft="@drawable/ic_time"
+        android:drawablePadding="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:text="2014-09-20 17:30"
+        android:textColor="@color/item_devider" />
+
+</RelativeLayout>

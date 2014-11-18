@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_match"
+    android:background="@color/bg"
+    android:scrollbarStyle="outsideOverlay"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        style="@style/match_match"
+        android:orientation="vertical" >
+
+        <include layout="@layout/common_back_operate_title" />
+
+        <LinearLayout
+            style="@style/match_warp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pcb_draw_plate_bg"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/lottery_btn_layout"
+                style="@style/match_match"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible" >
+
+                <LinearLayout
+                    android:id="@+id/lottery_btn_100_layout"
+                    style="@style/match_warp"
+                    android:layout_marginLeft="@dimen/dp_50"
+                    android:layout_marginRight="@dimen/dp_50"
+                    android:background="@drawable/lottery_btn_selector"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp_17"
+                    android:paddingTop="@dimen/dp_17" >
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:text="@string/try_one"
+                        android:textColor="@color/phone_color"
+                        android:textSize="@dimen/sp_18"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:text="@string/cast_100"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/sp_14" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lottery_btn_200_layout"
+                    style="@style/match_warp"
+                    android:layout_marginLeft="@dimen/dp_50"
+                    android:layout_marginRight="@dimen/dp_50"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/lottery_btn_selector"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp_17"
+                    android:paddingTop="@dimen/dp_17" >
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:text="@string/try_two"
+                        android:textColor="@color/phone_color"
+                        android:textSize="@dimen/sp_18"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:text="@string/cast_200"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/sp_14" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 转盘 -->
+
+            <LinearLayout
+                android:id="@+id/lottery_draw_plate_layout"
+                style="@style/match_match"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <FrameLayout style="@style/wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/lottery_draw_plate"
+                        style="@style/wrap_content"
+                        android:contentDescription="@string/des" />
+
+                    <ImageButton
+                        android:id="@+id/lottery_start"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/pcb_draw_plate_start"
+                        android:contentDescription="@string/des" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/lottery_info"
+                    style="@style/match_warp"
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:background="@drawable/item_layout_default"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/dp_7"
+                    android:paddingTop="@dimen/dp_7"
+                    android:textColor="@color/red" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/match_warp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/item_layout_default"
+            android:padding="@dimen/dp_10" >
+
+            <TextView
+                style="@style/match_warp"
+                android:text="@string/lottery_note"
+                android:textSize="@dimen/sp_11" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

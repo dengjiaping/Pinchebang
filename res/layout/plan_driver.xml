@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_warp"
+    android:layout_margin="@dimen/dp_10"
+    android:background="@drawable/item_layout_default"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dp_15"
+    android:paddingLeft="@dimen/dp_1"
+    android:paddingRight="@dimen/dp_1" >
+
+    <TextView
+        android:id="@+id/plan_driver_info_title"
+        style="@style/match_warp"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="left"
+        android:padding="@dimen/dp_4"
+        android:textSize="@dimen/sp_16" />
+
+    <LinearLayout
+        android:id="@+id/plan_driver_content"
+        style="@style/match_warp"
+        android:layout_marginTop="@dimen/dp_7"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/plan_driver_cancel"
+        style="@style/plan_cancel_btn"
+        android:layout_marginTop="@dimen/dp_15"
+        android:visibility="gone" />
+
+</LinearLayout>

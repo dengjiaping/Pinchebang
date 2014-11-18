@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg1" >
+
+    <!-- 起点，终点 -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_100"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_10" >
+
+            <LinearLayout
+                style="@style/work_fragemnt_layout"
+                android:background="@drawable/item_layout_default" >
+
+                <include
+                    android:id="@+id/work_fragment_start_layout"
+                    layout="@layout/item_text_image" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.4dp"
+                    android:background="@color/item_devider" />
+
+                <include
+                    android:id="@+id/work_fragment_end_layout"
+                    layout="@layout/item_text_image" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/work_fragemnt_layout"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/item_layout_default" >
+
+                <!-- 途径点 -->
+
+                <LinearLayout
+                    android:id="@+id/work_fragment_through_point_layout"
+                    style="@style/match_warp"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <include
+                        android:id="@+id/work_fragment_through_point"
+                        layout="@layout/item_text_image" />
+
+                    <View style="@style/item_divider" />
+
+                    <!-- 途径点 1 -->
+
+                    <include
+                        android:id="@+id/work_fragment_through_point_one"
+                        layout="@layout/item_text_image"
+                        android:visibility="gone" />
+
+                    <View
+                        android:id="@+id/work_fragment_through_point_one_divider"
+                        style="@style/item_divider"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:visibility="gone" />
+                    <!-- 途径点 2 -->
+
+                    <include
+                        android:id="@+id/work_fragment_through_point_two"
+                        layout="@layout/item_text_image"
+                        android:visibility="gone" />
+
+                    <View
+                        android:id="@+id/work_fragment_through_point_bottom_divider"
+                        style="@style/item_divider"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <!-- 时间段 -->
+
+                <include
+                    android:id="@+id/work_fragment_time_layout"
+                    layout="@layout/item_text_text_arrow" />
+
+                <!-- 出发 -->
+
+                <View style="@style/item_divider" />
+
+                <include
+                    android:id="@+id/work_fragment_set_out_layout"
+                    layout="@layout/item_text_text_arrow"
+                    android:background="@drawable/item_layout_selector" />
+                <!-- 返程 -->
+
+                <View style="@style/item_divider" />
+
+                <include
+                    android:id="@+id/work_fragment_return_layout"
+                    layout="@layout/item_text_text_arrow"
+                    android:background="@drawable/item_layout_selector" />
+
+                <View style="@style/item_divider" />
+
+                <!-- 费用 -->
+
+                <include
+                    android:id="@+id/work_fragment_cost_layout"
+                    layout="@layout/item_text_editortext" />
+
+                <View
+                    android:id="@+id/work_fragment_people_num_divider"
+                    style="@style/item_divider" />
+
+                <!-- 费用，可载人数 -->
+
+                <LinearLayout
+                    android:id="@+id/work_fragment_people_num_layout"
+                    style="@style/match_warp"
+                    android:orientation="vertical"
+                    android:visibility="visible" >
+
+                    <include
+                        android:id="@+id/work_fragment_people_num"
+                        layout="@layout/item_text_editortext" />
+
+                    <View style="@style/item_divider" />
+                </LinearLayout>
+                <!-- 联系电话 -->
+
+                <include
+                    android:id="@+id/work_fragment_people_phone_layout"
+                    layout="@layout/item_text_editortext"
+                    android:background="@drawable/item_layout_selector" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/work_fragment_note"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_100"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/item_layout_default"
+                android:hint="@string/add_hint"
+                android:inputType="textMultiLine"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_2"
+                android:singleLine="false" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:background="@color/item_devider" />
+
+        <Button
+            android:id="@+id/work_fragment_publish_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="@drawable/btn_white_gray_selector"
+            android:text="@string/main_foot_publish"
+            android:textColor="@color/btn_blue_normal"
+            android:textSize="@dimen/sp_16" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:background="@drawable/search_input" >
+
+        <EditText
+            android:id="@+id/select_city_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:background="@null"
+            android:drawableLeft="@drawable/search_icon"
+            android:hint="@string/input_city_name"
+            android:singleLine="true" />
+    </RelativeLayout>
+
+    <View style="@style/item_divider" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/select_city_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/position_city_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="@string/locate_city"
+                android:textColor="@color/text_gray"
+                android:textSize="16sp" >
+            </TextView>
+
+            <View style="@style/item_divider" />
+
+            <TextView
+                android:id="@+id/select_city_curr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/list_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="25dp"
+                android:text="@string/positioning"
+                android:textColor="@color/black"
+                android:textSize="16sp" >
+            </TextView>
+
+            <View style="@style/item_divider" />
+
+            <ExpandableListView
+                android:id="@+id/select_city_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/exbandable_divider"
+                android:dividerHeight="1px"
+                android:footerDividersEnabled="false"
+                android:groupIndicator="@null"
+                android:scrollbars="none" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/search_city_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/list_devider"
+            android:dividerHeight="1px"
+            android:footerDividersEnabled="false"
+            android:scrollbars="none"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

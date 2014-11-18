@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="false"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/pinche_trail_root_view"
+            style="@style/match_warp"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_60"
+            android:visibility="visible" >
+
+            <!-- 起点，终点 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingBottom="@dimen/dp_17"
+                android:paddingLeft="@dimen/dp_15"
+                android:paddingRight="@dimen/dp_15"
+                android:paddingTop="@dimen/dp_17" >
+                
+                <RelativeLayout style="@style/match_warp"
+                                android:id="@+id/start_end_layout">
+                     <ImageView
+                    android:id="@+id/pinche_trail_details_start_img"
+                    style="@style/wrap_content"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/ic_starting" />
+                <!-- 起点 -->
+
+                <TextView
+                    android:id="@+id/pinche_trail_details_start"
+                    style="@style/order_details_start_end"
+                    android:layout_toLeftOf="@+id/pinche_trail_details_map"
+                    android:layout_toRightOf="@+id/pinche_trail_details_start_img" />
+
+                <ImageView
+                    android:id="@+id/pinche_trail_details_end_img"
+                    style="@style/wrap_content"
+                    android:layout_below="@+id/pinche_trail_details_start_img"
+                    android:layout_marginTop="@dimen/dp_14"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/ic_end" />
+                <!-- 终点 -->
+
+                <TextView
+                    android:id="@+id/pinche_trail_details_end"
+                    style="@style/order_details_start_end"
+                    android:layout_below="@+id/pinche_trail_details_start_img"
+                    android:layout_marginTop="@dimen/dp_14"
+                    android:layout_toLeftOf="@+id/pinche_trail_details_map"
+                    android:layout_toRightOf="@+id/pinche_trail_details_end_img" />
+
+                <ImageView
+                    android:id="@+id/pinche_trail_details_map"
+                    style="@style/wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/order_map_ic_selector" />
+                
+                </RelativeLayout>
+                
+                <!-- 途经点 -->
+                <RelativeLayout style="@style/match_warp"
+                                android:id="@+id/point_layout"
+                                android:layout_below="@id/start_end_layout"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:visibility="gone">
+		                <View android:id="@+id/line"
+		                  android:layout_width="match_parent"
+		                  android:layout_height="@dimen/dp_0point4"
+		                  android:background="@color/line"
+		                  android:visibility="gone"
+		                  />
+	                    <TextView android:id="@+id/point1"
+	                      style="@style/baseStyle"
+	                      android:textSize="@dimen/sp_14"
+	                      android:textColor="@color/blue_light"
+	                      android:layout_marginLeft="@dimen/dp_15"
+	                      android:layout_marginTop="@dimen/dp_10"
+	                      android:layout_below="@id/line"
+	                      android:singleLine="true"
+	                      android:visibility="gone"/>
+	                    <View android:id="@+id/line1"
+		                  android:layout_width="wrap_content"
+		                  android:layout_height="@dimen/dp_0point4"
+		                  android:layout_marginLeft="@dimen/dp_15"
+		                  android:layout_marginRight="@dimen/dp_15"
+		                  android:layout_marginTop="@dimen/dp_5"
+		                  android:background="@color/line"
+		                  android:layout_below="@id/point1"
+		                  android:visibility="gone"
+		                  />
+	                    <TextView android:id="@+id/point2"
+	                      style="@style/baseStyle"
+	                      android:textSize="@dimen/sp_14"
+	                      android:textColor="@color/blue_light"
+	                      android:layout_below="@id/line1"
+	                      android:layout_marginLeft="@dimen/dp_15"
+	                      android:layout_marginTop="@dimen/dp_10"
+	                      android:layout_marginBottom="@dimen/dp_10"
+	                      android:singleLine="true"
+	                      android:visibility="gone"/>
+	                </RelativeLayout>
+            </RelativeLayout>
+
+            <View style="@style/item_divider" />
+
+            <LinearLayout
+                style="@style/match_warp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/item_layout_default"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/pinche_trail_details_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_90"
+                    android:paddingLeft="@dimen/dp_15"
+                    android:paddingRight="@dimen/dp_15" >
+
+                    <com.lepin.widget.CircleImageView
+                        android:id="@+id/pinche_trail_details_publisher_img"
+                        android:layout_width="@dimen/dp_70"
+                        android:layout_height="@dimen/dp_70"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/des"
+                        android:src="@drawable/pcb_home_photo"
+                        app:border_color="@color/white"
+                        app:border_width="2dp" />
+                    <!-- 用户名 -->
+
+                    <TextView
+                        android:id="@+id/pinche_trail_details_publisher_name"
+                        style="@style/wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_21"
+                        android:layout_toRightOf="@+id/pinche_trail_details_publisher_img"
+                        android:maxLength="10"
+                        android:singleLine="true"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:id="@+id/pinche_trail_details_info_verified"
+                        style="@style/wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_22"
+                        android:layout_toRightOf="@+id/pinche_trail_details_publisher_name"
+                        android:contentDescription="@string/des"
+                        android:src="@drawable/pcb_order_ic_v"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/pinche_trail_details_publisher_car_brand"
+                        style="@style/wrap_content"
+                        android:layout_below="@+id/pinche_trail_details_publisher_name"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/pinche_trail_details_publisher_img"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:id="@+id/pinche_trail_details_publisher_driving_years"
+                        style="@style/wrap_content"
+                        android:layout_below="@+id/pinche_trail_details_publisher_name"
+                        android:layout_marginLeft="@dimen/dp_8"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/pinche_trail_details_publisher_car_brand"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/sp_12"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/pinche_trail_details_publisher_car_license"
+                        style="@style/wrap_content"
+                        android:layout_below="@+id/pinche_trail_details_publisher_car_brand"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/pinche_trail_details_publisher_img"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/sp_12" />
+
+                    <Button
+                        android:id="@+id/pinche_trail_details_info_appointment"
+                        android:layout_width="@dimen/dp_82"
+                        android:layout_height="@dimen/dp_29"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/btn_blue_selector"
+                        android:text="@string/appointment"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/sp_12" />
+                </RelativeLayout>
+
+                <View style="@style/item_divider" />
+
+                <!-- 出发，返回时间 -->
+
+                <LinearLayout
+                    style="@style/match_warp"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/dp_15" >
+
+                    <!-- 出发时间 -->
+
+                    <include
+                        android:id="@+id/pinche_trail_details_start_time_layout"
+                        layout="@layout/item_text_text" />
+
+                    <include
+                        android:id="@+id/pinche_trail_details_back_time_layout"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+
+                <View style="@style/item_divider" />
+
+                <!-- 费用 -->
+
+                <LinearLayout
+                    style="@style/match_warp"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/dp_15" >
+
+                    <include
+                        android:id="@+id/pinche_trail_details_cost_layout"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+
+                <View style="@style/item_divider" />
+
+                <!-- 搭载人数 -->
+
+                <LinearLayout
+                    style="@style/match_warp"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/dp_15" >
+
+                    <include
+                        android:id="@+id/pinche_trail_details_people_num_layout"
+                        layout="@layout/item_text_text" />
+                </LinearLayout>
+                <!-- 备注信息 -->
+
+                <View style="@style/item_divider" />
+
+                <RelativeLayout
+                    android:id="@+id/pinche_trail_detail_calendar_layout"
+                    style="@style/match_warp"
+                    android:layout_marginBottom="@dimen/dp_15"
+                    android:paddingRight="@dimen/dp_1"
+                    android:paddingTop="@dimen/dp_15"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/pinche_trail_detail_gender"
+                        style="@style/wrap_content"
+                        android:layout_marginLeft="@dimen/dp_15"
+                        android:text="@string/pcb_calendar" />
+
+                    <com.lepin.widget.PcbCalender
+                        android:id="@+id/pinche_trail_detail_calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_160"
+                        android:layout_marginBottom="@dimen/dp_15"
+                        android:layout_marginLeft="@dimen/dp_23"
+                        android:layout_toRightOf="@+id/pinche_trail_detail_calendar_title" >
+                    </com.lepin.widget.PcbCalender>
+
+                    <View
+                        style="@style/item_divider"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:paddingBottom="@dimen/dp_15" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_44"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center"
+                    android:text="@string/order_detail_note" />
+
+                <EditText
+                    android:id="@+id/pinche_trail_details_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_100"
+                    android:layout_marginBottom="@dimen/dp_15"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:background="@drawable/item_layout_default"
+                    android:gravity="start"
+                    android:inputType="text"
+                    android:padding="@dimen/dp_4"
+                    android:paddingLeft="@dimen/dp_2"
+                    android:textColor="@color/ligth_gray"
+                    android:textSize="@dimen/sp_16" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

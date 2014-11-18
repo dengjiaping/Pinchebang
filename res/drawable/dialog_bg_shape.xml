@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item><shape>
+            <stroke android:width="@dimen/dp_0point4" android:color="@color/item_devider" />
+
+            <solid android:color="@android:color/white" />
+
+            <corners android:radius="@dimen/dp_4" />
+        </shape></item>
+
+</selector>

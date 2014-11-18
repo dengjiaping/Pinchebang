@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg1" >
+
+    <RelativeLayout
+        android:id="@+id/home_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_alignParentTop="true"
+        android:background="@color/blue_title" >
+
+        <CheckedTextView
+            android:id="@+id/home_choice_city"
+            style="@style/wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:contentDescription="@string/des"
+            android:drawableRight="@drawable/pcb_btn_home_arrow_selector"
+            android:maxLength="4"
+            android:singleLine="true"
+            android:src="@drawable/common_title_back_selector"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_20" />
+
+        <ImageButton
+            android:id="@+id/home_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/pcb_btn_home_selector"
+            android:contentDescription="@string/des" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/home_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/home_bottom_layout"
+        android:layout_below="@+id/home_title_layout" />
+
+    <LinearLayout
+        android:id="@+id/home_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <CheckedTextView
+            android:id="@+id/home_bottom_home"
+            style="@style/home_bottom_btn"
+            android:background="@drawable/pcb_footerbar_bg"
+            android:drawableTop="@drawable/pcb_footerbar_home_selector"
+            android:text="@string/home_home" />
+
+        <LinearLayout
+            android:id="@+id/home_bottom_publish_layout"
+            style="@style/wrap_content"
+            android:background="@drawable/pcb_footerbar_publish_bg_normal"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/home_bottom_publish"
+                style="@style/wrap_content"
+                android:background="@drawable/pcb_footerbar_publish_selector"
+                android:contentDescription="@string/des" />
+        </LinearLayout>
+
+        <CheckedTextView
+            android:id="@+id/home_bottom_order"
+            style="@style/home_bottom_btn"
+            android:background="@drawable/pcb_footerbar_bg"
+            android:drawableTop="@drawable/pcb_footerbar_order_selector"
+            android:text="@string/home_order" />
+    </LinearLayout>
+
+</RelativeLayout>

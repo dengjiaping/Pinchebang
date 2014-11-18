@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:background="@drawable/btn_fillet_shape"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <CheckedTextView
+            android:id="@+id/home_bottom_publish_menu_long"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_50"
+            android:background="@drawable/home_menu_item_pressed"
+            android:drawableLeft="@drawable/pcb_home_bottom_publish_long"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_18"
+            android:paddingRight="@dimen/dp_18"
+            android:text="@string/square_long_space"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:layout_width="@dimen/dp_0point4"
+            android:layout_height="match_parent"
+            android:background="@drawable/pcb_home_bottom_menu_line" />
+
+        <CheckedTextView
+            android:id="@+id/home_bottom_publish_menu_work"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_50"
+            android:background="@drawable/home_menu_item_pressed"
+            android:drawableLeft="@drawable/pcb_home_bottom_publish_work"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_18"
+            android:paddingRight="@dimen/dp_18"
+            android:text="@string/square_work"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+    <ImageView
+        style="@style/wrap_content"
+        android:contentDescription="@string/des"
+        android:src="@drawable/pcb_triangle" />
+
+</LinearLayout>

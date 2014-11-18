@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical"
+    tools:context=".FindPwdActivity" >
+
+    <!-- title布局 -->
+
+    <include
+        layout="@layout/common_back_operate_title" />
+
+    <!-- 编辑信息提示 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_1"
+        android:paddingTop="@dimen/dp_1"
+        android:background="@drawable/item_layout_default"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_10" >
+
+        <LinearLayout
+            android:id="@+id/add_car_type_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="center"
+            android:background="@drawable/white_gray_selector" >
+
+            <TextView
+                style="@style/table_text"
+                android:text="@string/my_car_type" />
+
+            <TextView
+                android:id="@+id/add_car_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/dp_5"
+                android:gravity="center_vertical|right"
+                android:paddingRight="@dimen/dp_10"
+                android:singleLine="true"
+                android:text="@string/my_car_vefic_notdo"
+                android:textColor="@color/myself_text"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:background="@color/item_devider" />
+
+        <!-- 可搭载人数 -->
+
+
+        <!-- 车辆牌照 -->
+
+        <LinearLayout
+            android:id="@+id/add_car_people_num_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="center"
+            android:background="@drawable/white_gray_selector" >
+
+            <TextView
+                style="@style/table_text"
+                android:text="@string/my_car_total_people" />
+
+            <TextView
+                android:id="@+id/add_car_people_number"
+                style="@style/table_text_m"
+                android:textColor="@color/myself_text" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:background="@color/item_devider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="center" >
+
+            <TextView
+                style="@style/table_text"
+                android:text="@string/my_car_license_plate" />
+
+            <EditText
+                android:id="@+id/add_car_edit_card"
+                style="@style/table_text_m"
+                android:maxLength="7"
+                android:textColor="@color/myself_text"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/add_car_save"
+        style="@style/submit_btn"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/my_car_btn_update" />
+
+</LinearLayout>

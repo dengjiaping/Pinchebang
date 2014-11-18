@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical"
+    tools:context=".FindPwdActivity" >
+
+    <!-- title布局 -->
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:scrollbars="none" >
+
+        <!-- 编辑信息提示 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/my_car_edit_show"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/my_car_editinfo"
+                android:textSize="@dimen/dp_15"
+                android:visibility="gone" />
+            <!-- 车辆外观 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/item_layout_default"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_10" >
+                
+                <!-- 品牌 -->
+                <LinearLayout
+                    android:id="@+id/type_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_gravity="center" >
+
+                    <TextView
+                        style="@style/table_text"
+                        android:text="@string/my_car_type" 
+                        android:textColor="@color/myself_text"
+                        android:textSize="@dimen/sp_16"
+                        />
+
+                    <TextView
+                        android:id="@+id/my_car_edit_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:gravity="center_vertical|right"
+                        android:paddingRight="@dimen/dp_10"
+                        android:singleLine="true"
+                        android:text="@string/my_car_vefic_notdo"
+                        android:textColor="@color/text_gray"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.4dp"
+                    android:background="@color/item_devider" />
+
+                <!-- 可搭载人数 -->
+
+
+                <!-- 车辆牌照 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_gravity="center" >
+
+                    <TextView
+                        style="@style/table_text"
+                        android:text="@string/my_car_license_plate"
+                        android:textColor="@color/myself_text"
+                        android:textSize="@dimen/sp_16"                  />
+
+                    <EditText
+                        android:id="@+id/my_car_edit_card"
+                        style="@style/match_parent"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:gravity="right|center"
+                        android:enabled="false"
+                        android:maxLength="7"
+                        android:paddingRight="@dimen/dp_10"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/dp_12"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.4dp"
+                    android:background="@color/item_devider" />
+
+                <!-- 人数 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_gravity="center" >
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:gravity="right|center"
+                        android:singleLine="true"
+                        android:text="@string/my_car_total_people"
+                        android:textSize="@dimen/dp_16"
+                        android:textColor="@color/myself_text"
+                         />
+
+                    <TextView
+                        android:id="@+id/my_car_people_number"
+                        style="@style/match_parent"
+                        android:gravity="right|center"
+                        android:singleLine="true"
+                        android:paddingRight="@dimen/dp_5"
+                        android:textColor="@color/text_gray" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 车辆驾龄 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                android:background="@drawable/item_layout_selector"
+                android:visibility="gone" >
+
+                <ImageView
+                    style="@style/ic_img"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/pcb_birthday" />
+
+                <TextView
+                    style="@style/table_text"
+                    android:hint="@string/my_car_driving_years" />
+
+                <TextView
+                    android:id="@+id/my_car_edit_driving_year"
+                    style="@style/table_text_m"
+                    android:textColor="@color/myself_text" />
+            </LinearLayout>
+            <!-- 车辆验证 -->
+
+            <LinearLayout
+                android:id="@+id/my_car_safe_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/item_layout_default"
+                android:paddingLeft="@dimen/dp_10" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center"
+                    android:singleLine="true"
+                    android:text="@string/my_car_safe"
+                    android:textColor="@color/myself_text"
+                    android:textSize="@dimen/dp_16"
+                     />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/dp_10" >
+
+                    <TextView
+                        android:id="@+id/my_car_safe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:layout_toLeftOf="@+id/my_car_more"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/my_car_vefic_notdo"
+                        android:textColor="@color/text_gray"
+                         />
+
+                    <TextView
+                        android:id="@+id/my_car_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp_2"
+                        android:background="@drawable/pcb_right_arrow" />
+                </RelativeLayout>
+            </LinearLayout>
+            <!-- 保存按钮 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10" >
+
+                <TextView
+                    android:id="@+id/my_car_save"
+                    style="@style/submit_btn"
+                    android:text="@string/my_car_btn_update"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

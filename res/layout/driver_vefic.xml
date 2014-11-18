@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical" >
+
+    <!-- title布局 -->
+
+    <include layout="@layout/common_back_operate_title" />
+    
+    <TextView style="@style/wrap_content"
+              android:text="@string/driver_verify_licence_note"
+              android:textColor="@color/item_devider"
+              android:textSize="@dimen/sp_14"
+              android:layout_marginTop="@dimen/dp_10"
+              android:layout_marginLeft="@dimen/dp_15"/>
+    
+    <LinearLayout style="@style/match_warp"
+                  android:orientation="horizontal">
+	    <LinearLayout android:layout_width="0dp"
+	                  android:layout_height="@dimen/dp_125"
+	                  android:layout_marginLeft="@dimen/dp_15"
+	                  android:orientation="vertical"
+	                  android:gravity="center"
+	                  android:layout_weight="1"
+	        >
+	       <TextView android:layout_height="25dp"
+	                 android:layout_width="match_parent"
+	                 android:text="@string/driver_verify_licence_orignial"
+	                 android:textColor="@color/white"
+	                 android:textSize="@dimen/sp_14"
+	                 android:background="@color/yellow"
+	                 android:gravity="center"
+	           />
+	       <ImageView android:id="@+id/driving_licence_original"
+	                  android:src="@drawable/driving_licence_original" 
+	                  android:layout_height="@dimen/dp_82"
+	                  android:layout_width="match_parent"
+	                  android:contentDescription="@string/driver_verify_licence_orignial"
+	                  android:scaleType="centerCrop"
+	           />
+	       <com.lepin.widget.MyProgress
+	                  android:id="@+id/driving_licence_original_progressbar"
+	                  style="@style/NumberProgressBar_Default"
+	                  android:visibility="gone"
+	           />
+	    </LinearLayout>
+    
+	    <LinearLayout android:layout_width="0dp"
+	                  android:layout_height="@dimen/dp_125"
+	                  android:layout_marginLeft="@dimen/dp_20"
+	                   android:layout_marginRight="@dimen/dp_15"
+	                  android:orientation="vertical"
+	                  android:gravity="center"
+	                   android:layout_weight="1">
+	       <TextView android:layout_height="25dp"
+	                 android:layout_width="match_parent"
+	                 android:text="@string/driver_verify_licence_copy"
+	                 android:textColor="@color/white"
+	                 android:textSize="@dimen/sp_14"
+	                 android:background="@color/yellow"
+	                 android:gravity="center"
+	                 />
+	       <ImageView android:id="@+id/driving_licence_copy"
+	                  android:src="@drawable/driving_licence_copy" 
+	                  android:layout_height="@dimen/dp_82"
+	                  android:layout_width="match_parent"
+	                  android:contentDescription="@string/driver_verify_licence_copy"
+	                   android:scaleType="centerCrop"
+	                  />
+	        <com.lepin.widget.MyProgress 
+	                  android:id="@+id/driving_licence_copy_progressbar"
+	                  style="@style/NumberProgressBar_Default"
+	                  android:visibility="gone"
+	           />
+	    </LinearLayout>
+    </LinearLayout>
+    
+    <TextView style="@style/wrap_content"
+              android:text="@string/driver_verify_vehicle_licence_note"
+              android:textColor="@color/item_devider"
+              android:textSize="@dimen/sp_14"
+              android:layout_marginTop="5dp"
+              android:layout_marginLeft="15dp"/>
+    
+    <LinearLayout style="@style/match_warp"
+                  android:orientation="horizontal">
+	    <LinearLayout android:layout_width="0dp"
+	                  android:layout_height="@dimen/dp_125"
+	                  android:layout_marginLeft="@dimen/dp_15"
+	                  android:orientation="vertical"
+	                  android:gravity="center"
+	                   android:layout_weight="1">
+	       <TextView android:layout_height="25dp"
+	                 android:layout_width="match_parent"
+	                 android:text="@string/driver_verify_vehicle_licence_orignial"
+	                 android:textColor="@color/white"
+	                 android:textSize="@dimen/sp_14"
+	                 android:background="@color/yellow"
+	                 android:gravity="center"
+	                 />
+	       <ImageView android:id="@+id/vehicle_licence_original"
+	                  android:src="@drawable/vehicle_license_original" 
+	                  android:layout_height="@dimen/dp_82"
+	                  android:layout_width="match_parent"
+	                  android:contentDescription="@string/driver_verify_vehicle_licence_orignial"
+	                  android:scaleType="centerCrop"
+	                  />
+	       <com.lepin.widget.MyProgress
+	                  android:id="@+id/vehicle_licence_original_progressbar"
+	                  style="@style/NumberProgressBar_Default"
+	                  android:visibility="gone"
+	           />
+	    </LinearLayout>
+	    
+	    <LinearLayout android:layout_width="0dp"
+	                  android:layout_height="@dimen/dp_125"
+	                  android:layout_marginLeft="@dimen/dp_20"
+	                  android:orientation="vertical"
+	                   android:layout_marginRight="@dimen/dp_15"
+	                  android:gravity="center"
+	                   android:layout_weight="1"
+	        >
+	       <TextView android:layout_height="@dimen/dp_25"
+	                 android:layout_width="match_parent"
+	                 android:text="@string/driver_verify_vehicle_licence_copy"
+	                 android:textColor="@color/white"
+	                 android:textSize="@dimen/sp_14"
+	                 android:background="@color/yellow"
+	                 android:gravity="center"
+	           />
+	       <ImageView android:id="@+id/vehicle_licence_copy"
+	                  android:src="@drawable/vehicle_license_copy" 
+	                  android:layout_height="@dimen/dp_82"
+	                  android:layout_width="match_parent"
+	                  android:contentDescription="@string/driver_verify_vehicle_licence_copy"
+	                  android:scaleType="centerCrop"
+	           />
+	       <com.lepin.widget.MyProgress
+	                  android:id="@+id/vehicle_licence_copy_progressbar"
+	                  style="@style/NumberProgressBar_Default"
+	                  android:visibility="gone"
+	           />
+	    </LinearLayout>
+    </LinearLayout>
+    
+    <TextView style="@style/wrap_content"
+              android:text="@string/driver_verify_note_one"
+              android:layout_marginTop="@dimen/dp_15"
+              android:layout_marginLeft="@dimen/dp_15"
+              android:textColor="@color/basic_info_text_color"
+              android:textSize="@dimen/sp_10"/>
+    
+    <TextView style="@style/wrap_content"
+              android:text="@string/driver_verify_note_two"
+              android:layout_marginTop="@dimen/dp_8"
+              android:layout_marginLeft="@dimen/dp_15"
+              android:textColor="@color/basic_info_text_color"
+              android:textSize="@dimen/sp_10"/>
+    <TextView style="@style/wrap_content"
+              android:text="@string/driver_verify_note_three"
+              android:layout_marginTop="@dimen/dp_8"
+              android:layout_marginLeft="@dimen/dp_15"
+              android:textColor="@color/basic_info_text_color"
+              android:textSize="@dimen/sp_10"/>
+
+    <!-- 保存按钮 -->
+
+    <TextView
+        android:id="@+id/driver_vefic_submit"
+        style="@style/submit_btn"
+        android:layout_marginLeft="@dimen/dp_35"
+        android:layout_marginRight="@dimen/dp_35"
+        android:layout_marginTop="@dimen/dp_22"
+        android:text="@string/my_car_vefic_submit"
+         />
+</LinearLayout>

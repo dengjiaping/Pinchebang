@@ -1,0 +1,651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="exit">再按一次退出拼车帮</string>
+    <!-- app名字 -->
+    <string name="app_name">拼车帮</string>
+    <string name="share_2_friends">分享好友</string>
+    <string name="common_no_data">没有数据</string>
+    <string name="chengke">我是乘客</string>
+    <string name="chezhu">我是车主</string>
+    <string name="driver">车主</string>
+    <string name="passenger">乘客</string>
+    <!-- 登陆界面字符串 -->
+    <string name="loginTitle">登录</string>
+    <string name="phone_num">手机号</string>
+    <string name="login_pwd">登录密码</string>
+    <string name="login_btn">登录</string>
+    <string name="reg_btn">注册账号</string>
+    <string name="forget_pwd">忘记密码</string>
+    <string name="login_ing">登录中\u2026</string>
+    <string name="input_phone_num">请输入手机号码</string>
+    <string name="input_pwd">请输入密码</string>
+    <string name="not_registered">此号码还未注册!</string>
+    <string name="not_logged_in">未登录</string>
+    <string name="login_now">立即登录</string>
+    <string name="logout">退出应用</string>
+    <string name="login_again">您的帐号已经过时或者已在别的设备上登录，请重新登录!</string>
+    <!-- 注册界面字符串 -->
+    <string name="next_step">下一步</string>
+    <string name="register_ing">注册中\u2026</string>
+    <string name="register_validate_code">请输入四位验证码</string>
+    <string name="register_get_validate_code">获取验证码</string>
+    <string name="pwd_with_backspace">新密码</string>
+    <string name="register_rpwd_hint">确认密码</string>
+    <string name="dialog_confirm">确认</string>
+    <string name="register_use_clause">使用条款</string>
+    <string name="register_use_already_read">同意使用条款</string>
+    <string name="go_login">已有账号，马上登录</string>
+    <string name="update_user_info">正在保存信息\u2026</string>
+
+    <!-- 忘记密码 -->
+    <string name="forget_pwd_title">忘记密码</string>
+    <string name="confirm">确定</string>
+
+    <!-- 主界面导航字符串 -->
+    <string name="main_foot_search">搜索</string>
+    <string name="main_foot_publish">发布</string>
+    <string name="car_service">汽车服务</string>
+    <string name="home_home">首页</string>
+    <string name="home_order">订单</string>
+    <string name="activites">精彩活动</string>
+
+    <!-- 拼车广场 -->
+    <string name="square_long">长途</string>
+    <string name="square_long_space">长途&#160;&#160;&#160;&#160;</string>
+    <string name="square_work">上下班</string>
+
+    <!-- 搜索 -->
+    <string name="searchint">搜索中\u2026</string>
+    <string name="search_find_passager">乘客发布</string>
+    <string name="search_find_driver">司机发布</string>
+    <string name="search_start_point_hint">请输入你出发的小区/写字楼</string>
+    <string name="search_end_point_hint">请输入你想到达的小区/写字楼</string>
+    <string name="search_result">搜索结果</string>
+    <string name="choice_location">位置选择</string>
+    <string name="search_no_result">未找到匹配结果，发布一条试试吧</string>
+
+    <!-- 发布 -->
+    <string name="publishTitle">发布拼车</string>
+    <string name="publishNow">立即发布</string>
+    <string name="publish_start_point_hint">请输入起点</string>
+    <string name="publish_end_point_hint">请输入目的地</string>
+    <string name="publish_period">时间段</string>
+    <string name="publish_start_date">出发</string>
+    <string name="publish_cost">费用</string>
+    <string name="publish_cost_unit">元/人</string>
+    <string name="publish_back_date_hint">选择返回时间</string>
+    <string name="publish_back_date_no">没有返回时间</string>
+    <string name="publish_remark">填写备注。如：不吸烟、可带宠物、上下班拼车日付。</string>
+    <string name="publish_note">起点和终点距离小于</string>
+    <string name="m">米</string>
+    <string name="start_end_can_not_same">起点和终点不能相同</string>
+    <string name="end_start_can_not_same">终点和起点不能相同</string>
+    <string name="start_is_null">起点不能为空</string>
+    <string name="end_is_null">终点不能为空</string>
+    <string name="publish_date_wrong">出发时间应该在三个月以内</string>
+    <string name="publish_get_detail_fault">获取拼车详情失败，请稍后再试</string>
+    <string name="publish_data_update_success">信息修改成功</string>
+    <string name="publish_btn_update_text">修改</string>
+    <string name="publish_data_update_fault">信息修改失败，请稍后再试</string>
+    <string name="publish_data_update_ing">拼车信息更新中\u2026</string>
+    <string name="publish_btn_save_text">保存</string>
+    <string name="publish_not_have_note">备注：无\u2026</string>
+    <string name="publish_input_money">请输入费用信息</string>
+    <string name="publish_money_error">费用只能是1到9999元</string>
+    <string name="publish_date_change_fault">信息状态设置失败,请稍后再试</string>
+    <string name="publish_info_delete">您即将删除当前拼车信息，是否删除</string>
+    <string name="publish_no_info_1">你搜索的这条路线还没有人发布哟！</string>
+    <string name="publish_no_info_2">立即去发布一条吧</string>
+    <string name="publish_get_info_ing">正在获取发布信息\u2026</string>
+    <string name="people_num_toast">可载人数必须是1-6人。</string>
+    <string name="input_type_limit">只能输入字母，数字，中文，标点，空格!</string>
+    <string name="input_type_error">输入非法字符</string>
+    <string name="pick_details_through_point">途径点</string>
+
+    <!-- 个人中心 -->
+    <string name="my_publish_detail">我的发布详情</string>
+    <string name="my_publish">我的发布</string>
+    <string name="exit_login">退出登录</string>
+    <string name="myself_car">我的爱车</string>
+    <string name="myself_add_car">添加爱车</string>
+    <string name="myself_login_psw">我的登录密码</string>
+    <string name="myself_pay_psw">我的支付密码</string>
+    <string name="pick_gender">选择性别</string>
+    <string name="publish_ing">发布中\u2026</string>
+    <string name="start_time_must_1month">出发时间应在一个月内。</string>
+    <string name="start_time_must_after_publish">出发时间应在发布之后。</string>
+    <string name="pwd_error">密码为6~16位字符</string>
+    <string name="pay_pwd_error">密码为6~18位字符,且不能为纯数字</string>
+    <string name="pay_pwd_error_1">两次输入密码不同</string>
+    <string name="account_error">无效的账号</string>
+    <string name="account_null">账号不能为空</string>
+    <string name="my_balance">我的余额</string>
+    <string name="my_pinche_coin">我的拼车币</string>
+    <string name="my_commonly_used_address">我的常用拼车地点</string>
+    <string name="my_love_car">我的爱车</string>
+    <string name="pay_psw_setting_title">支付密码设置</string>
+    <!-- 修改个人信息 -->
+    <string name="update_name">修改昵称</string>
+    <string name="update_pass">修改密码</string>
+    <string name="update_input_name">请输入昵称</string>
+    <string name="update_name_success">昵称修改成功</string>
+    <string name="update_pass_success">密码修改成功，请重新登录</string>
+    <string name="update_name_ing">正在修改昵称\u2026</string>
+    <string name="update_pass_ing">正在修改密码\u2026</string>
+    <string name="update_oldpass_short">当前密码少于6位</string>
+    <string name="update_newpass_short">新密码少于6位</string>
+    <string name="update_pass_not_equal">两次密码不匹配</string>
+    <string name="update_gender_ing">正在修改性别\u2026</string>
+    <string name="update_gender_success">性别修改成功</string>
+    <string name="update_birthdate_ing">正在修改生日\u2026</string>
+    <string name="update_birthdate_success">生日修改成功</string>
+    <string name="update_driveage_ing">正在修改驾龄\u2026</string>
+    <string name="update_driveage_success">驾龄修改成功</string>
+    <string name="my_change_pay_psw_tip">为了保障您的账户资金安全，请设置支付密码保护。</string>
+    <string name="entry_pay_psw">输入支付密码</string>
+    <string name="entry_pay_psw_hint">长度为6&#8211;18位，不可纯数字</string>
+    <string name="sure_pay_psw">确认支付密码</string>
+    <string name="sure_pay_psw_hint">请再次输入密码</string>
+    <string name="entry_verification_code">请输入验证码</string>
+    <string name="send_verification_code">发送验证码</string>
+    <string name="sure_change_pay_psw">确定</string>
+    <!-- 添加车辆信息 -->
+    <string name="add_car_title">添加车辆</string>
+    <string name="add_car_success">成功添加车辆信息</string>
+    <string name="add_car_select_type">请选择车辆品牌</string>
+    <string name="add_car_type">汽车品牌</string>
+    <string name="car_verifying_tip">您的车辆处于正在验证或者验证通过状态，无法修改信息</string>
+    <string name="car_verifying_get_carifo_tip">正在更新车辆状态</string>
+
+    <!-- 提现账户 -->
+    <string name="tip_unpay_psw">您还未设置支付密码，请先设置支付密码</string>
+    <string name="entry_pay_psw_title">请输入您的支付密码</string>
+    <string name="entry_pay_psw_hint_one">输入支付密码</string>
+    <string name="entry_pay_psw_again_hint">确认支付密码</string>
+    <string name="add_cash_account_text">添加你的提现账户（目前只支持支付宝）</string>
+    <string name="modify_cash_account_text">修改你的提现账户（目前只支持支付宝）</string>
+    <string name="add_cash_account_name">姓名：</string>
+    <string name="add_cash_account_name_hint">请输入姓名</string>
+    <string name="add_cash_account_alipay_hint">请输入支付宝账户</string>
+    <string name="add_cash_account_alipay">支付宝账户：</string>
+    <string name="add_other_cash_account_alipay">增加其他支付宝账户</string>
+    <string name="get_cash_account_tip">获得支付宝账户</string>
+    <string name="delect_cash_account_tip">正在删除支付宝账户</string>
+    <string name="cash_account_title">提现账户设置</string>
+    <string name="add_cash_account_success_toast">添加账户成功</string>
+    <string name="add_or_modify_cash_account_success_toast">操作成功</string>
+    <string name="adding_cash_account_tip">正在添加提现账户</string>
+    <string name="entry_pay_psw_content_hint">请输入支付密码</string>
+
+    <!-- 车辆验证 -->
+    <string name="car_vefic_small">小型汽车</string>
+    <string name="car_vefic_medium">中型汽车</string>
+    <string name="car_vefic_large">大型汽车</string>
+    <string name="car_vefic_other">其它汽车</string>
+    <string name="car_vefic_submit_info">在审核未完成之前不能修改验证信息，您确认提交？</string>
+    <string name="car_vefic_submit_ing">正在提交验证信息\u2026</string>
+    <string name="car_vefic_submit_success">车辆信息提交成功</string>
+    <string name="car_vefic_submit_fail">车辆信息提交失败</string>
+    <string name="car_vefic_check_card_info">请输入如”川A88888“的车牌号！</string>
+    <string name="car_vefic_check_num_info">请输入17位字母和数字组成的车架号！</string>
+    <string name="driver_verify_note_one">1、驾驶证为了验证车主的驾驶能力和资格</string>
+    <string name="driver_verify_note_two">2、行驶证为了验证车辆的相关信息</string>
+    <string name="driver_verify_note_three">3、车主的相关信息仅用于验证目的并且完全保密，请放心验证</string>
+    <string name="driver_verify_licence_note">驾驶证验证</string>
+    <string name="driver_verify_licence_orignial">驾驶证正本</string>
+    <string name="driver_verify_licence_copy">驾驶证副本</string>
+    <string name="driver_verify_vehicle_licence_note">行驶证验证</string>
+    <string name="driver_verify_vehicle_licence_orignial">行驶证正本</string>
+    <string name="driver_verify_vehicle_licence_copy">行驶证副本</string>
+    <string name="driver_verify_nofity_verify_tips">正在提交验证通知...</string>
+    <string name="driver_verify_nofity_upload_success_tips">你的信息已经上传成功，我们将在一个工作日内审核完毕</string>
+    <string name="driver_verify_nofity_is_finish_tips">图片正在上传或者正在通知验证，请稍等片刻。。。</string>
+
+    <!-- 我的私车 -->
+    <string name="my_car_title">车辆信息</string>
+    <string name="my_car_type">品牌</string>
+    <string name="my_car_total_people">人数</string>
+    <string name="my_car_license_plate">牌照</string>
+    <string name="my_car_driving_years">驾龄</string>
+    <string name="my_car_safe">车辆验证结果</string>
+    <string name="my_car_btn_update">保存</string>
+    <string name="my_car_editinfo">编辑车辆信息</string>
+    <string name="my_car_choice_dryear">您的驾龄</string>
+    <string name="my_car_info_update">车辆信息修改中\u2026</string>
+    <string name="my_car_vefic_title">车辆验证</string>
+    <string name="driver_vefic_title">车主验证</string>
+    <string name="my_car_vefic_submit">立即验证</string>
+    <string name="my_car_vefic_type">车型</string>
+    <string name="my_car_vefic_card">车牌号</string>
+    <string name="my_car_vefic_num">车架号</string>
+    <string name="my_car_vefic_chtype">请选择车型</string>
+    <string name="my_car_vefic_faile">审核失败</string>
+    <string name="my_car_vefic_notdo">未验证</string>
+    <string name="my_car_vefic_doing">审核中</string>
+    <string name="my_car_vefic_okdo">已验证</string>
+    <string name="my_car_null_data">暂无</string>
+    <string name="my_car_please_add">请添加车辆信息</string>
+    <string name="my_car_not_add">您还没添加车辆信息</string>
+    <string name="my_car_choose_car_type">请选择车辆外观</string>
+    <string name="my_car_card_toast">请输入如”川A88888“的车牌号</string>
+    <string name="my_car_data_submit_success">车辆信息编辑成功</string>
+
+    <!-- 个人资料 -->
+    <string name="my_personal_centre_title">个人中心</string>
+    <string name="my_data_title">我的信息</string>
+    <string name="my_data_nickname_hint">昵称</string>
+    <string name="my_data_mobile_hint">手机号码</string>
+    <string name="my_data_birthday">生日</string>
+    <string name="my_data_sex">性别</string>
+    <string name="my_data_btn_update">完成</string>
+    <string name="my_data_gender_m">男</string>
+    <string name="my_data_gender_f">女</string>
+    <string name="my_data_is_edit">编辑个人信息</string>
+    <string name="my_wallet">我的钱包</string>
+    <string name="my_manage_password">密码管理</string>
+    <string name="my_login_password">我的登录密码</string>
+    <string name="my_pay_password">我的支付密码</string>
+    <string name="my_manage_account">账户管理</string>
+    <string name="my_cash_account">我的提现账户</string>
+    <string name="input_old_pwd">输入旧密码</string>
+    <string name="input_new_pwd">输入新密码</string>
+    <string name="input_new_pwd_re">再次输入新密码</string>
+    <string name="check_sd">请检查SD卡是否可用</string>
+    <string name="pick_image">选择获取图片方式</string>
+    <string name="my_data_image_way_photo">拍照</string>
+    <string name="my_change_password">修改</string>
+    <string name="my_cash_account_title">我的提现账户</string>
+    <!-- 我的信息 -->
+    <string name="my_pinche_title">我的发布</string>
+    <string name="my_order_title">我的订单</string>
+    <string name="my_info_btn_delete">删除</string>
+    <string name="my_info_btn_sure">确认订单</string>
+    <string name="my_info_btn_cancel">取消</string>
+    <string name="my_info">我的信息</string>
+
+    <!-- 线路详情 -->
+    <string name="pinche_trail_publish_trail">发布的线路</string>
+    <string name="pinche_trail_personal_page">个人主页</string>
+
+    <!-- 车主验证 -->
+    <string name="car_verify_net_tips">您目前正在使用2G/3G网络，上传照片将会产生一定流量费用，是否继续验证?</string>
+    <string name="car_verify_net_tips_yes">立即验证</string>
+    <string name="car_verify_net_tips_no">稍后验证</string>
+
+    <!-- 我的信息详情 -->
+    <string name="my_info_details_start_date">出发时间</string>
+    <!-- 我的发布详情 -->
+    <string name="my_publish_details_edit_note">请编辑以下信息</string>
+    <!-- 我的 预约 -->
+    <string name="myself_publish">不要点啦，这是您发布的路线哦</string>
+    <string name="my_book_ing"> 预约中</string>
+    <string name="book_success"> 预约成功</string>
+
+    <!-- 更多 -->
+    <string name="moreTitle">更多</string>
+    <string name="more_idea_feedback_txt">反馈意见</string>
+    <string name="more_about_txt">关于我们</string>
+    <string name="logout_int">正在注销当前账号\u2026</string>
+
+    <!-- 意见反馈 -->
+    <string name="hint_msg1">请输入您要反馈的意见：</string>
+    <string name="hint_msg2">如果可以，留下您的联系方式，我们的客服会尽快联系您!</string>
+    <string name="hint_msg3">联系方式</string>
+    <string name="hint_msg4">请写下对我们产品的意见或建议\u2026</string>
+    <string name="hint_msg5">QQ/微信／微博/电话（选填）</string>
+    <string name="btn_submit">提交</string>
+
+    <!-- 关于我们 -->
+    <string name="about">关于我们</string>
+    <string name="about_home">官方网站</string>
+    <string name="about_sina_web">新浪微博</string>
+    <string name="about_qq">反馈QQ群</string>
+    <string name="about_sina_web_txt">\@拼车帮</string>
+    <string name="about_qq_txt">134584232</string>
+
+    <!-- 使用条款 -->
+    <string name="use_clause">使用条款</string>
+
+    <!-- 搭车详情 -->
+    <string name="pick_details_Title">拼车详情</string>
+    <string name="pin_che_plan_detail">拼车计划详情</string>
+    <string name="pick_trail_Title">线路详情</string>
+    <string name="pick_details_start_point">起点</string>
+    <string name="pick_details_end_point">终点</string>
+    <string name="pick_details_start_date">出发</string>
+    <string name="pick_details_back_date">返程</string>
+    <string name="pick_details_cost">费用</string>
+    <string name="pick_details_cost_note">费用(元/人)</string>
+    <string name="pick_details_total_people">可载人数</string>
+    <string name="pick_details_explain">*预约不会产生任何费用</string>
+    <string name="pick_details_book">马上预约</string>
+    <string name="pick_details_tel">联系电话</string>
+    <string name="pick_details_licence">车牌号</string>
+    <string name="pick_details_car_info">车辆信息</string>
+    <string name="pick_details_car_model">车辆型号</string>
+    <string name="phone">电话</string>
+    <string name="pick_details_car_vefic">车辆验证</string>
+    <string name="pick_details_car_year">驾龄</string>
+    <string name="pick_details_name">昵称</string>
+    <string name="pick_details_drivername">司机姓名</string>
+    <string name="pick_details_driver_passager_tel">联系电话 (点击拨打)</string>
+    <string name="pick_publish_trail">发布的线路</string>
+
+    <!-- Header View -->
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载\u2026</string>
+    <string name="xlistview_header_last_time">更新于：</string>
+    <!-- Footer View -->
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <!-- app dialog提示信息字符串 -->
+
+    <string name="msg_ok"> 您确定与对方同行吗？</string>
+    <string name="msg_ack">请确认您所填信息?</string>
+    <string name="msg_text1">发布成功，你可以在个人中心-我的发布中查看或者删除信息</string>
+    <string name="msg_text2">信息尚未发布，确认离开吗？</string>
+    <string name="msg_btn_text1">离开</string>
+    <string name="msg_btn_text2">再想想</string>
+    <string name="msg_btn_text3">关闭</string>
+    <string name="msg_btn_text4">我的发布</string>
+    <string name="select_city">选择城市</string>
+    <string name="positioning">定位中\u2026</string>
+    <string name="lepin_dialog_loading">数据加载中\u2026</string>
+    <string name="des">image</string>
+    <string name="complete_carpool">立即支付</string>
+    <string name="complete_carpool_cash">已支付现金</string>
+    <string name="has_pay">已支付</string>
+    <string name="complete_carpool_online">在线支付</string>
+    <string name="complete_carpool_dialog_title">如果您已完成拼车，请选择支\n付方式付款给司机。</string>
+    <string name="xx_can_not_null">%1$s不能为空</string>
+    <string name="wait_confim">等待确认中</string>
+    <string name="call_later">稍后联系</string>
+    <!-- 我的拼车币 -->
+    <string name="my_pc_mongy_title">我的拼车币</string>
+    <string name="my_pc_money_history">充值/消费记录</string>
+    <string name="my_pc_money_cost">消费</string>
+    <string name="my_pc_money_fee">兑换话费</string>
+    <string name="my_pc_money_recharge">充值拼车币</string>
+    <string name="my_pc_tip">通过拼车币支付，尝试更多优惠</string>
+    <string name="my_pc_record">记录</string>
+    <string name="my_fee_tip_1">您目前最多可兑换</string>
+    <string name="my_fee_tip_2">话费</string>
+    <string name="my_fee_10">10元</string>
+    <string name="my_fee_20">20元</string>
+    <string name="my_fee_30">30元</string>
+    <string name="my_fee_50">50元</string>
+    <string name="my_fee_100">100元</string>
+    <string name="my_fee_200">200元</string>
+    <string name="my_fee_500">500元</string>
+    <string name="my_fee_1000">1000元</string>
+    <string name="my_fee_do_recharge">立即兑换</string>
+    <string name="recharge_now">立即充值</string>
+    <!-- 支付 -->
+    <string name="pay_this_time">本次支付　</string>
+    <string name="pay_order">拼车帮订单支付</string>
+    <string name="pcb_balance">余额: %1$s拼车币</string>
+    <string name="pay_now">立即付款</string>
+    <string name="pay_password_hint">请输入登录密码</string>
+    <string name="pay">支付</string>
+    <string name="pay_use_alipay">前往支付宝</string>
+    <string name="pay_use_alipay_pay">使用支付宝支付</string>
+    <string name="pinche_bi">拼车币</string>
+    <string name="network_unavaiable">亲，网络不通哦！</string>
+    <string name="passenger_number">乘客数量</string>
+    <string name="avaiable_passenger_num">可载人数</string>
+    <string name="anonymous_user">匿名用户</string>
+    <string name="is_cancel_order">是否取消订单？</string>
+    <string name="order_cancel_ing">订单取消中\u2026</string>
+    <string name="comfirm_order_ing">正在确认订单\u2026</string>
+    <string name="complete_order_ing">正在完成订单\u2026</string>
+    <string name="order_detail_loading">订单详情加载中\u2026</string>
+    <string name="complete">已经完成</string>
+    <string name="has_been_cancel">已取消</string>
+    <string name="pay_ok">支付成功</string>
+    <string name="pay_ok_share_btn">拼车成功，立即分享给好友</string>
+    <string name="pay_ok_use_pinchebi_num">使用拼车币</string>
+    <string name="pay_with_pcb">使用拼车币支付</string>
+    <string name="pay_with_alipay">使用支付宝支付</string>
+    <string name="unit_one">个</string>
+    <string name="unit_yuan">元</string>
+    <string name="pay_use_alipay_pay_yse_no">使用支付宝支付%1$d.00元?</string>
+    <string name="paying">支付中\u2026</string>
+    <string name="pay_start">起点:%1$s</string>
+    <string name="pay_end">终点:%1$s</string>
+    <string name="order_money_error">订单金额有误！</string>
+
+    <!-- 订单 -->
+    <string name="has_ben_confirm">已完成</string>
+    <string name="wait_confirm">待确认</string>
+    <string name="wait_pay">待付款</string>
+    <string name="wait_to_pay_for">等待付款</string>
+    <string name="wait_passager_to_pay">等待乘客付款</string>
+    <string name="pay_for">付款</string>
+    <string name="choice_pay_type">请选择支付方式</string>
+    <string name="back_plaza">返回</string>
+    <string name="all">全部</string>
+    <string name="no_order_info">您还没有此类订单信息!</string>
+    <!-- 充值 -->
+    <string name="recharge_note">1元=10拼车币</string>
+    <string name="recharge_choice">请选择充值金额(1元=10拼车币)</string>
+    <string name="recharge_money">充值金额(元)</string>
+    <string name="recharge_title">充值</string>
+    <string name="recharge_default">50</string>
+    <string name="recharge_confirm_or_cancel">充值金额%1$s元,是否确认充值?</string>
+    <string name="recharge_ok">充值成功!</string>
+    <string name="recharge_ok_num">充值成功%1$s.00元</string>
+    <string name="recharge_ok_2_publish">充值成功,去发布拼车信息。</string>
+    <string name="recharge_ok_2_pinchebi">返回我的拼车币。</string>
+    <string name="init">初始化中\u2026</string>
+    <string name="init_f">初始化中失败</string>
+    <string name="pay_body">订单支付</string>
+    <string name="recharging">充值中\u2026</string>
+    <string name="money_no_enough">您的拼车币太少了,目前无法兑换话费。</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="locate_city">定位城市</string>
+    <string name="input_city_name">请输入城市名称</string>
+    <string name="request_time_out">网络链接超时</string>
+    <string name="request_data_error">数据请求异常</string>
+    <string name="delete_success">删除成功</string>
+    <string name="basic_information">基本信息</string>
+    <string name="human">人</string>
+    <string name="moring">早</string>
+    <string name="night">晚</string>
+    <string name="input_start_end">请输入起点或终点</string>
+    <string name="not_setting">未设置</string>
+    <string name="info_save_success">信息保存成功</string>
+    <string name="no_car_2_add">您还没有车辆，无法预约乘客，是否添加车辆？</string>
+    <string name="get_pinche_money">获取拼车币\u2026</string>
+    <string name="this_time_use">本次将使用</string>
+    <string name="no_update_version">没有可更新版本!</string>
+    <string name="can_update_version">发现新版本，是否更新!</string>
+    <string name="update">更新</string>
+    <string name="balance">余额</string>
+    <string name="what_error">%1$s错误</string>
+    <string name="prompt">提示</string>
+    <string name="recharge_success_prompt">充值成功，可能延迟到帐。</string>
+    <string name="is_confirm_recharge">请确认充值金额和手机号后，是否充值？</string>
+    <string name="one_2_five">周一至周五</string>
+    <string name="publish_city_note">您发布的上下班线路不在同一城市，是否发布</string>
+    <string name="unable_to_contact">无法电话联系此人!</string>
+    <string name="gets_the_verification_code">获取验证码\u2026</string>
+    <string name="verification_code">验证码</string>
+    <string name="check_user_info">验证用户信息\u2026</string>
+    <string name="Log_in_directly">你已经是会员，请直接登录。</string>
+    <string name="orders_loading">订单加载中\u2026</string>
+    <string name="failer_2_get_money">获取拼车币失败!</string>
+    <string name="check_version">版本检测中\u2026</string>
+    <string name="unknow">未知</string>
+    <!-- 选择日期 -->
+    <string name="every_day">每天</string>
+    <string name="every_day_num_text">1,2,3,4,5,6,7</string>
+    <string name="work_day">工作日</string>
+    <string name="work_day_num_text">1,2,3,4,5</string>
+    <string name="one">一</string>
+    <string name="one_num">1</string>
+    <string name="two">二</string>
+    <string name="two_num">2</string>
+    <string name="three">三</string>
+    <string name="three_num">3</string>
+    <string name="four">四</string>
+    <string name="four_num">4</string>
+    <string name="five">五</string>
+    <string name="five_num">5</string>
+    <string name="six">六</string>
+    <string name="six_num">6</string>
+    <string name="seven">日</string>
+    <string name="seven_num">7</string>
+    <string name="monday">星期一</string>
+    <string name="tuesday">星期二</string>
+    <string name="wednesday">星期三</string>
+    <string name="thursday">星期四</string>
+    <string name="friday">星期五</string>
+    <string name="saturday">星期六</string>
+    <string name="sunday">星期日</string>
+    <string name="time_slot">时段选择</string>
+    <string name="work_days">工作日[周一至周五]</string>
+    <string name="single_day">单日设定</string>
+    <!-- 消息中心 -->
+    <string name="message_center_no_data">您还没有记录信息!</string>
+    <string name="message_center_error">请求出错，点击刷新!</string>
+    <string name="message_center_title">消息中心</string>
+    <string name="message_center_get_data">正在获取消息\u2026</string>
+    <string name="message_center_get_fault">获取消息失败</string>
+    <string name="message_center_read_data">正在阅读消息\u2026</string>
+    <string name="message_center_delete_data">正在删除消息\u2026</string>
+    <string name="message_center_delete_data_success">信息删除成功</string>
+
+    <!-- 汽车服务 -->
+    <string name="car_server_getlocation">定位中，请稍后\u2026</string>
+    <!-- 网址 -->
+    <string name="www.52pcb.com">www.52pcb.com</string>
+    <!-- 选择汽车品牌 -->
+    <string name="search_brand_hint">输入车名或首字母</string>
+    <string name="weixin">微信帐号</string>
+    <string name="comfirm_modify">确认修改</string>
+    <string name="pwd_rule">密码限制在6-16个字符</string>
+    <string name="find_back_pwd">正在为您找回密码\u2026</string>
+    <string name="invalid_phone_num">无效手机号</string>
+    <string name="input_regist_phone_num">请输入您注册时使用的手机号码</string>
+    <string name="add_hint">添加备注</string>
+    <string name="phone_num_error">电话号码有误</string>
+    <string name="research">未搜索到，请重新输入搜索。</string>
+    <string name="setting">设置</string>
+    <!-- 首页拼车计划 -->
+    <string name="passenger_with">乘客:&#160;&#160;%1$s</string>
+    <string name="has_confirm_carpool">已确定拼车</string>
+    <string name="has_confirm_cancel">已取消拼车</string>
+    <string name="start_or_end_point_with">%1$s:&#160;&#160;%2$s</string>
+    <string name="driver_cancel">是否确定取消与乘客的拼车?</string>
+    <string name="passenger_cancel">是否确定取消与司机的拼车?</string>
+    <string name="order_operate">计划%1$s中\u2026</string>
+    <string name="setting_push">推送设置</string>
+    <string name="setting_other">其他设置</string>
+    <string name="setting_push_order">订单推送</string>
+    <string name="setting_check_update">检查更新</string>
+    <string name="my_car_edit">编辑</string>
+    <string name="push_has_been_closed">推送通知已关闭</string>
+    <string name="push_has_been_open">推送通知已开启</string>
+    <string name="get_data_error">获取数据失败</string>
+    <string name="add_car_info">增加车辆信息\u2026</string>
+    <string name="get_pinche_plan">获取拼车计划</string>
+    <string name="is_comfirm_delete_msg">是否确认删除此信息</string>
+    <string name="no_carinfo_2_add">您还没有车辆信息，是否立即添加?</string>
+    <string name="add">添加</string>
+    <string name="is_contact">是否电话联系对方?</string>
+    <string name="pin_che_bi_not_enough">拼车币不足，请使用支付宝支付!</string>
+    <string name="not_agree_to_the_terms_of_use">为同意使用条款!</string>
+    <string name="publish_info_close">您关闭路线后,别人将不能看到您的发布信息</string>
+    <string name="publish_info_open">您开启路线后,别人将看到您的发布信息</string>
+    <string name="turn_on">开启</string>
+    <string name="is_switch_to_locting_city">是否切换到当前定位城市:%1$s?</string>
+    <string name="switch_to">切换</string>
+    <string name="charge_money_rule">充值金额必须10－1000</string>
+    <string name="duration">800</string>
+    <string name="is_delete_plan">是否删除拼车计划?</string>
+    <string name="cancel_su">取消成功。</string>
+    <string name="operate_fail">操作失败。</string>
+    <!-- 分享 -->
+    <string name="share">分享</string>
+    <string name="line_has_been_published">您的线路已经发布成功</string>
+    <string name="share_2_friends_now">立即把线路分享给其他小伙伴</string>
+    <string name="share_now">立即分享</string>
+    <string name="choice_statr">请选择起点</string>
+    <string name="choice_end">请选择终点</string>
+    <string name="people_num">可乘%1$d人</string>
+    <string name="call_now">立即联系</string>
+    <string name="appointment">立即预约</string>
+    <string name="order_detail_note">备注:</string>
+    <string name="driving_years">驾龄:%1$s</string>
+    <string name="pcb_calendar">拼车日历:</string>
+    <string name="downloading">下载中\u2026</string>
+    <string name="money_num">金额</string>
+    <string name="location_error">位置信息有误!</string>
+    <string name="passenger_pay_all">乘客已经付清全部拼车费用!</string>
+    <string name="no_need_to_pay">没有需要支付的拼车车费!</string>
+    <string name="pay_error">支付失败!</string>
+    <string name="register">注册</string>
+    <string name="register_fail">注册失败!</string>
+    <string name="register_su">注册成功!</string>
+    <string name="refresh_fail">刷新失败!</string>
+    <!-- 拼车线路 -->
+    <string name="pinche_trail_no_location">缺少必要的经纬度，暂时没法地图展示，请谅解</string>
+    <string name="share_order_content">我在拼车帮找到了顺路的小伙伴，舒适出行，分摊邮费，更重要的是路上有个人可以说说话，看看我的路线！和你，也顺路么？</string>
+    <string name="share_line_content">我正在拼车帮寻找拼车小伙伴，快来和我拼车吧!</string>
+    <string name="share_order_title">拼车帮-订单分享</string>
+    <string name="share_line_title">拼车帮-线路分享</string>
+    <string name="upload_success">上传成功!</string>
+    <string name="upload_fail">上传失败!</string>
+    <string name="through_point">途经点</string>
+    <string name="point_can_not_equls">途经点不能相同!</string>
+    <string name="through_point_num">途经点%1$d:%2$s</string>
+    <string name="through_point_num_no_index">途经:%1$s</string>
+    <string name="request_error">请求失败!</string>
+    <string name="register_exit">退出</string>
+    <string name="register_continue">继续注册</string>
+    <!-- 常用地址 -->
+    <string name="common_address_title">我常用拼车地点</string>
+    <string name="common_home_address">家的位置:</string>
+    <string name="choice_common_home_address">请选择家的位置</string>
+    <string name="common_company_address">公司位置:</string>
+    <string name="choice_common_company_address">请选择公司位置</string>
+    <string name="edit_common_address">常用地址修改中\u2026</string>
+    <string name="edit_common_address_su">修改成功</string>
+    <string name="edit_common_address_fail">修改失败</string>
+    <string name="apply_to_cash">申请提现</string>
+    <string name="account_details">账户明细:</string>
+    <string name="no_account_details">该账户目前没有资金来往。</string>
+    <!-- 充值 -->
+    <string name="input_recharge_num">请输入充值金额</string>
+    <string name="choice_recharge_type">选择充值方式</string>
+    <string name="alipay_recharge">支付宝充值</string>
+    <!-- 提现 -->
+    <string name="apply_submit">确定提现</string>
+    <string name="add_apply_account">添加提现账户</string>
+    <string name="input_apply_num">请输入提现金额</string>
+    <string name="apply_note">为了保证你的资金安全，请输入支付密码</string>
+    <string name="apply_alipy_account">支付宝帐户:</string>
+    <string name="apply_alipy_name">姓名:</string>
+    <string name="get_cash_accounts">获取账户\u2026</string>
+    <string name="choice_account">请选择你要提现的账户</string>
+    <string name="input_account_and_name">请输入账户名和开户名</string>
+    <string name="current_cash">当前余额</string>
+    <string name="current_pcb">当前拼车币</string>
+    <string name="how_to_get_pcb">如何获得拼车币</string>
+    <string name="pcb_activity">拼车币活动</string>
+    <string name="pcb_100_luck_draw">100拼车币抽大奖</string>
+    <string name="phone_cash">手机  话费</string>
+    <string name="click_join">点击参与</string>
+    <string name="lottery_note">活动介绍:\n1.进入相应的活动板块，消耗一定的拼车币，抽奖次数不限。\n2.抽中的拼车币将于10分钟内充入你的拼车币账户中。\n3.若未中奖,消耗的拼车币不予返还。\n4.拼车帮在法律范围内保留本次活动的最终解释权。</string>
+    <string name="pcb_lottery">拼车币抽奖</string>
+    <string name="try_one">小试下手气</string>
+    <string name="try_two">手气不错畅玩一把</string>
+    <string name="cast_100">消耗100拼车币</string>
+    <string name="cast_200">消耗200拼车币</string>
+    <string name="to_be_processed">待处理</string>
+    <string name="to_be_get_in_car">待上车</string>
+    <string name="comfirm_get_in_car">确认上车</string>
+    <string name="cancel_with_pan">取消\n乘客已付款</string>
+</resources>

@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg1" >
+
+    <include
+        android:id="@+id/top_item_layout"
+        layout="@layout/my_order_item" />
+
+    <FrameLayout
+        style="@style/match_parent"
+        android:layout_below="@+id/top_item_layout" >
+
+        <ListView
+            android:id="@+id/my_order_listview"
+            style="@style/match_warp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/item_layout_default"
+            android:divider="@color/list_devider"
+            android:dividerHeight="@dimen/dp_1"
+            android:scrollbars="none" >
+        </ListView>
+
+        <LinearLayout
+            android:id="@+id/no_data_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <TextView
+                style="@style/wrap_content"
+                android:text="@string/no_order_info" />
+        </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>

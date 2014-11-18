@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical" >
+
+    <!-- 标题 -->
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <!-- 数据列表 -->
+
+    <ListView
+        android:id="@+id/my_pc_record_listview"
+        style="@style/listView"
+        android:divider="@color/list_devider"
+        android:dividerHeight="@dimen/dp_1" />
+
+    <TextView
+        android:id="@+id/my_record_is_null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:text="您还没有记录信息"
+        android:textSize="@dimen/sp_16"
+        android:visibility="gone" />
+
+</LinearLayout>

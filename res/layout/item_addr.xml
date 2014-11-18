@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_55" >
+
+    <ImageView
+        android:id="@+id/item_addr_imge"
+        style="@style/wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:background="@drawable/ic_search"
+        android:contentDescription="@string/des" />
+
+    <TextView
+        android:id="@+id/result_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_toRightOf="@+id/item_addr_imge"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/result_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/result_addr"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@+id/item_addr_imge"
+        android:textColor="@color/deep_gray"
+        android:textSize="@dimen/sp_12" />
+
+    <TextView
+        android:id="@+id/result_district"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/result_addr"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@+id/result_city"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/deep_gray"
+        android:textSize="@dimen/sp_12" />
+
+</RelativeLayout>

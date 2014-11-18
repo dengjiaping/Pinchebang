@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <Button 
+        android:id="@+id/id_item_btn"
+        android:layout_width="@dimen/dp_60"
+        android:singleLine="true"
+        android:layout_height="@dimen/dp_30"
+      	android:background="@drawable/btn_fillet_message"
+      	android:textColor="#ffffff"
+      	android:paddingLeft="@dimen/dp_15"
+      	android:paddingRight="@dimen/dp_15"
+      	android:layout_marginRight="@dimen/dp_15"
+        />
+</LinearLayout>

@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PayActivity" >
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include
+            android:id="@+id/pay_ok_layout"
+            layout="@layout/pay_or_recharge_ok"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/pay_choice_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_layout_default"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp_15" >
+
+                <TextView
+                    android:id="@+id/pay_start"
+                    style="@style/wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:id="@+id/pay_end"
+                    style="@style/wrap_content"
+                    android:layout_marginBottom="@dimen/dp_12"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textSize="@dimen/sp_16" />
+
+                <View style="@style/item_divider" />
+
+                <TextView
+                    android:id="@+id/pay_cost"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_44"
+                    android:gravity="center_vertical|right"
+                    android:paddingRight="@dimen/dp_20"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_marginTop="@dimen/dp_18"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/pay_pinche_bi_layout"
+                    style="@style/wrap_content" >
+
+                    <ImageButton
+                        android:id="@+id/pay_pinche_bi_radio"
+                        style="@style/wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/radio_btn_selector"
+                        android:contentDescription="@string/des" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_toRightOf="@+id/pay_pinche_bi_radio"
+                        android:text="@string/pay_with_pcb"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:id="@+id/pay_pinchebi_over"
+                        style="@style/wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/dp_18"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/pay_over_color"
+                        android:textSize="@dimen/sp_14"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/pay_alipay_layout"
+                    style="@style/wrap_content"
+                    android:layout_marginTop="@dimen/dp_18" >
+
+                    <ImageButton
+                        android:id="@+id/pay_alipay_radio"
+                        style="@style/wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/radio_btn_selector"
+                        android:contentDescription="@string/des" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_toRightOf="@+id/pay_alipay_radio"
+                        android:text="@string/pay_with_alipay"
+                        android:textSize="@dimen/sp_16" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/pay_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginTop="@dimen/dp_18"
+                android:background="@drawable/item_layout_default"
+                android:gravity="center"
+                android:hint="@string/pay_password_hint"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/dp_5"
+                android:singleLine="true"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/pay_pay_btn"
+                style="@style/submit_btn"
+                android:layout_marginTop="@dimen/dp_18"
+                android:gravity="center"
+                android:text="@string/pay_now"
+                android:visibility="visible" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

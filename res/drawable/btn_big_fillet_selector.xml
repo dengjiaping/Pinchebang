@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="false"><shape>
+            <solid android:color="@color/normal_btn_bg" />
+
+            <corners android:radius="@dimen/dp_10" />
+
+            <stroke android:dashWidth="@dimen/dp_0" android:width="@dimen/dp_1" />
+        </shape></item>
+    <item android:state_pressed="true"><shape>
+            <solid android:color="@color/press_btn_bg" />
+
+            <corners android:radius="@dimen/dp_10" />
+
+            <stroke android:dashWidth="@dimen/dp_0" android:width="@dimen/dp_1" android:color="@android:color/white" />
+        </shape></item>
+
+</selector>
