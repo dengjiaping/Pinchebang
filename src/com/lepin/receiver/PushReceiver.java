@@ -16,6 +16,9 @@ import cn.jpush.android.api.JPushInterface;
 import com.lepin.activity.CarServiceActivity;
 import com.lepin.activity.MessageCenterActivity;
 import com.lepin.activity.MyOrderDetailActivity;
+import com.lepin.activity.PincheTrailActivity;
+import com.lepin.activity.RecommendActivity;
+import com.lepin.entity.PushMsg;
 import com.lepin.util.Constant;
 import com.lepin.util.Util;
 
@@ -45,19 +48,23 @@ public class PushReceiver extends BroadcastReceiver {
 		Intent i = new Intent();
 		try {
 			jsonObject = new JSONObject(result);
-			Util.printLog("json:" + jsonObject.toString());
 			String type = jsonObject.getString("type");
-			Util.printLog("type:" + type);
-
 			String expand = jsonObject.getString("expand");
-			if (type.endsWith("ORDER") || type.contains("ORDER")) {// 订单
+			String orderString = PushMsg.PUSH_MSG_TYPE.ORDER.name();
+			if (type.endsWith(orderString) || type.contains(orderString)) {// 订单
 				i.setClass(mContext, MyOrderDetailActivity.class);
 				goBundle.putString(Constant.BOOK_ID, expand);
-			} else if (type.equals("ACTIVITY")) {// 活动
+			} else if (type.equals(PushMsg.PUSH_MSG_TYPE.ACTIVITY.name())) {// 活动
 				i.setClass(mContext, CarServiceActivity.class);
 				goBundle.putString(Constant.JCHDOrQCFW, Constant.JCHD);
 				goBundle.putString("url", expand);
-			} else {// 消息跳转
+			} else if (type.equals(PushMsg.PUSH_MSG_TYPE.RECOMMEND_SINGLE.name())) {// 跳转到信息详情页
+				i.setClass(mContext, PincheTrailActivity.class);
+				goBundle.putInt("PincheId", Integer.parseInt(expand));
+			} else if (type.equals(PushMsg.PUSH_MSG_TYPE.RECOMMEND_MULTI.name())) {// 跳转到推荐页面
+				i.setClass(mContext, RecommendActivity.class);
+				goBundle.putString("recommendType", expand);
+			} else {// 跳转到消息中心
 				i.setClass(mContext, MessageCenterActivity.class);
 				goBundle.putBoolean(MessageCenterActivity.S_IS_PUSH, true);
 			}

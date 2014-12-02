@@ -80,7 +80,8 @@ public class Car implements Serializable {
 	}
 
 	public String getLicence(Context mContext) {
-		return TextUtils.isEmpty(licence) ? mContext.getString(R.string.not_setting) : licence;
+		return TextUtils.isEmpty(licence) ? mContext.getString(R.string.my_car_vefic_card) + ":"
+				+ mContext.getString(R.string.not_setting) : licence;
 	}
 
 	public String getNum() {

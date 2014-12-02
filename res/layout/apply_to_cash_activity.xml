@@ -156,7 +156,7 @@
                     android:layout_marginRight="@dimen/dp_10"
                     android:layout_marginTop="@dimen/dp_12"
                     android:background="@drawable/item_layout_default"
-                    android:inputType="number"
+                    android:inputType="textPassword"
                     android:paddingLeft="@dimen/dp_5"
                     android:textColor="@color/text_gray"
                     android:textSize="@dimen/sp_14" />

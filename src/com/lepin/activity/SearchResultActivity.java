@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lepin.entity.Key;
+import com.lepin.entity.Pinche;
 import com.lepin.fragment.SearchResultFragment;
 import com.lepin.inject.Contextview;
 import com.lepin.inject.ViewInject;
@@ -78,8 +79,8 @@ public class SearchResultActivity extends BaseFragmentActivity implements OnClic
 		final Bundle mBundle = getIntent().getExtras();
 		Key key = null;
 		if (mBundle != null) key = (Key) mBundle.getSerializable("search_key");
-		mFragments.add(SearchResultFragment.newInstance(SDRIVER, key));
-		mFragments.add(SearchResultFragment.newInstance(SPASSERGER, key));
+		mFragments.add(SearchResultFragment.newInstance(Pinche.DRIVER, key));
+		mFragments.add(SearchResultFragment.newInstance(Pinche.PASSENGER, key));
 	}
 
 	private OnPageChangeListener mPageChangeListener = new OnPageChangeListener() {

@@ -151,15 +151,6 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
-    <style name="money_num">
-        <item name="android:layout_width">@dimen/dp_0</item>
-        <item name="android:layout_height">@dimen/dp_45</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:background">@drawable/white_gray_selector</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/red</item>
-    </style>
-
     <style name="popwindow_delete_btn_anim_style">
         <item name="android:windowEnterAnimation">@anim/delete_btn_show</item>
         <!-- 指定显示的动画xml -->
@@ -211,12 +202,6 @@
         <item name="android:background">@android:color/white</item>
     </style>
 
-    <style name="my_order_fragment_list_item_text" parent="@style/wrap_content">
-        <item name="android:ellipsize">start</item>
-        <item name="android:maxEms">5</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:textSize">@dimen/sp_16</item>
-    </style>
     <!-- 首页底部按钮 -->
     <style name="home_bottom_btn">
         <item name="android:layout_width">@dimen/dp_0</item>

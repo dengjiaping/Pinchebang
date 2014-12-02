@@ -68,7 +68,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:focusable="false"
-            
             android:scrollbars="none" >
 
             <LinearLayout
@@ -82,7 +81,7 @@
                 android:background="@drawable/item_layout_default"
                 android:orientation="vertical"
                 android:paddingBottom="@dimen/dp_15"
-                android:visibility="visible" >
+                >
 
                 <!-- 起点，终点 -->
 
@@ -120,7 +119,6 @@
                             android:ellipsize="middle"
                             android:maxLength="5"
                             android:singleLine="true"
-                            android:text="的开发的地"
                             android:textSize="@dimen/sp_16" />
 
                         <ImageView
@@ -138,9 +136,9 @@
                             style="@style/wrap_content"
                             android:layout_below="@+id/my_order_details_publisher_name"
                             android:layout_marginTop="@dimen/dp_1"
-                            android:text="Q7"
                             android:textColor="@color/text_gray"
-                            android:textSize="@dimen/sp_12" />
+                            android:textSize="@dimen/sp_12"
+                            android:visibility="gone" />
                         <!-- 驾龄 -->
 
                         <TextView
@@ -150,10 +148,9 @@
                             android:layout_marginLeft="@dimen/dp_8"
                             android:layout_marginTop="@dimen/dp_1"
                             android:layout_toRightOf="@+id/my_order_details_publisher_car_brand"
-                            android:text="驾龄:2年"
                             android:textColor="@color/text_gray"
                             android:textSize="@dimen/sp_12"
-                            android:visibility="visible" />
+                            android:visibility="gone" />
                         <!-- 车牌 -->
 
                         <TextView
@@ -161,9 +158,9 @@
                             style="@style/wrap_content"
                             android:layout_below="@+id/my_order_details_publisher_car_brand"
                             android:layout_marginTop="@dimen/dp_1"
-                            android:text="川A88888"
                             android:textColor="@color/text_gray"
-                            android:textSize="@dimen/sp_12" />
+                            android:textSize="@dimen/sp_12"
+                            android:visibility="gone" />
                         <!-- 电话 -->
                     </RelativeLayout>
 
@@ -289,6 +286,8 @@
 
             <View style="@style/item_divider" />
 
+            <!-- 取消和确定 -->
+
             <LinearLayout
                 android:id="@+id/my_order_cancel_and_ok_layout"
                 style="@style/match_match"
@@ -303,23 +302,33 @@
                     android:background="@drawable/btn_red_selector"
                     android:text="@string/my_info_btn_cancel" />
 
+                <!-- 立即支付 -->
+
                 <Button
-                    android:id="@+id/my_order_btn_ok"
+                    android:id="@+id/my_order_btn_pay"
                     style="@style/my_order_detail_btn"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:background="@drawable/btn_blue_selector"
-                    android:text="@string/dialog_confirm" />
+                    android:text="@string/order_pay" />
+            </LinearLayout>
+            <!-- 取消订单 -->
+
+            <LinearLayout
+                android:id="@+id/my_order_cancel_layout"
+                style="@style/match_match"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_7"
+                android:visibility="gone" >
+
+                <Button
+                    android:id="@+id/btn_driver_cancle"
+                    style="@style/my_order_detail_btn"
+                    android:background="@drawable/btn_red_selector"
+                    android:textSize="@dimen/sp_16" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/my_info_btn_ack"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_50"
-                android:background="@drawable/btn_white_gray_selector"
-                android:text="@string/my_info_btn_sure"
-                android:textColor="@color/btn_blue_normal"
-                android:textSize="@dimen/sp_16"
-                android:visibility="gone" />
+            <!-- 立即付款 -->
 
             <LinearLayout
                 android:id="@+id/calendar_pay_layout"

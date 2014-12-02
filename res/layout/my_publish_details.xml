@@ -246,14 +246,14 @@
                 android:layout_marginTop="@dimen/dp_10"
                 android:background="@drawable/item_layout_default"
                 android:orientation="vertical" >
-                
+
                 <!-- 途经点1 -->
-                 <LinearLayout
+
+                <LinearLayout
+                    android:id="@+id/point1_layout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_48"
-                    android:visibility="gone"
-                    android:id="@+id/point1_layout"
-                     >
+                    android:visibility="gone" >
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -272,18 +272,21 @@
                         android:textColor="@color/ligth_gray"
                         android:textSize="16sp" />
                 </LinearLayout>
-                 <View android:id="@+id/my_publish_line"
-	                  android:layout_width="match_parent"
-	                  android:layout_height="@dimen/dp_0point4"
-	                  android:layout_marginLeft="@dimen/dp_15"
-	                  android:visibility="gone"
-	                  android:background="@color/line"/> 
-                 <LinearLayout
+
+                <View
+                    android:id="@+id/my_publish_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0point4"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:background="@color/line"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/point2_layout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_48"
-                    android:visibility="gone"
-                    android:id="@+id/point2_layout"
-                     >
+                    android:visibility="gone" >
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -301,14 +304,18 @@
                         android:textColor="@color/ligth_gray"
                         android:textSize="16sp" />
                 </LinearLayout>
-                 <View android:id="@+id/line2"
-	                  android:layout_width="match_parent"
-	                  android:layout_height="@dimen/dp_0point4"
-	                  android:layout_marginLeft="@dimen/dp_15"
-	                  android:background="@color/line"/> 
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0point4"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:background="@color/line" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_48" >
+                    android:layout_height="@dimen/dp_48"
+                    android:paddingTop="@dimen/dp_1" >
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -320,13 +327,11 @@
 
                     <RelativeLayout
                         android:id="@+id/my_publish_details_start_date_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        style="@style/match_match" >
 
                         <TextView
                             android:id="@+id/my_publish_details_start_date"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            style="@style/match_match"
                             android:layout_toLeftOf="@+id/my_publish_stop_starttime"
                             android:enabled="false"
                             android:gravity="center|right"
@@ -381,7 +386,7 @@
                             android:gravity="center_vertical|right"
                             android:paddingRight="@dimen/dp_10"
                             android:textColor="@color/ligth_gray"
-                            android:textSize="16sp" />
+                            android:textSize="@dimen/sp_16" />
 
                         <CheckBox
                             android:id="@+id/my_publish_stop_backtime"

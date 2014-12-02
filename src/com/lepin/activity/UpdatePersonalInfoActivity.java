@@ -51,7 +51,7 @@ public class UpdatePersonalInfoActivity extends BaseActivity implements OnClickL
 	@ViewInject(id = R.id.update_repeat_pass)
 	private EditText upReNewPass;// 重复新密码
 	@ViewInject(id = R.id.submitPass)
-	private TextView upSubmitPass;// 提交密码
+	private TextView mUpdatePwd;// 提交密码
 
 	private String updateType;// name:更新姓名 pass：更新密码
 	private Util util = Util.getInstance();
@@ -82,7 +82,7 @@ public class UpdatePersonalInfoActivity extends BaseActivity implements OnClickL
 		} else if (type.equals("pass")) {
 			uppassLayout.setVisibility(View.VISIBLE);
 			upTitle.setText(getString(R.string.update_pass));
-			upSubmitPass.setOnClickListener(this);
+			mUpdatePwd.setOnClickListener(this);
 		}
 		upBack.setOnClickListener(this);
 	}
@@ -101,7 +101,7 @@ public class UpdatePersonalInfoActivity extends BaseActivity implements OnClickL
 			} else {
 				updateUserName();
 			}
-		} else if (v == upSubmitPass) {
+		} else if (v == mUpdatePwd) {
 			if (checkData()) {
 				updatePwd();
 			}
@@ -127,6 +127,7 @@ public class UpdatePersonalInfoActivity extends BaseActivity implements OnClickL
 						});
 				if (jsonResult != null && jsonResult.isSuccess()) {
 					user.setUsername(upName.getText().toString().trim());
+					util.setUser(UpdatePersonalInfoActivity.this, user);
 					Util.showToast(UpdatePersonalInfoActivity.this,
 							getString(R.string.update_name_success));
 					UpdatePersonalInfoActivity.this.finish();
@@ -166,7 +167,14 @@ public class UpdatePersonalInfoActivity extends BaseActivity implements OnClickL
 							.toString());
 				}
 			}
-		}, params, Constant.URL_MODIFYPWD, getString(R.string.update_pass_ing), false);
+
+			@Override
+			public void onFail(String errorType, String errorMsg) {
+				if (!TextUtils.isEmpty(errorMsg)) {
+					Util.showToast(UpdatePersonalInfoActivity.this, errorMsg);
+				}
+			}
+		}, params, Constant.URL_MODIFYPWD, getString(R.string.update_pass_ing), true);
 
 	}
 

@@ -22,12 +22,12 @@
         <item>其它汽车</item>
     </string-array>
         <string-array name="peopnum">
-        <item>1人</item>
-        <item>2人</item>
-        <item>3人</item>
-        <item>4人</item>
-        <item>5人</item>
-        <item>6人</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
     </string-array>
     
        

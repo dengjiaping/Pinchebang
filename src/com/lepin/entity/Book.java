@@ -44,7 +44,18 @@ public class Book implements Serializable {
 
 	private User driver;
 	private User passenger;
+
 	private long createTime = -1;
+
+	private long rideTime; // 订单出发时间
+
+	public long getRideTime() {
+		return rideTime;
+	}
+
+	public void setRideTime(long rideTime) {
+		this.rideTime = rideTime;
+	}
 
 	public String getCreateTime() {
 		return TimeUtils.formatDate(createTime, TimeUtils.TIME_FORMART_HMS);
@@ -269,7 +280,7 @@ public class Book implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Book [bookId=" + infoOrderId + ", passengerId=" + passengerId + ", driverId=" + driverId
+		return "Book [infoOrderId=" + infoOrderId + ", passengerId=" + passengerId + ", driverId=" + driverId
 				+ ", infoId=" + infoId + ", price=" + price + ", num=" + num + ", snapshot="
 				+ snapshot + ", state=" + state + ", payType=" + payType + ", bookType=" + bookType
 				+ ", note=" + note + ", sysNote=" + sysNote + ", deleteByPassenger="

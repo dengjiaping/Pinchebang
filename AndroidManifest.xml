@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lepin.activity"
     android:versionCode="15"
-    android:versionName="2.4debug" >
+    android:versionName="2.4debug4" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -170,18 +170,12 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".MyCashAccountSettingActivity"
-            android:screenOrientation="portrait"
             android:launchMode="singleTop"
-             />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MyCashAccountAddOrModifyActivity"
             android:screenOrientation="portrait" />
-        
-        <!--
-             <activity
-            android:name=".GuidePageActivity"
-            android:screenOrientation="portrait" />
-        -->
+
         <activity
             android:name=".MyLoveCarActivity"
             android:screenOrientation="portrait" />
@@ -307,6 +301,11 @@
             android:name=".LotteryActivity"
             android:screenOrientation="portrait" >
         </activity>
+        <!-- 线路推荐界面 -->
+        <activity
+            android:name=".RecommendActivity"
+            android:screenOrientation="portrait" >
+        </activity>
 
         <!-- 创建一个应用程序独有的消息推送进程 -->
         <service
@@ -321,8 +320,7 @@
             android:process=":remote" >
         </service>
         <!--
-                地图key   tanzhiqiang:3hzsZelFlvGt9GWek63088lr wangxiaohong:Qi1FznUgSPcAYoiawjgBgpzX 
-                key   sZ5fCRHxgDB9a4s0amPxNGxE
+                地图key   tanzhiqiang:3hzsZelFlvGt9GWek63088lr wangxiaohong:sZ5fCRHxgDB9a4s0amPxNGxE 
                    打包发布时所用的key：Qi1FznUgSPcAYoiawjgBgpzX
         -->
         <meta-data

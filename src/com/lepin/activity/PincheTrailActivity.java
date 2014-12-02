@@ -37,10 +37,10 @@ import com.lepin.widget.CircleImageView;
  */
 @Contextview(R.layout.pinche_trail_details)
 public class PincheTrailActivity extends BaseActivity implements OnClickListener {
-	@ViewInject(id = R.id.common_title_title, parentId = R.id.pinche_details_title)
+	@ViewInject(id = R.id.common_title_title)
 	private TextView mTitle;// 标题
 
-	@ViewInject(id = R.id.common_title_back, parentId = R.id.pinche_details_title)
+	@ViewInject(id = R.id.common_title_back)
 	private ImageView mTitleBack;// 返回
 
 	// 头像
@@ -145,6 +145,23 @@ public class PincheTrailActivity extends BaseActivity implements OnClickListener
 	private int pinche_id;// 获取拼车信息的id
 	private Pinche mPincheDetails;// 拼车信息对象
 
+	/**
+	 * 起点维度
+	 */
+	private int mStartLat;
+	/**
+	 * 起点经度
+	 */
+	private int mStartLon;
+	/**
+	 * 终点维度
+	 */
+	private int mEndLat;
+	/**
+	 * 终点经度
+	 */
+	private int mEndLon;
+
 	private Util util = Util.getInstance();
 	/**
 	 * 身份 ： 乘客 /司机
@@ -159,6 +176,13 @@ public class PincheTrailActivity extends BaseActivity implements OnClickListener
 		loadPinche();
 	}
 
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+		loadPinche();
+	}
+
 	/**
 	 * 初始化组件
 	 */
@@ -168,7 +192,6 @@ public class PincheTrailActivity extends BaseActivity implements OnClickListener
 		this.mTitleBack.setOnClickListener(this);
 		this.mPhotoView.setOnClickListener(this);
 		this.mapImageView.setOnClickListener(this);
-		// this.mappointment.setOnClickListener(this);
 		this.mTitle.setText(getResources().getString(R.string.pick_trail_Title));// 初始化title
 	}
 
@@ -180,6 +203,10 @@ public class PincheTrailActivity extends BaseActivity implements OnClickListener
 		final User user = mPincheDetails.getUser();
 
 		if (this.mPincheDetails != null) {
+			mStartLat = mPincheDetails.getStartLat();
+			mStartLon = mPincheDetails.getStartLon();
+			mEndLat = mPincheDetails.getEndLat();
+			mEndLon = mPincheDetails.getEndLon();
 			this.mStarText.setText(mPincheDetails.getStart_name());
 			this.mEndText.setText(mPincheDetails.getEnd_name());
 			String urlString = util.getPhotoURL(user.getUserId());
@@ -188,8 +215,10 @@ public class PincheTrailActivity extends BaseActivity implements OnClickListener
 			// 出发费用备注都有
 			this.mStartDateTitleText.setText(getResources().getString(
 					R.string.pick_details_start_date));
-			this.mStartDateText.setText(mPincheDetails.getDepartureTime());
-			mBackDateLayout.setVisibility(View.GONE);
+
+			this.mStartDateText.setText(mPincheDetails.getCarpoolType().equals(
+					Pinche.CARPOOLTYPE_ON_OFF_WORK) ? mPincheDetails.getCycle().getTxt() + " "
+					+ mPincheDetails.getDepartureTime() : mPincheDetails.getDepartureTime());
 
 			if (user != null && user.isUserStateVerify()) {
 				this.mUserISVerified.setVisibility(View.VISIBLE);
@@ -202,12 +231,18 @@ public class PincheTrailActivity extends BaseActivity implements OnClickListener
 				mDrivingYears.setVisibility(View.VISIBLE);
 				mCarLicenseText.setVisibility(View.VISIBLE);
 				this.mDrivingYears.setText(user.getDriveAge());
-				this.mCarLicenseText.setText(car.getLicence());
+				if (!TextUtils.isEmpty(car.getLicence())) {
+					this.mCarLicenseText.setText(mPincheDetails.isBooking() ? car.getLicence()
+							: car.getLicence().substring(0, 3) + "**"
+									+ car.getLicence().substring(5, 6));
+				}
 				// 上下班设置返回
 				if (mPincheDetails.getCarpoolType().equals(Pinche.CARPOOLTYPE_ON_OFF_WORK)) {
 					this.mBackDateTitleText.setText(getResources().getString(
 							R.string.pick_details_back_date));
-					this.mBackDateText.setText(mPincheDetails.getBackTime());
+					mBackDateLayout.setVisibility(View.VISIBLE);
+					this.mBackDateText.setText(mPincheDetails.getCycle().getTxt() + " "
+							+ mPincheDetails.getBackTime());
 				}
 				this.mCostTitleText.setText(getResources().getString(
 						R.string.pick_details_cost_note));
@@ -242,9 +277,6 @@ public class PincheTrailActivity extends BaseActivity implements OnClickListener
 				}
 				this.mCostTitleText.setText(getResources().getString(R.string.pick_details_cost));
 				this.mCostText.setText(mPincheDetails.getCharge() + "");
-				// this.mPeopleNumTitle.setText(getResources().getString(
-				// R.string.pick_details_total_people));
-				// this.mPeopleNum.setText(car.getNum());
 			}
 			String note = mPincheDetails.getNote();
 			if (!TextUtils.isEmpty(note)) mNoteText.setText(note);
@@ -278,6 +310,7 @@ public class PincheTrailActivity extends BaseActivity implements OnClickListener
 				JsonResult<Pinche> jsonResult = util.getObjFromJsonResult(result,
 						new TypeToken<JsonResult<Pinche>>() {
 						});
+				Util.printLog("线路详情:" + jsonResult.toString());
 				if (jsonResult != null && jsonResult.isSuccess()) {
 					mPincheDetails = jsonResult.getData();
 					setPincheDetails();// 设置界面初始值
@@ -351,27 +384,14 @@ public class PincheTrailActivity extends BaseActivity implements OnClickListener
 				if (null != bookId) {
 					Bundle bundle = new Bundle();
 					bundle.putString(Constant.BOOK_ID, bookId);
+					bundle.putInt(Constant.START_LAT, mStartLat);
+					bundle.putInt(Constant.START_LON, mStartLon);
+					bundle.putInt(Constant.END_LAT, mEndLat);
+					bundle.putInt(Constant.END_LON, mEndLon);
 					util.go2OrderDetail(PincheTrailActivity.this, bundle);
 				}
 			}
 		}, params, Constant.URL_ADDBOOK, getString(R.string.my_book_ing) + "...", false);
-
-		// util.doPostRequest(PincheTrailActivity.this, new
-		// OnDataLoadingCallBack() {
-		// @Override
-		// public void onLoadingBack(String result) {
-		// if (!TextUtils.isEmpty(result)) {
-		// String bookId = doBooking(result);
-		// if (null != bookId) {
-		// Bundle bundle = new Bundle();
-		// bundle.putString(Constant.BOOK_ID, bookId);
-		// util.go2OrderDetail(PincheTrailActivity.this, bundle);
-		// }
-		// }
-		// }
-		//
-		// }, params, Constant.URL_ADDBOOK, getString(R.string.my_book_ing) +
-		// "...");
 	}
 
 	private String doBooking(String result) {

@@ -31,7 +31,6 @@ import com.lepin.util.Constant;
 import com.lepin.util.UMSharingMyOrder;
 import com.lepin.util.Util;
 import com.lepin.util.Util.OnHttpRequestDataCallback;
-import com.lepin.util.Util.SERVICE_TYPE;
 import com.lepin.widget.CircleImageView;
 import com.lepin.widget.PcbConfirmDialog;
 import com.lepin.widget.PcbConfirmDialog.OnOkOrCancelClickListener;
@@ -134,37 +133,93 @@ public class MyOrderDetailActivity extends BaseActivity implements OnClickListen
 	@ViewInject(id = R.id.my_order_cancel_and_ok_layout)
 	private LinearLayout mCancelAndOkLayout;
 
-	// 三个按钮
-	@ViewInject(id = R.id.my_info_btn_ack)
-	private Button mOneSureBtn;// 确认
+	/**
+	 * 订单取消后 或者 司机端操作 取消layout
+	 */
+	@ViewInject(id = R.id.my_order_cancel_layout)
+	private LinearLayout mCancelLayout;
 
-	// 两个按钮的取消按钮
+	// 三个按钮
+	/**
+	 * 司机的取消按钮 （new） 乘客或司机的 订单完成 展示按钮 （complete）
+	 */
+	@ViewInject(id = R.id.btn_driver_cancle)
+	private Button mCancleDriverBtn;// 司机取消按钮
+
+	// 两个按钮的取消按钮 新建订单的取消按钮 （乘客）
 	@ViewInject(id = R.id.my_order_btn_cancel)
 	private Button mTwoCancelBtn;
 
-	@ViewInject(id = R.id.my_order_btn_ok)
-	private Button mTwoSureBtn;// 两个按钮的确认按钮
+	// 新建订单的立即支付按钮 （乘客）
+	/**
+	 * 立即支付 （operateType = 6） 或 确认上车（operateType = 1） 按钮
+	 */
+	@ViewInject(id = R.id.my_order_btn_pay)
+	private Button mTwoPayOrInBtn;// 两个按钮的立即支付按钮
 
 	@ViewInject(id = R.id.my_order_detail_calendar_layout)
 	private View mCalendarLayout;
 	// 操作类型
-	private static final int COMFIRM_BOOK = 1;// 确认订单
-	private static final int COMPLETE_PAY_CASH_BOOK = 2;// 完成订单线下支付
+	/**
+	 * 确认上车
+	 */
+	private static final int COMFIRM_IN = 1;// 确认上车
+	/**
+	 * 线下支付
+	 */
+	private static final int COMPLETE_PAY_CASH_BOOK = 2;// 线下支付
+	/**
+	 * 订单加载
+	 */
 	private static final int GET_ORDER_MSG = 4;// 加载订单
-	private static final int CANCEL_ORDER = 5;// 取消订单操作
+	/**
+	 * 司机取消订单操作
+	 */
+	private static final int DRIVER_CANCLE_ORDER = 7;// 司机取消订单操作
+	/**
+	 * 乘客取消操作
+	 */
+	private static final int CANCEL_ORDER = 5;// 乘客取消订单操作
+	/**
+	 * 乘客立即支付
+	 */
+	private static final int PAY = 6; // 乘客立即支付操作
+	private int operateType; // 操作类型
+
 	// private int state;// 状态
 	private String mBookState;// 订单状态
 	private Book book;// 预约对象
 	private Pinche mPinche;// 拼车对象
 	private User mUser;
 
+	/**
+	 * 起点维度
+	 */
+	private int mStartLat;
+	/**
+	 * 起点经度
+	 */
+	private int mStartLon;
+	/**
+	 * 终点维度
+	 */
+	private int mEndLat;
+	/**
+	 * 终点经度
+	 */
+	private int mEndLon;
+	/**
+	 * true 车主 false 乘客
+	 */
 	private boolean isDriverOfMe;// 我在这个订单中的身份
-	private boolean isPublisher;//
-	private boolean isPassgerCanPay = false;// 乘客是否可以付款
+	/**
+	 * true 自己发的 false 别人发的
+	 */
+	// private boolean isPublisher;//
+	// private boolean isPassgerCanPay = false;// 乘客是否可以付款
 	private boolean isCancelOrder = false;// 是否取消了
 	private boolean isShowCalendar = false;
 	private Util util = Util.getInstance();
-	private String blueColor = "#289be5";
 	UMSocialService mController = UMServiceFactory.getUMSocialService("com.umeng.share",
 			RequestType.SOCIAL);
 
@@ -174,7 +229,6 @@ public class MyOrderDetailActivity extends BaseActivity implements OnClickListen
 		ViewInjectUtil.inject(this);
 		setTitleText();
 		initView();
-
 	}
 
 	private void setTitleText() {
@@ -189,15 +243,19 @@ public class MyOrderDetailActivity extends BaseActivity implements OnClickListen
 	private void initView() {
 		final Bundle bundle = getIntent().getExtras();
 		this.book_id = bundle.getString(Constant.BOOK_ID);
+		this.mStartLat = bundle.getInt(Constant.START_LAT);
+		this.mStartLon = bundle.getInt(Constant.START_LON);
+		this.mEndLat = bundle.getInt(Constant.END_LAT);
+		this.mEndLon = bundle.getInt(Constant.END_LON);
 		isShowCalendar = bundle.getBoolean(Constant.SHOW_CALENDAR);
 		Util.printLog("bookId:" + book_id);
-		this.tvTitle.setText(getResources().getString(R.string.my_order_title));// 初始化title
+		this.tvTitle.setText(getResources().getString(R.string.order_details_title));// 初始化title
 		this.btnBack.setOnClickListener(this);
 		this.btnShare.setOnClickListener(this);
 		this.mPhoneButton.setOnClickListener(this);
-		this.mOneSureBtn.setOnClickListener(this);
+		this.mCancleDriverBtn.setOnClickListener(this);
 		mTwoCancelBtn.setOnClickListener(this);
-		mTwoSureBtn.setOnClickListener(this);
+		mTwoPayOrInBtn.setOnClickListener(this);
 		mapImageView.setOnClickListener(this);
 		mPhotoView.setOnClickListener(this);
 	}
@@ -206,14 +264,22 @@ public class MyOrderDetailActivity extends BaseActivity implements OnClickListen
 	public void onClick(View view) {
 		if (this.btnBack == view) {// 返回
 			finish();
-		} else if (this.mOneSureBtn == view) {// 确认
+		} else if (this.mCancleDriverBtn == view) {// 司机取消按钮
+			operateType = DRIVER_CANCLE_ORDER;
 			doBtnPress();
 		} else if (this.mPhoneButton == view) {
 			contactEachOther();
-		} else if (view == this.mTwoSureBtn) {
+		} else if (view == this.mTwoPayOrInBtn) { // 支付
+			if (mBookState.equals(Book.STATE_NEW)) {
+				operateType = PAY;
+			} else if (mBookState.equals(Book.STATE_PAYMENT)) {
+				operateType = COMFIRM_IN;
+			}
 			doBtnPress();
 		} else if (view == this.mTwoCancelBtn) {
-			isCancelOrder = true;
+			operateType = CANCEL_ORDER;
+			isCancelOrder = isCanCancleOrder(mBookState.equals(Book.STATE_PAYMENT)); // 状态要是乘客付款
+																						// 离发车前两小时外才能取消订单
 			doBtnPress();
 		} else if (view == this.btnShare) {
 			util.share(MyOrderDetailActivity.this, book_id, mController,
@@ -262,20 +328,18 @@ public class MyOrderDetailActivity extends BaseActivity implements OnClickListen
 		String title = "";
 		String ok = "";
 		String cancel = "";
-		if (isCancelOrder) {
+		if ((isCancelOrder && operateType == CANCEL_ORDER) || (operateType == DRIVER_CANCLE_ORDER)) {// 乘客自己取消订单或者司机取消订单
 			title = getString(R.string.is_cancel_order);
 			ok = getString(R.string.dialog_confirm);
 			cancel = getString(R.string.my_info_btn_cancel);
-
-		} else if (isPassgerCanPay) {
+		} else if (mBookState.equals(Book.STATE_NEW) && operateType == PAY) { // 乘客支付订单
 			title = getString(R.string.complete_carpool_dialog_title);
 			ok = getString(R.string.complete_carpool_online);
 			cancel = getString(R.string.complete_carpool_cash);
-		} else if (mBookState.equals(Book.STATE_NEW)) {
-			title = getString(R.string.my_info_btn_sure);
+		} else if (mBookState.equals(Book.STATE_PAYMENT) && operateType == COMFIRM_IN) { // 乘客确认上车
+			title = getString(R.string.order_dialog_comfirm_in_title);
 			ok = getString(R.string.dialog_confirm);
 			cancel = getString(R.string.my_info_btn_cancel);
-
 		} else if (mBookState.equals(Book.STATE_CONFIRM)) {
 			title = getString(R.string.complete_carpool_dialog_title);
 			ok = getString(R.string.complete_carpool_online);
@@ -284,25 +348,27 @@ public class MyOrderDetailActivity extends BaseActivity implements OnClickListen
 
 		Util.getInstance().showDialog(MyOrderDetailActivity.this, title, ok, cancel,
 				new OnOkOrCancelClickListener() {
-
 					@Override
 					public void onOkClick(int type) {
 						if (type == PcbConfirmDialog.OK) {
-							if (isCancelOrder) {
-								operateBook(CANCEL_ORDER, Constant.URL_CANCLEBOOK);
-							} else if (isPassgerCanPay) {// 乘客立即支付
+							if ((isCancelOrder && operateType == CANCEL_ORDER)
+									|| (operateType == DRIVER_CANCLE_ORDER)) {
+								operateBook(CANCEL_ORDER, Constant.URL_CANCLEBOOK_NEW);
+							} else if (operateType == PAY) {// 乘客立即支付
 								go2OnLinePay();
 								// 跳到支付頁面
-							} else if (mBookState.equals(Book.STATE_NEW)) {// 司机确认订单
-								operateBook(COMFIRM_BOOK, Constant.URL_CONFIRMBOOK);
+							} else if (mBookState.equals(Book.STATE_PAYMENT)) {// 乘客确认上车
+								operateBook(COMFIRM_IN, Constant.URL_ORDER_IN);
 							} else if (mBookState.equals(Book.STATE_CONFIRM)) {// 乘客支付
 								if (!isDriverOfMe) {
 									go2OnLinePay();
 								}
 							}
 						} else {
-							if (mBookState.equals(Book.STATE_CONFIRM) || isPassgerCanPay) {// 乘客支付，现金
-								operateBook(COMPLETE_PAY_CASH_BOOK, Constant.URL_COMPLETEBOOK);
+							if (mBookState.equals(Book.STATE_NEW) && !isDriverOfMe
+									&& operateType == PAY) {// 乘客支付，现金
+								operateType = COMPLETE_PAY_CASH_BOOK;
+								operateBook(COMPLETE_PAY_CASH_BOOK, Constant.URL_PAY_NEW);
 							}
 						}
 					}
@@ -313,104 +379,105 @@ public class MyOrderDetailActivity extends BaseActivity implements OnClickListen
 	 * 加载我的预约详情
 	 */
 	private void loadSingleOrder() {
-
 		operateBook(GET_ORDER_MSG, Constant.URL_GET_ORDER_BY_ID);
-
 	}
 
 	/**
-	 * 设置详情
+	 * 设置界面view的值
 	 */
-	private void loadBookDetail() {
+	private void setBookData2View() {
 		if (book != null) {
-
-			this.mPinche = util.string2Bean(this.book.getSnapshot(), Pinche.class);
-
-			Util.printLog("拼车快照:" + mPinche.toString());
-			if (book.getBookType().equals(Pinche.DRIVER)) {// 司机发的信息 车找人
-				this.mPeopleNumTitle.setText(getString(R.string.avaiable_passenger_num));
-			} else {// 乘客发的 人找车 显示 乘客人数
-				this.mPeopleNumTitle.setText(getString(R.string.passenger_number));
-			}
-
-			if (!isDriverOfMe) {// 头像显示司机信息
-				final User driver = book.getDriver();
-				if (driver != null) {
-					this.mNameText.setText(driver == null ? getString(R.string.anonymous_user)
-							: driver.getUsername());
-					mPhotoView.displayWithUrl(Util.getInstance().getPhotoURL(driver.getUserId()),
-							false, false);
-				}
-
-				final Car car = driver.getCar();
-				if (car != null) {
-					mCarLicenseText.setText((car.getLicence() == null || car.getLicence()
-							.equals("")) ? getString(R.string.unknow) : car.getLicence());// 车牌
-					CarType carType = driver.getCar().getCarType();
-					if (carType != null) {
-						String carTypeName = carType.getCarTypeName();
-						mCarBrandText.setText(carTypeName);// 车型
-					} else {
-						mCarBrandText.setText(getString(R.string.unknow));
-					}
-
-					if (driver != null && driver.isUserStateVerify()) {
-						mVImageView.setVisibility(View.VISIBLE);
-					}
-				} else {
-					mCarLicenseText.setText(getString(R.string.unknow));
-					mCarBrandText.setText(getString(R.string.unknow));
-				}
-
-				// 显示车辆品牌，车牌号
-			} else {// 头像显示乘客信息
-				final User passager = book.getPassenger();
-				if (passager != null) {
-					mPhotoView.displayWithUrl(Util.getInstance().getPhotoURL(passager.getUserId()),
-							false, false);
-					this.mNameText.setText(passager.getUsername(this));
-					mCarBrandText.setText(passager.getGender(this));
-				}
-				if (passager.isUserStateVerify()) {
-					mVImageView.setVisibility(View.VISIBLE);
-				}
-			}
-
 			this.mStarText.setText(this.mPinche.getStart_name(this));
 			this.mEndText.setText(this.mPinche.getEnd_name(this));
-			if (mPinche.getCarpoolType().equals(Pinche.CARPOOLTYPE_LONG_TRIP)) {// 长途
-				this.mStartDateText.setText(mPinche.getDepartureTime());// 出发时间（长途）
-				((View) findViewById(R.id.my_order_details_back_time_layout))
-						.setVisibility(View.GONE);// 没有返程信息，隐藏
-			} else {// 上下班
-				if ("".equals(mPinche.getBackTime())) {
-					this.mStartDateText.setText(mPinche.getCycle().getTxt() + "  "
-							+ getString(R.string.moring) + ":" + mPinche.getDepartureTime());// 出发时间单程（上下班）
+			showDriverOrPassengerInfo();
+			showOrderInfo();
+			if (isShowCalendar) mCalendarLayout.setVisibility(View.VISIBLE);
+		}
+
+	}
+
+	private void showOrderInfo() {
+		if (mPinche.getCarpoolType().equals(Pinche.CARPOOLTYPE_LONG_TRIP)) {// 长途
+			this.mStartDateText.setText(mPinche.getDepartureTime());// 出发时间（长途）
+			((View) findViewById(R.id.my_order_details_back_time_layout)).setVisibility(View.GONE);// 没有返程信息，隐藏
+		} else {// 上下班
+			if ("".equals(mPinche.getBackTime())) {
+				this.mStartDateText.setText(mPinche.getCycle().getTxt() + "  "
+						+ getString(R.string.moring) + ":" + mPinche.getDepartureTime());// 出发时间单程（上下班）
+			} else {
+				this.mStartDateText.setText(mPinche.getCycle().getTxt() + "  "
+						+ mPinche.getDepartureTime());// 出发时间（上下班）
+				if (mPinche.getBackTime() == null || mPinche.getBackTime().equals("")) {
+					((LinearLayout) findViewById(R.id.my_order_details_back_time_layout))
+							.setVisibility(View.GONE);// 没有返程信息，隐藏
 				} else {
-					this.mStartDateText.setText(mPinche.getCycle().getTxt() + "  "
-							+ getString(R.string.moring) + ":" + mPinche.getDepartureTime());// 出发时间（上下班）
-					if (mPinche.getBackTime() == null || mPinche.getBackTime().equals("")) {
-						((LinearLayout) findViewById(R.id.my_order_details_back_time_layout))
-								.setVisibility(View.GONE);// 没有返程信息，隐藏
-					} else {
-						this.mBackDateText.setText(mPinche.getCycle().getTxt() + "  "
-								+ getString(R.string.night) + ":" + mPinche.getBackTime());// 返回时间（上下班）
-					}
+					this.mBackDateText.setText(mPinche.getCycle().getTxt() + "  "
+							+ mPinche.getBackTime());// 返回时间（上下班）
 				}
 			}
-			mCostText.setText(String.valueOf(mPinche.getCharge()));
-			if (!TextUtils.isEmpty(String.valueOf(mPinche.getNum()))) {
-				this.mPeopleNum.setText(String.valueOf(mPinche.getNum()));
-			} else {
-				this.mPeopleNum.setText("0" + getString(R.string.human));
+		}
+		mCostText.setText(String.valueOf(mPinche.getCharge()));// 费用
+		if (book.getBookType().equals(Pinche.DRIVER)) {// 司机发的信息 车找人
+			this.mPeopleNumTitle.setText(getString(R.string.avaiable_passenger_num));
+		} else {// 乘客发的 人找车 显示 乘客人数
+			this.mPeopleNumTitle.setText(getString(R.string.passenger_number));
+		}
+		if (!TextUtils.isEmpty(String.valueOf(mPinche.getNum()))) {
+			this.mPeopleNum.setText(String.valueOf(mPinche.getNum()));
+		} else {
+			this.mPeopleNum.setText("0" + getString(R.string.human));
+		}
+		if (!TextUtils.isEmpty(mPinche.getNote())) {
+			this.mNoteText.setText(mPinche.getNote());
+		}
+	}
+
+	private void showDriverOrPassengerInfo() {
+		if (!isDriverOfMe) {// 头像显示司机信息
+			final User driver = book.getDriver();
+			if (driver != null) {
+				this.mNameText.setText(driver.getUsername(this));
+				mPhotoView.displayWithUrl(Util.getInstance().getPhotoURL(driver.getUserId()),
+						false, false);
 			}
-			if (!TextUtils.isEmpty(mPinche.getNote())) {
-				this.mNoteText.setText(mPinche.getNote());
+			final Car car = driver.getCar();
+			if (car != null) {
+				mCarLicenseText.setText(car.getLicence(this));// 车牌
+				mCarLicenseText.setVisibility(View.VISIBLE);
+				CarType carType = driver.getCar().getCarType();
+				if (carType != null) {
+					mCarBrandText.setText(carType.getCarTypeName());// 车型
+				} else {
+					mCarBrandText.setText(getString(R.string.unknow));
+				}
+				mCarBrandText.setVisibility(View.VISIBLE);
+				// 是否验证
+				if (driver.isUserStateVerify()) {
+					mVImageView.setVisibility(View.VISIBLE);
+				}
+				// 驾龄
+				mDrivingYears.setText(getString(R.string.driving_years, TextUtils.isEmpty(driver
+						.getDriveAge()) ? getString(R.string.unknow) : driver.getDriveAge()));
+				mDrivingYears.setVisibility(View.VISIBLE);
+			} else {
+				mCarLicenseText.setText(getString(R.string.unknow));
+				mCarLicenseText.setVisibility(View.VISIBLE);
+				mCarBrandText.setText(getString(R.string.unknow));
+				mCarBrandText.setVisibility(View.VISIBLE);
+			}
+
+			// 显示车辆品牌，车牌号
+		} else {// 头像显示乘客信息
+			final User passager = book.getPassenger();
+			if (passager != null) {
+				mPhotoView.displayWithUrl(Util.getInstance().getPhotoURL(passager.getUserId()),
+						false, false);
+				this.mNameText.setText(passager.getUsername(this));
+			}
+			if (passager.isUserStateVerify()) {
+				mVImageView.setVisibility(View.VISIBLE);
 			}
 		}
-		if (isShowCalendar) mCalendarLayout.setVisibility(View.VISIBLE);
-		((View) findViewById(R.id.my_order_root_view)).setVisibility(View.VISIBLE);
-
 	}
 
 	protected void operateBook(final int type, String url) {
@@ -422,8 +489,8 @@ public class MyOrderDetailActivity extends BaseActivity implements OnClickListen
 			// ONLINE线上支付
 		}
 		String loadingMsg = "";
-		if (type == COMFIRM_BOOK) {
-			loadingMsg = getString(R.string.comfirm_order_ing);
+		if (type == COMFIRM_IN) {
+			loadingMsg = getString(R.string.comfirm_order_in);
 		} else if (type == COMPLETE_PAY_CASH_BOOK) {
 			loadingMsg = getString(R.string.complete_order_ing);
 		} else if (type == GET_ORDER_MSG) {
@@ -436,41 +503,39 @@ public class MyOrderDetailActivity extends BaseActivity implements OnClickListen
 
 			public void onSuccess(String result) {
 				if (type == GET_ORDER_MSG) {// 获取订单信息
-					doResultInfo(result);
+					setViewValueAndBtnState(result);
 				} else {
 					JsonResult<String> jsonResult = util.getObjFromJsonResult(result,
 							new TypeToken<JsonResult<String>>() {
 							});
 					final boolean isSuccess = jsonResult.isSuccess();
-					if (type == COMFIRM_BOOK) {
-						if (isSuccess) {
+					if (type == COMFIRM_IN) {
+						if (isSuccess) {// 乘客确定上车后 乘客端 司机端展示
 							Util.showLongToast(MyOrderDetailActivity.this, jsonResult.getData());
-							if (!isDriverOfMe) {// 此时乘客确认后可以支付 （可以操作完成订单）
-								isPassgerCanPay = true;
-								setBtnTextAndColor(R.string.complete_carpool, Color.RED, true,
-										View.VISIBLE);
-							} else {// 订单已确认，等待乘客付款 司机不可操作
-								setBtnTextAndColor(R.string.wait_passager_to_pay,
-										Color.parseColor(blueColor), false, View.VISIBLE);
-							}
 							mCancelAndOkLayout.setVisibility(View.GONE);
+							mCancelLayout.setVisibility(View.VISIBLE);
+							setBtnTextAndColor(R.string.order_state_complete, Color.GRAY, false,
+									View.VISIBLE);
 						} else {
-							mOneSureBtn.setVisibility(View.VISIBLE);
+							mCancelLayout.setVisibility(View.VISIBLE);
+							mCancleDriverBtn.setVisibility(View.VISIBLE);
 							Util.showLongToast(MyOrderDetailActivity.this, jsonResult.getData());
 						}
 					} else if (type == COMPLETE_PAY_CASH_BOOK) {
 						if (isSuccess) {
-							setBtnTextAndColor(R.string.has_pay, Color.parseColor(blueColor),
-									false, View.VISIBLE);
-							((View) findViewById(R.id.my_order_detail_operation_layout))
-									.setVisibility(View.GONE);
+							mCancelAndOkLayout.setVisibility(View.GONE);
+							mCancleDriverBtn.setVisibility(View.VISIBLE);
+							mCancelLayout.setVisibility(View.VISIBLE);
+							setBtnTextAndColor(R.string.order_state_complete, Color.WHITE, false,
+									View.VISIBLE);
 						}
 						Util.showLongToast(MyOrderDetailActivity.this, jsonResult.getData());
 					} else if (type == CANCEL_ORDER) {
 						if (isSuccess) {// 订单取消成功
 							Util.showLongToast(MyOrderDetailActivity.this, jsonResult.getData());
 							mCancelAndOkLayout.setVisibility(View.GONE);
-							setBtnTextAndColor(R.string.has_been_cancel, Color.RED, false,
+							mCancelLayout.setVisibility(View.VISIBLE);
+							setBtnTextAndColor(R.string.has_been_cancel, Color.WHITE, false,
 									View.VISIBLE);
 						} else {// 订单取消失败
 							Util.showLongToast(MyOrderDetailActivity.this, jsonResult.getData());
@@ -478,15 +543,22 @@ public class MyOrderDetailActivity extends BaseActivity implements OnClickListen
 					}
 				}
 			}
-		}, params, url, loadingMsg, false);
 
+			@Override
+			public void onFail(String errorType, String errorMsg) {
+				// TODO Auto-generated method stub
+				super.onFail(errorType, errorMsg);
+				Util.showToast(MyOrderDetailActivity.this, errorMsg);
+			}
+		}, params, url, loadingMsg, true);
 	}
 
 	protected void setBtnTextAndColor(int textId, int colorId, boolean isCanPressed, int visibility) {
-		mOneSureBtn.setText(getString(textId));
-		mOneSureBtn.setTextColor(colorId);
-		mOneSureBtn.setClickable(isCanPressed);
-		mOneSureBtn.setVisibility(visibility);
+		mCancleDriverBtn.setText(getString(textId));
+		mCancleDriverBtn.setTextColor(colorId);
+		mCancleDriverBtn.setClickable(isCanPressed);
+		mCancleDriverBtn.setVisibility(visibility);
+		mCancelLayout.setVisibility(View.VISIBLE);
 	}
 
 	@Override
@@ -502,13 +574,15 @@ public class MyOrderDetailActivity extends BaseActivity implements OnClickListen
 	}
 
 	protected void go2OnLinePay() {
-		Util.getInstance().go2OnLinePay(this, book.getPrice(), "bookId", this.book_id,
-				mPinche.getStart_name(this), mPinche.getEnd_name(), Constant.URL_COMPLETEBOOK,
-				SERVICE_TYPE.CARPOOL_ORDER);
+		Util.getInstance().go2OnLinePay(this, book.getPrice(), this.book_id,
+				mPinche.getStart_name(this), mPinche.getEnd_name(), mStartLat, mStartLon, mEndLat,
+				mEndLon, mPinche.getCarpoolType());
 	}
 
-	private void doResultInfo(String result) {
-		Util.printLog("拼车详情:" + result);
+	/**
+	 * @param result
+	 */
+	private void setViewValueAndBtnState(String result) {
 		JsonResult<Book> jsonResult = util.getObjFromJsonResult(result,
 				new TypeToken<JsonResult<Book>>() {
 				});
@@ -518,51 +592,63 @@ public class MyOrderDetailActivity extends BaseActivity implements OnClickListen
 				return;
 			}
 			book = jsonResult.getData();// 获取拼车信息对象
+			if (book == null) {
+				Util.showToast(MyOrderDetailActivity.this, getString(R.string.common_no_data));
+				return;
+			}
+
 			mBookState = book.getState();// 订单状态
+			this.mPinche = util.string2Bean(this.book.getSnapshot(), Pinche.class);
 			isDriverOfMe = mUser.getUserId() == book.getDriverId();
 
-			// book_type=0 车找人（司机发布，乘客预订） 发布者是司机
-			// book_type=1 人找车 (乘客发布，司机预订)
-			isPublisher = ((book.getBookType().equals(Pinche.DRIVER)) && isDriverOfMe)
-					|| ((book.getBookType().equals(Pinche.PASSENGER)) && !isDriverOfMe);
-			/* 展示会员信息 */
-			if (!isDriverOfMe && book.getDriver() != null) {
-				String drivingAge = book.getDriver().getDriveAge();
-				if (TextUtils.isEmpty(drivingAge)) {
-					drivingAge = getString(R.string.unknow);
-				}
-				mDrivingYears.setText(getString(R.string.driving_years, drivingAge));
-				mDrivingYears.setVisibility(View.VISIBLE);
-			}
-			/* 展示快照信息（拼车信息）根据拼车类型和信息类型展示，和拼车详情逻辑一样 */
-
-			/* 展示订单操作按钮 */
-			if (mBookState.equals(Book.STATE_CANCEL)) {
-				setBtnTextAndColor(R.string.has_been_cancel, Color.parseColor(blueColor), false,
-						View.VISIBLE);
-			} else if (mBookState.equals(Book.STATE_NEW)) {// 新订单，可以由发布信息者操作（确认订单）
-				if (isPublisher) {// 由自己发布的，已经被预约，此时可以取消，确认
-					mCancelAndOkLayout.setVisibility(View.VISIBLE);
-				} else {
-					setBtnTextAndColor(R.string.wait_confim, Color.parseColor(blueColor), false,
-							View.VISIBLE);
-				}
-			} else if (mBookState.equals(Book.STATE_CONFIRM)) {// 已经确认，可以由乘客操作（完成订单）
-				if (!isDriverOfMe) {
-					setBtnTextAndColor(R.string.pay_now, Color.RED, true, View.VISIBLE);
-				} else {
-					// 等待乘客付款
-					setBtnTextAndColor(R.string.wait_passager_to_pay, Color.parseColor(blueColor),
-							false, View.VISIBLE);
-				}
-			} else if (mBookState.equals(Book.STATE_COMPLETE)) {// 已完成订单
-				setBtnTextAndColor(R.string.complete, Color.parseColor(blueColor), false,
-						View.VISIBLE);
-			}
-			loadBookDetail();// 初始化界面预约详情
+			setBookData2View();// 初始化界面预约详情
+			showBtnState();
 		} else {
 			Util.showToast(MyOrderDetailActivity.this, jsonResult.getErrorMsg());
 		}
+	}
+
+	private void showBtnState() {
+		/* 展示订单操作按钮 */
+		if (mBookState.equals(Book.STATE_CANCEL)) {
+			setBtnTextAndColor(R.string.has_been_cancel, Color.WHITE, false, View.VISIBLE);
+		} else if (mBookState.equals(Book.STATE_NEW)) {// 新订单，可以由发布信息者操作（确认订单）
+			if (!isDriverOfMe) {// 乘客 可以取消，支付
+				mCancelAndOkLayout.setVisibility(View.VISIBLE);
+				operateType = CANCEL_ORDER;
+			} else { // 司机取消
+				setBtnTextAndColor(R.string.order_operate_cancle, Color.WHITE, true, View.VISIBLE);
+			}
+		} else if (mBookState.equals(Book.STATE_PAYMENT)) {// 订单状态时已支付
+			if (!isDriverOfMe) { // 乘客确认上车 或者 取消
+				mCancelAndOkLayout.setVisibility(View.VISIBLE);
+				mTwoPayOrInBtn.setText(getResources().getString(R.string.order_operate_in));
+				isCanCancleOrder(true);
+				operateType = COMFIRM_IN;
+			} else {
+				// 司机取消
+				setBtnTextAndColor(R.string.order_operate_driver_cancle, Color.RED, true,
+						View.VISIBLE);
+			}
+		} else if (mBookState.equals(Book.STATE_COMPLETE)) {// 已完成订单
+			setBtnTextAndColor(R.string.order_state_complete, Color.WHITE, false, View.VISIBLE);
+		}
+	}
+
+	/**
+	 * @return 检查出发前两小时是否可以取消订单
+	 */
+	private Boolean isCanCancleOrder(boolean isPaymentState) {
+		// TODO Auto-generated method stub
+		long currentTime = System.currentTimeMillis();
+		long bookRideTime = book.getRideTime() * 1000L;
+		Boolean isCanCancleOrder = (bookRideTime * 1L - currentTime * 1L) >= 2 * 60 * 60 * 1000L ? true
+				: false;
+		if (!isCanCancleOrder && isPaymentState) {
+			mTwoCancelBtn.setClickable(false);
+			mTwoCancelBtn.setText("不能取消订单");
+		}
+		return isCanCancleOrder;
 	}
 
 	@Override

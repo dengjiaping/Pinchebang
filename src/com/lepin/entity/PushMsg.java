@@ -1,15 +1,23 @@
 package com.lepin.entity;
 
 import java.io.Serializable;
-
+/**
+ * 推送消息类
+ * @author zhiqiang
+ *
+ */
 public class PushMsg implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * 推送消息的类型
+	 * 
+	 * @author zhiqiang
+	 * 
+	 */
 	public enum PUSH_MSG_TYPE {
+		ORDER, // 订单统称
 		/** 新订单推送信息 */
 		NEW_CARPOOL_ORDER,
 		/** 确认订单推送信息 */
@@ -26,6 +34,12 @@ public class PushMsg implements Serializable {
 		VERIFY_CAR_FAILURE,
 		/** 余额充值成功 */
 		RECHARGE_GOLD,
+		/** 单条推荐路线 */
+		RECOMMEND_SINGLE,
+		/** 多条推荐路线 */
+		RECOMMEND_MULTI,
+		/** 活动 */
+		ACTIVITY,
 		/** 其它未识别的类型 */
 		OTHER
 

@@ -33,6 +33,7 @@
     <string name="pwd_with_backspace">新密码</string>
     <string name="register_rpwd_hint">确认密码</string>
     <string name="dialog_confirm">确认</string>
+    <string name="order_pay">立即付款</string>
     <string name="register_use_clause">使用条款</string>
     <string name="register_use_already_read">同意使用条款</string>
     <string name="go_login">已有账号，马上登录</string>
@@ -113,9 +114,10 @@
     <string name="myself_pay_psw">我的支付密码</string>
     <string name="pick_gender">选择性别</string>
     <string name="publish_ing">发布中\u2026</string>
-    <string name="start_time_must_1month">出发时间应在一个月内。</string>
+    <string name="start_time_must_3month">出发时间应在3个月内。</string>
     <string name="start_time_must_after_publish">出发时间应在发布之后。</string>
     <string name="pwd_error">密码为6~16位字符</string>
+    <string name="pwd_do_not_match">两次输入密码不一致</string>
     <string name="pay_pwd_error">密码为6~18位字符,且不能为纯数字</string>
     <string name="pay_pwd_error_1">两次输入密码不同</string>
     <string name="account_error">无效的账号</string>
@@ -355,10 +357,10 @@
     <string name="lepin_dialog_loading">数据加载中\u2026</string>
     <string name="des">image</string>
     <string name="complete_carpool">立即支付</string>
-    <string name="complete_carpool_cash">已支付现金</string>
+    <string name="complete_carpool_cash">线下支付</string>
     <string name="has_pay">已支付</string>
-    <string name="complete_carpool_online">在线支付</string>
-    <string name="complete_carpool_dialog_title">如果您已完成拼车，请选择支\n付方式付款给司机。</string>
+    <string name="complete_carpool_online">线上支付</string>
+    <string name="complete_carpool_dialog_title">请选择付款方式</string>
     <string name="xx_can_not_null">%1$s不能为空</string>
     <string name="wait_confim">等待确认中</string>
     <string name="call_later">稍后联系</string>
@@ -399,6 +401,7 @@
     <string name="is_cancel_order">是否取消订单？</string>
     <string name="order_cancel_ing">订单取消中\u2026</string>
     <string name="comfirm_order_ing">正在确认订单\u2026</string>
+    <string name="comfirm_order_in">确认上车中\u2026</string>
     <string name="complete_order_ing">正在完成订单\u2026</string>
     <string name="order_detail_loading">订单详情加载中\u2026</string>
     <string name="complete">已经完成</string>
@@ -410,11 +413,32 @@
     <string name="pay_with_alipay">使用支付宝支付</string>
     <string name="unit_one">个</string>
     <string name="unit_yuan">元</string>
-    <string name="pay_use_alipay_pay_yse_no">使用支付宝支付%1$d.00元?</string>
+    <string name="pay_use_alipay_pay_yse_no">使用支付宝支付</string>
     <string name="paying">支付中\u2026</string>
     <string name="pay_start">起点:%1$s</string>
     <string name="pay_end">终点:%1$s</string>
     <string name="order_money_error">订单金额有误！</string>
+    <string name="pay_is_use_pinche_coin">使用拼车币</string>
+    <string name="pay_send_insurance_date">2014.9.30日至2015.1.1，拼车帮送保险</string>
+    <string name="pay_real_costs">实际支付：</string>
+    <string name="pay_send_insurance_need_info_tip">拼车帮送您拼车意外保险，请填写参保人信息</string>
+    <string name="pay_insurance_info_name">姓名：</string>
+    <string name="pay_insurance_info_name_hint">请输入姓名</string>
+    <string name="pay_insurance_info_id">身份证号：</string>
+    <string name="pay_insurance_info_id_hint">请输入身份证号码</string>
+    <string name="pay_entry_pay_psw">请输入支付密码</string>
+    <string name="pay_sure_pay">确认支付</string>
+    <string name="pay_num_pinche_coin_can_use">拼车币可用</string>
+    <string name="pay_num_pinche_costs_tv">本次拼车费用：</string>
+    <string name="pay_num_pinche_insurance_costs_tv">单次乘客保险：</string>
+    <string name="pay_num_pinche_total_costs_tv">总计</string>
+    <string name="pay_num_input_pinche_coin_ev">使用拼车币</string>
+    <string name="pay_tip_input_personal_name">请输入参保人姓名</string>
+    <string name="pay_tip_input_personal_id">请输入参保人身份证号码</string>
+    <string name="pay_tip_input_psw">请输入支付密码</string>
+    <string name="pay_setting_psw_dialog_title">您还没有设置支付密码，是否立即设置？</string>
+    <string name="pay_setting_psw_dialog_no">稍后设置</string>
+    <string name="pay_setting_psw_dialog_ok">立即设置</string>
 
     <!-- 订单 -->
     <string name="has_ben_confirm">已完成</string>
@@ -427,6 +451,12 @@
     <string name="back_plaza">返回</string>
     <string name="all">全部</string>
     <string name="no_order_info">您还没有此类订单信息!</string>
+    <string name="order_dialog_comfirm_in_title">确认上车？</string>
+    <string name="order_state_complete">订单已完成</string>
+    <string name="order_operate_cancle">取消</string>
+    <string name="order_operate_in">确认上车</string>
+    <string name="order_operate_driver_cancle">取消（乘客已支付）</string>
+    <string name="order_details_title">订单详情</string>
     <!-- 充值 -->
     <string name="recharge_note">1元=10拼车币</string>
     <string name="recharge_choice">请选择充值金额(1元=10拼车币)</string>
@@ -458,6 +488,7 @@
     <string name="info_save_success">信息保存成功</string>
     <string name="no_car_2_add">您还没有车辆，无法预约乘客，是否添加车辆？</string>
     <string name="get_pinche_money">获取拼车币\u2026</string>
+    <string name="get_pinche_coin_balance">正在获取拼车币和余额信息\u2026</string>
     <string name="this_time_use">本次将使用</string>
     <string name="no_update_version">没有可更新版本!</string>
     <string name="can_update_version">发现新版本，是否更新!</string>
@@ -648,4 +679,9 @@
     <string name="to_be_get_in_car">待上车</string>
     <string name="comfirm_get_in_car">确认上车</string>
     <string name="cancel_with_pan">取消\n乘客已付款</string>
+    <string name="recommender_title">推荐路线</string>
+    <string name="setting_now">立即设置</string>
+    <string name="setting_later">稍后设置</string>
+    <string name="not_pay_pwd_notice">您还未设置支付密码，是否立即去设置?</string>
+
 </resources>

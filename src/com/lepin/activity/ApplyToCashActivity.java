@@ -6,6 +6,8 @@ import java.util.List;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -18,9 +20,9 @@ import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.LinearLayout.LayoutParams;
 
 import com.google.gson.reflect.TypeToken;
 import com.lepin.entity.GoldBank;
@@ -31,6 +33,8 @@ import com.lepin.inject.ViewInjectUtil;
 import com.lepin.util.Constant;
 import com.lepin.util.Util;
 import com.lepin.util.Util.OnHttpRequestDataCallback;
+import com.lepin.widget.PcbConfirmDialog;
+import com.lepin.widget.PcbConfirmDialog.OnOkOrCancelClickListener;
 
 /**
  * 申请提现
@@ -146,16 +150,34 @@ public class ApplyToCashActivity extends BaseActivity implements OnClickListener
 			@Override
 			public void onFail(String errorType, String errorMsg) {
 				if (errorType.equals("PAYPWD_NOT_EXIST")) {
-					Util.showToast(ApplyToCashActivity.this, "未设置支付密码");
-					Intent intent = new Intent(ApplyToCashActivity.this,
-							MyPayPswSettingActivity.class);
-					intent.putExtra("return", true);
-					startActivityForResult(intent, mRequestCode);
+					showNoPayPwdNotice();
 				} else {
 					Util.showToast(ApplyToCashActivity.this, errorMsg);
 				}
 			}
 		}, Constant.GET_CASH_ACCOUNT, getString(R.string.get_cash_accounts), true);
+
+	}
+
+	protected void showNoPayPwdNotice() {
+		mApplyNoAccountLayout.setVisibility(View.VISIBLE);
+		Util.getInstance().showDialogWithCanCancel(this, getString(R.string.not_pay_pwd_notice),
+				getString(R.string.setting_now), getString(R.string.setting_later),
+				new OnOkOrCancelClickListener() {
+
+					@Override
+					public void onOkClick(int type) {
+						if (type == PcbConfirmDialog.OK) {
+							Intent intent = new Intent(ApplyToCashActivity.this,
+									MyPayPswSettingActivity.class);
+							intent.putExtra("return", true);
+							startActivityForResult(intent, mRequestCode);
+						} else {
+							finish();
+						}
+
+					}
+				}, false);
 
 	}
 
@@ -215,12 +237,7 @@ public class ApplyToCashActivity extends BaseActivity implements OnClickListener
 						new TypeToken<JsonResult<String>>() {
 						});
 				if (jsonResult != null && jsonResult.isSuccess()) {
-
-					Util.showToast(
-							ApplyToCashActivity.this,
-							TextUtils.isEmpty(jsonResult.getData()) ? "你的提现申请已经提交成功，我们将在一个工作日内处理你的提现申请，请注意查收相应账户"
-									: jsonResult.getData());
-					finish();
+					showNoticeDialog();
 				}
 			}
 
@@ -230,6 +247,22 @@ public class ApplyToCashActivity extends BaseActivity implements OnClickListener
 			}
 		}, paramsList, Constant.APPLY_TO_CASH, "申请提现中...", true);
 
+	}
+
+	private void showNoticeDialog() {
+		AlertDialog.Builder dBuilder = new AlertDialog.Builder(this);
+		dBuilder.setTitle(getString(R.string.prompt))
+				.setMessage("你的提现申请已经提交成功，我们将在一个工作日内处理你的提现申请，请注意查收相应账户").setCancelable(false);
+		dBuilder.setPositiveButton(getString(R.string.confirm),
+				new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.dismiss();
+						finish();
+					}
+				});
+		dBuilder.show();
 	}
 
 	private boolean checkValue() {

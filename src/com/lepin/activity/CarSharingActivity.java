@@ -1,6 +1,5 @@
 package com.lepin.activity;
 
-import java.text.BreakIterator;
 import java.util.ArrayList;
 
 import android.content.Intent;

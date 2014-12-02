@@ -395,7 +395,8 @@ public class WorkFragment extends BaseFragment implements OnClickListener, Activ
 		public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 			Util.printLog("hourOfDay:" + hourOfDay);
 			Util.printLog("minute:" + minute);
-			String strHHss = (hourOfDay <= 9 ? "0" + hourOfDay : hourOfDay) + ":" + minute;
+			String strHHss = (hourOfDay <= 9 ? "0" + hourOfDay : hourOfDay) + ":"
+					+ (minute <= 9 ? "0" + minute : minute);
 			Util.printLog("strHHss:" + strHHss);
 			if (isStartTime) {
 				mSetOutTextView.setText(strHHss);// 上下班出发时间

@@ -247,7 +247,11 @@ public class HttpUtil {
 		} catch (IOException e) {// 读取数据出错
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			Util.printLog("HttpUtil:读取请求数据出错");
+			Util.printLog("HttpUtil:读取请求数据出错:"+e.getMessage());
+		}catch (IllegalStateException e) {
+			
+			Util.printLog("HttpUtil:IllegalStateException:"+e.getMessage());
+			// TODO: handle exception
 		}
 		return result;
 	}

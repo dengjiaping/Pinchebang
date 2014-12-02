@@ -110,7 +110,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 	private static final int GET_VALIDATECODE = 1;// 获取验证码
 	private static final int CHECK_USER = 2;// 检查用户是否存在
 
-	private String gender = User.GENDER_MALE;// 性别 （ 0表示男 1表示女）
+	private String gender;// 性别 （ 0表示男 1表示女）
 	private String[] genderStrings;
 
 	@Override
@@ -324,9 +324,9 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 			Util.showToast(RegisterActivity.this, "密码必须是数字，字母6－16位");
 			return false;
 		}
-
+       
 		if (!user_pwd.equals(strRpPwd)) {
-			Util.showToast(RegisterActivity.this, getString(R.string.pwd_error));
+			Util.showToast(RegisterActivity.this, getString(R.string.pwd_do_not_match));
 			return false;
 		}
 
@@ -387,7 +387,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 		params.add(new BasicNameValuePair("code", etValidateCode.getText().toString().trim()));
 
 		params.add(new BasicNameValuePair("username", this.mNickname.getText().toString()));
-		params.add(new BasicNameValuePair("gender", this.gender));
+		if (gender != null) params.add(new BasicNameValuePair("gender", this.gender));
 		String birthString = this.mBirthday.getText().toString();
 		if (!TextUtils.isEmpty(birthString)) {
 			String time = TimeUtils.formartTaskDate(this.mBirthday.getText().toString());
@@ -417,7 +417,12 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 				}
 
 			}
-		}, params, Constant.URL_ADDUSER, getString(R.string.register_ing), false);
+
+			@Override
+			public void onFail(String errorType, String errorMsg) {
+				Util.showToast(RegisterActivity.this, errorMsg);
+			}
+		}, params, Constant.URL_ADDUSER, getString(R.string.register_ing), true);
 
 	}
 
@@ -467,7 +472,14 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 					}
 				}
 			}
-		}, params, url, title, false);
+
+			@Override
+			public void onFail(String errorType, String errorMsg) {
+				// TODO Auto-generated method stub
+				super.onFail(errorType, errorMsg);
+				Util.showToast(RegisterActivity.this, errorMsg);
+			}
+		}, params, url, title, true);
 	}
 
 	/**

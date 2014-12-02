@@ -140,6 +140,7 @@ public class MyCommonAddressActivity extends BaseActivity implements OnClickList
 					Util.getInstance().setUser(MyCommonAddressActivity.this, newUser);
 					Util.showToast(MyCommonAddressActivity.this,
 							getString(R.string.edit_common_address_su));
+					finish();
 				} else {
 
 				}

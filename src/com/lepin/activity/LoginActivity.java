@@ -101,19 +101,8 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 			break;
 		case R.id.login_btn:// 登陆
 			if (validateForm()) {// 校验账号，密码合法性
-				ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-				params.add(new BasicNameValuePair("account", this.usrname));
-				params.add(new BasicNameValuePair("pwd", this.password));
+				doLogin();
 
-				util.doPostRequest(LoginActivity.this, new OnHttpRequestDataCallback() {
-
-					public void onSuccess(String result) {
-						// TODO Auto-generated method stub
-						doLoginResult(result);
-					}
-
-				}, params, Constant.URL_LOGIN, getString(R.string.login_ing), false);
-			
 			}
 			break;
 		case R.id.reg_btn:// 注册
@@ -128,6 +117,24 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 			startActivity(forgetIntent);
 			break;
 		}
+	}
+
+	private void doLogin() {
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add(new BasicNameValuePair("account", this.usrname));
+		params.add(new BasicNameValuePair("pwd", this.password));
+
+		util.doPostRequest(LoginActivity.this, new OnHttpRequestDataCallback() {
+
+			public void onSuccess(String result) {
+				doLoginResult(result);
+			}
+
+			@Override
+			public void onFail(String errorType, String errorMsg) {
+				Util.showToast(LoginActivity.this, errorMsg);
+			}
+		}, params, Constant.URL_LOGIN, getString(R.string.login_ing), true);
 	}
 
 	/**

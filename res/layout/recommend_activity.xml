@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_match"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_back_operate_title" />
+
+    <LinearLayout
+        android:id="@+id/recommend_content"
+        style="@style/match_match"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</LinearLayout>

@@ -18,6 +18,7 @@ import android.widget.ListView;
 
 import com.google.gson.reflect.TypeToken;
 import com.lepin.activity.LoginActivity;
+import com.lepin.activity.MyOrderDetailActivity;
 import com.lepin.activity.R;
 import com.lepin.adapter.FragmentTabAdapter;
 import com.lepin.adapter.MyOrderFragmentListviewAdapter;
@@ -29,7 +30,6 @@ import com.lepin.inject.ViewInject;
 import com.lepin.inject.ViewInjectUtil;
 import com.lepin.util.Constant;
 import com.lepin.util.Util.OnHttpRequestDataCallback;
-import com.lepin.util.Util.SERVICE_TYPE;
 import com.lepin.util.Util;
 import com.lepin.widget.PcbConfirmDialog;
 import com.lepin.widget.PcbConfirmDialog.OnOkOrCancelClickListener;
@@ -129,6 +129,7 @@ public class MyOrderFragment extends BaseFragment implements OnItemClickListener
 
 	@Override
 	public void setUserVisibleHint(boolean isVisibleToUser) {
+		// TODO Auto-generated method stub
 		super.setUserVisibleHint(isVisibleToUser);
 		if (isVisibleToUser) {
 			refresh();
@@ -232,13 +233,14 @@ public class MyOrderFragment extends BaseFragment implements OnItemClickListener
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View v, int arg2, long arg3) {
-		Book book = (Book) ((ListView) parent).getItemAtPosition(arg2);
+		Book book = (Book) (mListView.getItemAtPosition(arg2));
 		if (!Util.getInstance().isUserLoging(getActivity())) {
 			Util.getInstance().go2Activity(getActivity(), LoginActivity.class);
 		} else {
 			Bundle bundle = new Bundle();
 			bundle.putString(Constant.BOOK_ID, String.valueOf(book.getInfoOrderId()));
-			Util.getInstance().go2OrderDetail(getActivity(), bundle);
+			Util.getInstance().go2ActivityWithBundle(getActivity(), MyOrderDetailActivity.class,
+					bundle);
 		}
 	}
 
@@ -253,12 +255,12 @@ public class MyOrderFragment extends BaseFragment implements OnItemClickListener
 					.getInfoOrderId())));
 			String templeState = dataBook.getState();
 			int position = mBooks.indexOf(dataBook);
-			Util.printLog("点击的item:" + dataBook.toString());
 			if (mIdentityType.equals(PASSENGER)) {// 当前身份为乘客
 				if (templeState.equals(Book.STATE_NEW)) {// 这时可以付款了
 					go2Pay(position, dataBook, params);
 				} else if (templeState.equals(Book.STATE_PAYMENT)) {// 可以上车了
-
+					getInCar(String.valueOf(dataBook.getInfoOrderId()));
+					doBtnOperation(position, dataBook, "确认上车中...", params, Constant.URL_ORDER_IN);
 				}
 			} else {// 当前身份为司机
 				if (templeState.equals(Book.STATE_NEW) || templeState.equals(Book.STATE_PAYMENT)) {// 这时可以取消
@@ -278,12 +280,26 @@ public class MyOrderFragment extends BaseFragment implements OnItemClickListener
 					@Override
 					public void onOkClick(int type) {
 						if (type == PcbConfirmDialog.OK) {// 在线支付
-							go2OnLinePay(mBooks.get(position), book.getInfoOrderId());
+							Pinche mPinche = util.string2Bean(book.getSnapshot(), Pinche.class);
+							Util.getInstance().go2OnLinePay(getActivity(), book.getPrice(),
+									String.valueOf(book.getInfoOrderId()), mPinche.getStart_name(),
+									mPinche.getEnd_name(), mPinche.getStartLat(),
+									mPinche.getStartLon(), mPinche.getEndLat(),
+									mPinche.getEndLon(), mPinche.getCarpoolType());
 						} else {// 线下支付
 							doBtnOperation(position, book, "支付中...", pairs, Constant.URL_PAY);
 						}
 					}
 				});
+	}
+
+	/**
+	 * 乘客确认上车
+	 * 
+	 * @param valueOf
+	 */
+	protected void getInCar(String infoOrderId) {
+
 	}
 
 	// 点击按钮操作订单
@@ -298,13 +314,13 @@ public class MyOrderFragment extends BaseFragment implements OnItemClickListener
 						new TypeToken<JsonResult<String>>() {
 						});
 				if (jsonResult != null && jsonResult.isSuccess()) {
-					if (mOrderCurrentState.equals(all)) {
+					if (mOrderCurrentState.equals(all)) {// 在全部选项下
 						if (mIdentityType.equals(PASSENGER)) {
 							mBooks.get(itemPosition).setState(Book.STATE_COMPLETE);
 						} else {
 							mBooks.remove(itemPosition);
 						}
-					} else {
+					} else {// 在单个选项下
 						mBooks.remove(itemPosition);
 					}
 					myOrderFragmentListviewAdapter.notifyDataSetChanged();
@@ -316,18 +332,6 @@ public class MyOrderFragment extends BaseFragment implements OnItemClickListener
 
 		}, params, url, title, false);
 
-	}
-
-	protected void go2OnLinePay(Book book, int bookId) {
-		final int cost = book.getPrice();
-		if (cost <= 0) {
-			Util.showToast(getActivity(), getString(R.string.order_money_error));
-		} else {
-			Pinche mPinche = util.string2Bean(book.getSnapshot(), Pinche.class);
-			Util.getInstance().go2OnLinePay(getActivity(), cost, "bookId", String.valueOf(bookId),
-					mPinche.getStart_name(getActivity()), mPinche.getEnd_name(getActivity()),
-					Constant.URL_COMPLETEBOOK, SERVICE_TYPE.CARPOOL_ORDER);
-		}
 	}
 
 	private void setListView() {

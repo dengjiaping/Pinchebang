@@ -170,6 +170,7 @@ public class PcbHomeTobMenu extends PopupWindow {
 			mPersonalLayout.setVisibility(View.GONE);
 			mMsgText.setTextColor(mContext.getResources().getColor(R.color.dialog_btn_tx));
 			mMsgImageView.setBackgroundResource(R.drawable.pcb_home_menu_mail_pressed);
+			mMsgNum.setText("");
 			mPublishText.setTextColor(mContext.getResources().getColor(R.color.dialog_btn_tx));
 
 			mPulishImageView.setBackgroundResource(R.drawable.pcb_home_menu_publish_pressed);

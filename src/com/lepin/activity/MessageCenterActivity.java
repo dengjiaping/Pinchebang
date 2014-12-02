@@ -6,6 +6,8 @@ import java.util.List;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
+import u.aly.bu;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -199,12 +201,17 @@ public class MessageCenterActivity extends BaseActivity implements OnClickListen
 				if (jsonResult != null && jsonResult.isSuccess()) {
 					if (operation.equals(READ))// 阅读
 					{
-						if ((pushMsg.getType().equals(PushMsg.PUSH_MSG_TYPE.NEW_CARPOOL_ORDER)
-								|| pushMsg.getType().equals(
-										PushMsg.PUSH_MSG_TYPE.COMPLETE_CARPOOL_ORDER)
-								|| pushMsg.getType().equals(
-										PushMsg.PUSH_MSG_TYPE.CONFIRM_CARPOOL_ORDER) || pushMsg
-								.getType().equals(PushMsg.PUSH_MSG_TYPE.CANCEL_CARPOOL_ORDER))) {
+
+						// if
+						// ((pushMsg.getType().equals(PushMsg.PUSH_MSG_TYPE.NEW_CARPOOL_ORDER)
+						// || pushMsg.getType().equals(
+						// PushMsg.PUSH_MSG_TYPE.COMPLETE_CARPOOL_ORDER)
+						// || pushMsg.getType().equals(
+						// PushMsg.PUSH_MSG_TYPE.CONFIRM_CARPOOL_ORDER) ||
+						// pushMsg
+						// .getType().equals(PushMsg.PUSH_MSG_TYPE.CANCEL_CARPOOL_ORDER)))
+						// {
+						if (pushMsg.getType().name().endsWith(PushMsg.PUSH_MSG_TYPE.ORDER.name())) {
 							Bundle bundle = new Bundle();
 							bundle.putString(Constant.BOOK_ID, pushMsg.getExpand());
 							Util.getInstance().go2OrderDetail(MessageCenterActivity.this, bundle);
@@ -236,7 +243,7 @@ public class MessageCenterActivity extends BaseActivity implements OnClickListen
 		PUSH_MSG_TYPE msgType = pushMsg.getType();
 		// 订单相关
 
-		if (msgType.name().endsWith("ORDER")) {
+		if (msgType.name().endsWith(PushMsg.PUSH_MSG_TYPE.ORDER.name())) {
 			Intent intent = new Intent(MessageCenterActivity.this, MyOrderDetailActivity.class);
 			intent.putExtra("book_id", pushMsg.getExpand());
 			startActivity(intent);
@@ -246,7 +253,15 @@ public class MessageCenterActivity extends BaseActivity implements OnClickListen
 			startActivity(intent);
 		} else if (msgType.equals(PushMsg.PUSH_MSG_TYPE.RECHARGE_GOLD)) {
 			Util.getInstance().go2Activity(this, MyBalanceActivity.class);
-		} else if (pushMsg.getType().equals(PushMsg.PUSH_MSG_TYPE.OTHER)) {
+		} else if (msgType.equals(PushMsg.PUSH_MSG_TYPE.RECOMMEND_SINGLE)) {// 跳转到线路详情
+			Util.getInstance().go2PincheTrailActivity(this, Integer.parseInt(pushMsg.getExpand()));
+		} else if (msgType.equals(PushMsg.PUSH_MSG_TYPE.RECOMMEND_MULTI)) {// 推荐信息界面
+			Bundle bundle = new Bundle();
+			bundle.putString("recommendType", pushMsg.getExpand());
+			Util.getInstance().go2ActivityWithBundle(this, RecommendActivity.class, bundle);
+		}
+
+		else if (pushMsg.getType().equals(PushMsg.PUSH_MSG_TYPE.OTHER)) {
 		}
 	}
 
@@ -370,7 +385,8 @@ public class MessageCenterActivity extends BaseActivity implements OnClickListen
 						Util.printLog("消息中心刷新:" + jsonResult.toString());
 						if (jsonResult != null && jsonResult.isSuccess()) {
 							totalPageNum = jsonResult.getData().getPageCount();
-//							List<PushMsg> tempMessages = messageSort(jsonResult.getData().getRows());
+							// List<PushMsg> tempMessages =
+							// messageSort(jsonResult.getData().getRows());
 							List<PushMsg> tempMessages = jsonResult.getData().getRows();
 							if (tempMessages != null && tempMessages.size() > 0) {
 								messages.clear();

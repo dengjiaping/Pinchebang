@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
@@ -125,6 +126,8 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 	private long endLat;// 终点纬度
 	private Parcelable[] points = null;// 途经点
 
+	private String mStartName;
+	private String mEndName;
 	BitmapDescriptor startBitmapDescriptor = BitmapDescriptorFactory
 			.fromResource(R.drawable.map_starting);
 	BitmapDescriptor endBitmapDescriptor = BitmapDescriptorFactory.fromResource(R.drawable.map_end);
@@ -203,6 +206,7 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 			}
 
 			if (adrrResult.size() > 0) {
+				setTextAndDrawPoint(adrrResult.get(0), false, true);
 				setAdapter();
 			}
 		}
@@ -224,9 +228,13 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 			// 如果当前定位地址成功
 			if (!TextUtils.isEmpty(Constant.CURRENT_ADDRESS)) {
 				mStartTextView.setText(Constant.CURRENT_ADDRESS);
+				mStartName = Constant.CURRENT_ADDRESS;
 				mEndTextView.requestFocus();
 			}
 			mEndTextView.addTextChangedListener(new MyTextWatcher(END));
+			// 监听焦点变化
+			mStartTextView.setOnFocusChangeListener(onFocusChangeListener);
+			mEndTextView.setOnFocusChangeListener(onFocusChangeListener);
 			mSearchLayout.setVisibility(View.VISIBLE);
 		} else {// 只显示起点和终点
 			mStartTextView.setFocusable(false);
@@ -238,6 +246,25 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 
 	}
 
+	private OnFocusChangeListener onFocusChangeListener = new OnFocusChangeListener() {
+
+		@Override
+		public void onFocusChange(View v, boolean hasFocus) {
+			if (hasFocus) {// 得到焦点
+				if (mPoiListView.getVisibility() == View.VISIBLE) {
+					mPoiListView.setVisibility(View.GONE);
+				}
+				// if (mPoiListView.getVisibility() == View.VISIBLE) {
+				// if (v == mStartTextView) {
+				// } else {
+				//
+				// }
+				// }
+			}
+
+		}
+	};
+
 	private class MyTextWatcher implements TextWatcher {
 		private int mIndex;
 
@@ -247,7 +274,7 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 
 		@Override
 		public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-			
+
 			// TODO Auto-generated method stub
 		}
 
@@ -346,7 +373,7 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 			// 定位成功后，如果是搜索
 			if (!TextUtils.isEmpty(currentAddress) && !isOnlyShowPoints) {
 				Constant.CURRENT_ADDRESS = currentAddress;
-				mStartTextView.setText(currentAddress);
+				setStartName(currentAddress);
 				mStartTextView.addTextChangedListener(new MyTextWatcher(START));
 			}
 			// 定位成功
@@ -365,7 +392,7 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 				startLat = (long) (Constant.CURRENT_ADDRESS_LAT * 1e6);
 				startLon = (long) (Constant.CURRENT_ADDRESS_LON * 1e6);
 				// addOverLay(currentLatLng, startBitmapDescriptor);
-				
+
 			} else {
 				// 起点图标
 				LatLng startLatLng = new LatLng((double) startLat / 1e6, (double) startLon / 1e6);
@@ -394,7 +421,7 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 			if (checkParameters()) {
 				Util.getInstance().go2Search(this, createSearchKey());
 			}
-			
+
 		}
 
 	}
@@ -402,15 +429,13 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 	private Key createSearchKey() {
 		Key key = new Key();
 		key.setCarpoolType(Pinche.CARPOOLTYPE_ON_OFF_WORK);
-		final String startPoint = mStartTextView.getText().toString().trim();
-		final String endPoint = mEndTextView.getText().toString().trim();
-		if (!TextUtils.isEmpty(startPoint)) {
-			key.setStart_name(startPoint);
+		if (!TextUtils.isEmpty(mStartName)) {
+			key.setStart_name(mStartName);
 			key.setStart_lat(startLat);
 			key.setStart_lon(startLon);
 		}
-		if (!TextUtils.isEmpty(endPoint)) {
-			key.setEnd_name(endPoint);
+		if (!TextUtils.isEmpty(mEndName)) {
+			key.setEnd_name(mEndName);
 			key.setEnd_lat(endLat);
 			key.setEnd_lon(endLon);
 		}
@@ -423,15 +448,13 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 	}
 
 	protected boolean checkParameters() {
-		final String startName = mStartTextView.getText().toString();
-		
-		if (TextUtils.isEmpty(startName) || startLat <= 0 || startLon <= 0) {
+
+		if (TextUtils.isEmpty(mStartName) || startLat <= 0 || startLon <= 0) {
 			Util.showToast(this, getString(R.string.choice_statr));
 			return false;
 		}
-		final String endName = mEndTextView.getText().toString();
 
-		if (TextUtils.isEmpty(endName) || endLat <= 0 || endLon <= 0) {
+		if (TextUtils.isEmpty(mEndName) || endLat <= 0 || endLon <= 0) {
 			Util.showToast(this, getString(R.string.choice_end));
 			return false;
 		}
@@ -463,7 +486,6 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 
 		mPoiListView.setVisibility(View.VISIBLE);
 	}
-	
 
 	private OnItemClickListener onItemClickListener = new OnItemClickListener() {
 
@@ -473,16 +495,7 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 			mPoiListView.setVisibility(View.GONE);
 			Address address = adrrResult.get(position);
 			if (address != null) {
-				if (mCurrentIndex == START) {
-
-					mStartTextView.setText(address.getName());
-					// 地图上画点
-					drwaPointOnMap(address, START);
-
-				} else {
-					mEndTextView.setText(address.getName());
-					drwaPointOnMap(address, END);
-				}
+				setTextAndDrawPoint(address, true, true);
 			}
 			adrrResult.clear();
 			mAdapter.notifyDataSetChanged();
@@ -536,7 +549,8 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 		gPoints.add(startLng);
 
 		if (pPoints != null && pPoints.length > 0) {// 画途经点
-			BitmapDescriptor throuthPointBitmapDescriptor = BitmapDescriptorFactory.fromResource(R.drawable.throuth_point);
+			BitmapDescriptor throuthPointBitmapDescriptor = BitmapDescriptorFactory
+					.fromResource(R.drawable.throuth_point);
 			// 第一个途经点
 			Point point1 = (Point) pPoints[0];
 			double pStlat1 = (double) point1.getLat() / 1e6;
@@ -545,7 +559,7 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 			addOverLay(p3, throuthPointBitmapDescriptor);
 			gPoints.add(p3);
 			// 第二个途经点
-			if (points.length == 2&& pPoints[1] != null) {
+			if (points.length == 2 && pPoints[1] != null) {
 				Point point2 = (Point) pPoints[1];
 				LatLng p4 = new LatLng((double) point2.getLat() / 1e6,
 						(double) point2.getLon() / 1e6);
@@ -571,5 +585,33 @@ public class SearchWithMapActivity extends BaseActivity implements OnClickListen
 	private void animat2Point(LatLng llA, float zoom) {
 		MapStatusUpdate u = MapStatusUpdateFactory.newLatLngZoom(llA, zoom);
 		mBaiduMap.animateMapStatus(u);
+	}
+
+	/**
+	 * 给对应的起点和终点设置值
+	 * 
+	 * @param address
+	 * @param isSetTextViewValue
+	 *            是否设置EditorText的值
+	 * @param isSet2Str
+	 *            是否设置对应的String的值
+	 */
+	private void setTextAndDrawPoint(Address address, boolean isSetTextViewValue, boolean isSet2Str) {
+		if (mCurrentIndex == START) {
+			if (isSetTextViewValue) mStartTextView.setText(address.getName());
+			if (isSet2Str) mStartName = address.getName();
+			// 地图上画点
+			drwaPointOnMap(address, START);
+
+		} else {
+			if (isSetTextViewValue) mEndTextView.setText(address.getName());
+			if (isSet2Str) mEndName = address.getName();
+			drwaPointOnMap(address, END);
+		}
+	}
+
+	private void setStartName(String currentAddress) {
+		mStartTextView.setText(currentAddress);
+		mStartName = currentAddress;
 	}
 }

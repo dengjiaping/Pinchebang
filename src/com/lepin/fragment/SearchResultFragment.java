@@ -7,6 +7,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,7 +19,6 @@ import android.widget.LinearLayout;
 
 import com.google.gson.reflect.TypeToken;
 import com.lepin.activity.LongFragmentActivity;
-import com.lepin.activity.PincheTrailActivity;
 import com.lepin.activity.R;
 import com.lepin.activity.SearchResultActivity;
 import com.lepin.activity.WorkFragmentActivity;
@@ -49,7 +49,7 @@ public class SearchResultFragment extends BaseFragment implements OnItemClickLis
 	@ViewInject(id = R.id.search_listview)
 	private PcbListView mListview;
 
-	private int mIdentity;
+	private String mIdentity;// 如果时从推送进入，mIdentity：LONG_TRIP|ON_OFF_WORK
 	private Key mSearchKey;
 	private ArrayList<Pinche> mPinchesList;
 	private PincheListAdapter mAdapter;
@@ -60,18 +60,27 @@ public class SearchResultFragment extends BaseFragment implements OnItemClickLis
 	private int totalPageNum = 0;// 总共页数
 	private Util util = Util.getInstance();
 	private HttpRequestOnBackgrount mRefreshOrLoadMoreTask;
+	private boolean isHint = false;// 是否加载数据
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		mRootView = inflater.inflate(R.layout.search_result_fragment, container, false);
+		isHint = true;
 		ViewInjectUtil.inject(this, mRootView);
 		return mRootView;
+	}
+
+	@Override
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		// TODO Auto-generated method stub
+		super.setUserVisibleHint(isVisibleToUser);
+		if (isVisibleToUser) searching();
 	}
 
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		init();
-		searching();
+		// searching();
 	}
 
 	@Override
@@ -80,7 +89,7 @@ public class SearchResultFragment extends BaseFragment implements OnItemClickLis
 		super.onCreate(savedInstanceState);
 		final Bundle mBundle = getArguments();
 		mSearchKey = (Key) mBundle.getSerializable("search_key");
-		mIdentity = mBundle.getInt(SearchResultActivity.DRIVER_OR_PASSERGER);
+		mIdentity = mBundle.getString(SearchResultActivity.DRIVER_OR_PASSERGER);
 	}
 
 	private void init() {
@@ -89,46 +98,46 @@ public class SearchResultFragment extends BaseFragment implements OnItemClickLis
 		mGo2PulishBtn.setOnClickListener(this);
 	}
 
-	public static final SearchResultFragment newInstance(int mIdentity, Key key) {
+	public static final SearchResultFragment newInstance(String mIdentity, Key key) {
 		SearchResultFragment fragment = new SearchResultFragment();
 		Bundle bundle = new Bundle();
-		bundle.putInt(SearchResultActivity.DRIVER_OR_PASSERGER, mIdentity);
+		bundle.putString(SearchResultActivity.DRIVER_OR_PASSERGER, mIdentity);
 		bundle.putSerializable("search_key", key);
 		fragment.setArguments(bundle);
 		return fragment;
 	}
 
 	protected void searching() {
+		if (!isHint) return;
+		isHint = false;
 		final List<NameValuePair> params = getParams(mCurrentPageNum);
+		util.doPostRequest(
+				getActivity(),
+				new OnHttpRequestDataCallback() {
 
-		util.doPostRequest(getActivity(), new OnHttpRequestDataCallback() {
+					@Override
+					public void onSuccess(String result) {
+						if (mSearchKey != null) {
+							if (TextUtils.isEmpty(result)) {
+								mNoDataLayout.setVisibility(View.GONE);
+							} else {
+								searchResult(result);
+							}
+						} else {
+							JsonResult<ArrayList<Pinche>> jResult = Util.getInstance()
+									.getObjFromJsonResult(result,
+											new TypeToken<JsonResult<ArrayList<Pinche>>>() {
+											});
+							if (jResult != null && jResult.isSuccess()) {
+								ArrayList<Pinche> data = jResult.getData();
+								handleData(data);
+							}
 
-			@Override
-			public void onSuccess(String result) {
-				Util.printLog("搜索结果返回:"+result);
-				JsonResult<Page<Pinche>> jsonResult = util.getObjFromJsonResult(result,
-						new TypeToken<JsonResult<Page<Pinche>>>() {
-						});
-				if (jsonResult != null && jsonResult.isSuccess()) {
-					totalPageNum = jsonResult.getData().getPageCount();
-					mCurrentPageNum = jsonResult.getData().getPageNumber();
-					mListview.setPullLoadEnable(mCurrentPageNum == totalPageNum ? false : true);
-					final List<Pinche> pinches = jsonResult.getData().getRows();
-					if (pinches.size() <= 0) {// 没有数据
-						mListview.setVisibility(View.GONE);
-						mNoDataLayout.setVisibility(View.VISIBLE);
-						mListview.setPullRefreshEnable(false);
-					} else {
-						mNoDataLayout.setVisibility(View.GONE);
-						mPinchesList.addAll(pinches);
-						setListAdapter(mPinchesList);
+						}
 					}
-				} else {
-					Util.showToast(getActivity(), getString(R.string.request_data_error));
-				}
-			}
-		}, params, Constant.URL_GET_INFOS, getString(R.string.searchint), false);
-
+				}, params, mSearchKey == null ? Constant.GET_RECOMMEND_INFO
+						: Constant.URL_GET_INFOS,
+				getString(R.string.searchint), false);
 	}
 
 	/**
@@ -139,13 +148,16 @@ public class SearchResultFragment extends BaseFragment implements OnItemClickLis
 	private List<NameValuePair> getParams(int page) {
 		// 搜索条件
 		List<NameValuePair> paramsList = new ArrayList<NameValuePair>();
+		if (mSearchKey == null) {
+			paramsList.add(new BasicNameValuePair("carpoolType", mIdentity));
+			return paramsList;
+		}
 		paramsList.add(new BasicNameValuePair("startName", mSearchKey.getStart_name()));
 		paramsList.add(new BasicNameValuePair("endName", mSearchKey.getEnd_name()));
 		paramsList.add(new BasicNameValuePair("carpoolType", mSearchKey.getCarpoolType()));
 		paramsList.add(new BasicNameValuePair("rows", String.valueOf(SITEMSIZE)));
 		paramsList.add(new BasicNameValuePair("page", String.valueOf(mCurrentPageNum)));
-		paramsList.add(new BasicNameValuePair("infoType", mIdentity == 1 ? Pinche.PASSENGER
-				: Pinche.DRIVER));
+		paramsList.add(new BasicNameValuePair("infoType", mIdentity));
 		if (!mSearchKey.getCarpoolType().equals(Pinche.CARPOOLTYPE_LONG_TRIP)) {
 			if (mSearchKey.getStart_lat() > 0) {
 				paramsList.add(new BasicNameValuePair("startLat", String.valueOf(mSearchKey
@@ -176,9 +188,9 @@ public class SearchResultFragment extends BaseFragment implements OnItemClickLis
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		Bundle mBundle = new Bundle();
-		mBundle.putInt("PincheId", mPinchesList.get((int) id).getInfo_id());
-		util.go2ActivityWithBundle(getActivity(), PincheTrailActivity.class, mBundle);
+
+		Util.getInstance().go2PincheTrailActivity(getActivity(),
+				mPinchesList.get((int) id).getInfo_id());
 	}
 
 	@Override
@@ -198,6 +210,9 @@ public class SearchResultFragment extends BaseFragment implements OnItemClickLis
 	@Override
 	public void onResume() {
 		super.onResume();
+		if (getUserVisibleHint()) {
+			searching();
+		}
 	}
 
 	@Override
@@ -250,6 +265,34 @@ public class SearchResultFragment extends BaseFragment implements OnItemClickLis
 		if ((mCurrentPageNum + 1) <= totalPageNum) {
 			mCurrentPageNum += 1;
 			doRefreshOrLoadMore();
+		}
+	}
+
+	private void searchResult(String result) {
+		JsonResult<Page<Pinche>> jsonResult = util.getObjFromJsonResult(result,
+				new TypeToken<JsonResult<Page<Pinche>>>() {
+				});
+		if (jsonResult != null && jsonResult.isSuccess()) {
+			totalPageNum = jsonResult.getData().getPageCount();
+			mCurrentPageNum = jsonResult.getData().getPageNumber();
+			mListview.setPullLoadEnable(mCurrentPageNum == totalPageNum ? false : true);
+			final List<Pinche> pinches = jsonResult.getData().getRows();
+
+			handleData(pinches);
+		} else {
+			Util.showToast(getActivity(), getString(R.string.request_data_error));
+		}
+	}
+
+	private void handleData(final List<Pinche> pinches) {
+		if (pinches != null && pinches.size() <= 0) {// 没有数据
+			mListview.setVisibility(View.GONE);
+			mNoDataLayout.setVisibility(View.VISIBLE);
+			mListview.setPullRefreshEnable(false);
+		} else {
+			mNoDataLayout.setVisibility(View.GONE);
+			mPinchesList.addAll(pinches);
+			setListAdapter(mPinchesList);
 		}
 	}
 

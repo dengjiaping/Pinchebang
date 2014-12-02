@@ -20,7 +20,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
@@ -72,13 +71,13 @@ public class MyPublishDetailsActivity extends BaseActivity implements OnClickLis
 	@ViewInject(id = R.id.my_publish_details_start_date)
 	private TextView mpStartTime;// 出发时间
 	@ViewInject(id = R.id.my_publish_stop_starttime)
-	private CheckBox msCheckBox;
+	private CheckBox mStartTimeCheckBox;
 	@ViewInject(id = R.id.my_publish_details_backtime_layout)
 	private View mpBackTimeLayout;// 返程时间布局
 	@ViewInject(id = R.id.my_publish_details_back_date)
 	private TextView mpBackTime;// 返程时间
 	@ViewInject(id = R.id.my_publish_stop_backtime)
-	private CheckBox mbCheckBox;// 停止返回时间
+	private CheckBox mBackTimeCheckBox;// 停止返回时间
 
 	@ViewInject(id = R.id.point1_layout)
 	private View pointLayout1; // 途经点布局1
@@ -107,7 +106,7 @@ public class MyPublishDetailsActivity extends BaseActivity implements OnClickLis
 	private EditText mpNoTe;// 备注
 
 	private String info_id;
-	private String carpool_type;// （1：上下班，0：长途）
+	private String carpool_type;//上下班，长途
 	private int StartOrBack = 0;// (0:出发，1：返回）
 	private String strDate;//
 	private String mpSdate = "";// 出发
@@ -158,8 +157,8 @@ public class MyPublishDetailsActivity extends BaseActivity implements OnClickLis
 		mpStartTime.setOnClickListener(this);
 		mpBackTime.setOnClickListener(this);
 		mpPeopNum.setOnClickListener(this);
-		msCheckBox.setChecked(true);
-		mbCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+		mStartTimeCheckBox.setChecked(true);
+		mBackTimeCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -193,8 +192,8 @@ public class MyPublishDetailsActivity extends BaseActivity implements OnClickLis
 		{
 			if (!isEdit) {
 				mpEditNote.setVisibility(View.VISIBLE);
-				mbCheckBox.setVisibility(View.VISIBLE);
-				msCheckBox.setVisibility(View.VISIBLE);
+				mBackTimeCheckBox.setVisibility(View.VISIBLE);
+				mStartTimeCheckBox.setVisibility(View.VISIBLE);
 				mpEdit.setText(getString(R.string.publish_btn_save_text));
 				isEdit = true;
 				setEnable(true);
@@ -258,6 +257,11 @@ public class MyPublishDetailsActivity extends BaseActivity implements OnClickLis
 		}
 	}
 
+	@Override
+	public void onBackPressed() {
+		this.finish();
+	}
+
 	public void setEnable(boolean b) {
 		if (carpool_type.equals(Pinche.CARPOOLTYPE_ON_OFF_WORK))// 上下班
 		{
@@ -276,18 +280,18 @@ public class MyPublishDetailsActivity extends BaseActivity implements OnClickLis
 		}
 		if (b == true) {
 			mpEditNote.setVisibility(View.VISIBLE);
-			mbCheckBox.setVisibility(View.VISIBLE);
-			msCheckBox.setVisibility(View.VISIBLE);
+			mBackTimeCheckBox.setVisibility(View.VISIBLE);
+			mStartTimeCheckBox.setVisibility(View.VISIBLE);
 		} else {
 			mpEditNote.setVisibility(View.GONE);
-			mbCheckBox.setVisibility(View.GONE);
-			msCheckBox.setVisibility(View.GONE);
+			mBackTimeCheckBox.setVisibility(View.GONE);
+			mStartTimeCheckBox.setVisibility(View.GONE);
 		}
 		mpStartTime.setEnabled(b);
 		mpCost.setEnabled(b);
 		mpPeopNum.setEnabled(b);
 		mpNoTe.setEnabled(b);
-		mbCheckBox.setEnabled(b);
+		mBackTimeCheckBox.setEnabled(b);
 	}
 
 	/**
@@ -312,14 +316,15 @@ public class MyPublishDetailsActivity extends BaseActivity implements OnClickLis
 		}
 
 		if (carpool_type.equals(Pinche.CARPOOLTYPE_ON_OFF_WORK)) {
+			cycleString = pinche.getCycle().getNums();
 			mpTime.setText(pinche.getCycle().getTxt());// 时间段
 			mpStartTime.setText(mpTime.getText() + " " + pinche.getDepartureTime());
 			if (!pinche.getBackTime().equals("")) {
 				mpBackTime.setText(mpTime.getText() + " " + pinche.getBackTime());
-				mbCheckBox.setChecked(true);
+				mBackTimeCheckBox.setChecked(true);
 			} else {
 				mpBackTime.setText(getString(R.string.publish_back_date_no));
-				mbCheckBox.setChecked(false);
+				mBackTimeCheckBox.setChecked(false);
 			}
 			mpSdate = pinche.getDepartureTime();
 			mpEdate = pinche.getBackTime();
@@ -456,12 +461,12 @@ public class MyPublishDetailsActivity extends BaseActivity implements OnClickLis
 		util.doPostRequest(MyPublishDetailsActivity.this, new OnHttpRequestDataCallback() {
 
 			public void onSuccess(String result) {
+				Util.printLog("发布详情:"+result);
 				JsonResult<Pinche> jsonResult = util.getObjFromJsonResult(result,
 						new TypeToken<JsonResult<Pinche>>() {
 						});
 				if (jsonResult.isSuccess()) {
 					pinche = jsonResult.getData();
-					Util.printLog("back time:" + pinche.getBackTime());
 					setData(pinche);
 					if (carpool_type.equals(Pinche.CARPOOLTYPE_LONG_TRIP))// 长途过期
 					{
@@ -481,34 +486,6 @@ public class MyPublishDetailsActivity extends BaseActivity implements OnClickLis
 			}
 		}, params, Constant.URL_GETINFOBYID, "", false);
 
-		// util.doPostRequest(MyPublishDetailsActivity.this, new
-		// OnDataLoadingCallBack() {
-		// @Override
-		// public void onLoadingBack(String result) {
-		// JsonResult<Pinche> jsonResult = util.getObjFromJsonResult(result,
-		// new TypeToken<JsonResult<Pinche>>() {
-		// });
-		// if (jsonResult.isSuccess()) {
-		// pinche = jsonResult.getData();
-		// Util.printLog("back time:" + pinche.getBackTime());
-		// setData(pinche);
-		// if (carpool_type.equals(Pinche.CARPOOLTYPE_LONG_TRIP))// 长途过期
-		// {
-		// String currentTime = TimeUtils.getCurrentTime();
-		// long cTime = TimeUtils.dateStrToSecond(currentTime);
-		// String startTime = pinche.getDepartureTime();
-		// long eTime = TimeUtils.dateStrToSecond(startTime);
-		// if (eTime <= cTime) {
-		// mpEdit.setVisibility(View.INVISIBLE);
-		// }
-		// }
-		// } else {
-		// Util.showToast(MyPublishDetailsActivity.this,
-		// getString(R.string.publish_get_detail_fault));
-		// MyPublishDetailsActivity.this.finish();
-		// }
-		// }
-		// }, params, Constant.URL_GETINFOBYID, "");
 	}
 
 	/**
@@ -534,7 +511,7 @@ public class MyPublishDetailsActivity extends BaseActivity implements OnClickLis
 			params.add(new BasicNameValuePair("cycle", cycleString));// 时间段
 			params.add(new BasicNameValuePair("departureTime", String.valueOf(TimeUtils
 					.dateToSecond(mpSdate))));// 出发
-			if (mbCheckBox.isChecked() && !mpEdate.equals("")) {
+			if (mBackTimeCheckBox.isChecked() && !mpEdate.equals("")) {
 				params.add(new BasicNameValuePair("backTime", String.valueOf(TimeUtils
 						.dateToSecond(mpEdate))));// 返回
 			}
@@ -565,45 +542,15 @@ public class MyPublishDetailsActivity extends BaseActivity implements OnClickLis
 							getString(R.string.publish_data_update_fault));
 				}
 			}
-		}, params, Constant.URL_EDITINFO, getString(R.string.publish_data_update_ing), false);
 
-		// util.doPostRequest(MyPublishDetailsActivity.this, new
-		// OnDataLoadingCallBack() {
-		//
-		// @Override
-		// public void onLoadingBack(String result) {
-		// TypeToken<JsonResult<String>> tokens = new
-		// TypeToken<JsonResult<String>>() {
-		// };
-		// Gson gsons = new GsonBuilder().create();
-		// JsonResult<String> jsonResults = gsons.fromJson(result,
-		// tokens.getType());
-		// if (jsonResults.isSuccess()) {
-		// Util.showToast(MyPublishDetailsActivity.this,
-		// getString(R.string.publish_data_update_success));
-		// setEnable(false);
-		// mpEdit.setText(getString(R.string.publish_btn_update_text));
-		// isEdit = false;
-		// } else {
-		// Util.showToast(MyPublishDetailsActivity.this,
-		// getString(R.string.publish_data_update_fault));
-		// }
-		// }
-		// }, params, Constant.URL_EDITINFO,
-		// getString(R.string.publish_data_update_ing));
+			@Override
+			public void onFail(String errorType, String errorMsg) {
+				// TODO Auto-generated method stub
+				super.onFail(errorType, errorMsg);
+				Util.showToast(MyPublishDetailsActivity.this, errorMsg);
+			}
+		}, params, Constant.URL_EDITINFO, getString(R.string.publish_data_update_ing), true);
 
 	}
 
-	public boolean onKeyDown(int keyCode, android.view.KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			if (getString(R.string.publish_btn_save_text).equals(mpEdit.getText())) {
-				setEnable(false);
-				setData(pinche);
-				mpEdit.setText(getString(R.string.publish_btn_update_text));
-			} else {
-				this.finish();
-			}
-		}
-		return false;
-	};
 }

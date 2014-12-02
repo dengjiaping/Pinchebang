@@ -153,7 +153,6 @@ public class WelcomeActivity extends InstrumentedActivity {
 		super.onPause();
 		MobclickAgent.onPageEnd(this.getClass().getSimpleName());
 		MobclickAgent.onPause(WelcomeActivity.this);
-		JPushInterface.onPause(WelcomeActivity.this);
 	}
 
 	@Override

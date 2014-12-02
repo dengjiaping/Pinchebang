@@ -25,7 +25,7 @@ public class PcbConfirmDialog extends Dialog implements DialogInterface,
 	private TextView btnOk;
 	private OnOkOrCancelClickListener mOkClickListener;
 	private int duration = 500;
-
+	private boolean isCanCancelByBack = true;
 	private View mDialogView;
 
 	public interface OnOkOrCancelClickListener {
@@ -37,13 +37,18 @@ public class PcbConfirmDialog extends Dialog implements DialogInterface,
 		init(context);
 	}
 
-	public PcbConfirmDialog(Context context, int theme) {
+	public PcbConfirmDialog(Context context, int theme, boolean isCanCancelByBack) {
 		super(context, theme);
+		this.isCanCancelByBack = isCanCancelByBack;
 		init(context);
 	}
 
 	public static PcbConfirmDialog getInstance(Context context, int theme) {
-		return new PcbConfirmDialog(context, theme);
+		return new PcbConfirmDialog(context, theme, true);
+	}
+
+	public static PcbConfirmDialog getInstance(Context context, int theme, boolean isCanCancelByBack) {
+		return new PcbConfirmDialog(context, theme, isCanCancelByBack);
 	}
 
 	protected PcbConfirmDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
@@ -97,6 +102,7 @@ public class PcbConfirmDialog extends Dialog implements DialogInterface,
 				}
 			});
 		}
+		setCancelable(isCanCancelByBack);
 		setListener();
 	}
 

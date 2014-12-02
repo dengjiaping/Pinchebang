@@ -14,6 +14,7 @@
         android:layout_marginTop="@dimen/dp_20"
         android:background="@drawable/item_layout_default"
         android:hint="@string/input_recharge_num"
+        android:maxLength="4"
         android:inputType="number"
         android:paddingLeft="@dimen/dp_5" />
 

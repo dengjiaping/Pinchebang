@@ -3,6 +3,7 @@ package com.lepin.adapter;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,8 +77,21 @@ public class PincheListAdapter extends BaseAdapter {
 		viewHolder.fromTv.setText(pinche.getStart_name());// 起点
 		viewHolder.toTv.setText(pinche.getEnd_name());// 终点
 		if (pinche.getCarpoolType().equals(Pinche.CARPOOLTYPE_ON_OFF_WORK)) {
-			viewHolder.dateTv.setText(context.getString(R.string.work_day) + "(早:"
-					+ pinche.getDepartureTime() + " 晚:" + pinche.getBackTime() + ")");
+			String date = null;
+			if (TextUtils.isEmpty(pinche.getDepartureTime())
+					&& TextUtils.isEmpty(pinche.getDepartureTime())) {
+				date = "";
+			} else {
+				date = pinche.getCycle().getTxt() + "（";
+				if (!TextUtils.isEmpty(pinche.getDepartureTime())) {
+					date = date + "早：" + pinche.getDepartureTime();
+				}
+				if (!TextUtils.isEmpty(pinche.getBackTime())) {
+					date = date + " 晚:" + pinche.getBackTime();
+				}
+				date = date + ")";
+				viewHolder.dateTv.setText(date);
+			}
 		} else {
 			viewHolder.dateTv.setText(context.getString(R.string.publish_start_date) + " :"
 					+ pinche.getDepartureTime());

@@ -27,24 +27,28 @@ public class Constant {
 	/*
 	 * 远程路径
 	 */
-	/*
-	 * public static final String HOST = "api.52pcb.com"; public static final
-	 * String URL_LOCAL = "http://api.52pcb.com"; // 图片 public static final
-	 * String URL_RESOURCE = "http://sr.52pcb.com";
-	 */
+
+	// public static final String HOST = "api.52pcb.com";
+	// public static final String URL_LOCAL = "http://api.52pcb.com"; // 图片
+	// public
+	// // static
+	// // final
+	// public static String URL_RESOURCE = "http://sr.52pcb.com";
 
 	// * 本地206（李）
-	public static final String HOST = "192.168.4.206";
+	public static final String HOST = "192.168.2.32";
 	public static final String URL_LOCAL = "http://" + HOST + ":80/pcb";
-	public static final String URL_RESOURCE = "http://192.168.4.204:8080/sr";
+	public static final String URL_RESOURCE = "http://192.168.2.245:8080/sr";
 
 	/*
 	 * 本地 205(黄)
 	 */
 
-	// public static final String HOST = "192.168.4.205";
-	// public static final String URL_LOCAL = "http://" + HOST + ":80/pcb";
-	// public static final String URL_RESOURCE = "http://192.168.4.204:8080/sr";
+	/*
+	 * public static final String HOST = "192.168.4.205"; public static final
+	 * String URL_LOCAL = "http://" + HOST + ":80/pcb"; public static final
+	 * String URL_RESOURCE = "http://192.168.4.204:8080/sr";
+	 */
 
 	// 版本信息
 	public final static String REQUEST_TYPE = "android";
@@ -63,14 +67,20 @@ public class Constant {
 
 	// 订单
 	public static final String URL_GET_ORDERS = URL_LOCAL + "/logged/infoOrder/gets.do?";// 获取信息
-	public static final String URL_GET_ORDER_BY_ID = URL_LOCAL + "/logged/infoOrder/getInfoOrderById.do";// 获取订单信息
+	
+	
+	public static final String URL_GET_ORDER_BY_ID = URL_LOCAL
+			+ "/logged/infoOrder/getInfoOrderById.do";// 获取订单详情
 
 	public static final String URL_ADDBOOK = URL_LOCAL + "/logged/book/addBook.do";// 预约
 	public static final String URL_CANCLEBOOK = URL_LOCAL + "/logged/infoOrder/cancel.do";// 取消订单
 
-	public static final String URL_COMPLETEBOOK = URL_LOCAL + "/logged/book/completeBook.do";// 完成订单
+	public static final String URL_CANCLEBOOK_NEW = URL_LOCAL + "/logged/infoOrder/cancel.do";// 取消订单新接口
+	public static final String URL_ORDER_IN = URL_LOCAL + "/logged/infoOrder/complete.do";// 订单确认上车接口
 
-	public static final String URL_CONFIRMBOOK = URL_LOCAL + "/logged/book/confirmBook.do";// 确认订单
+//	public static final String URL_COMPLETEBOOK = URL_LOCAL + "/logged/book/completeBook.do";// 完成订单
+	public static final String URL_PAY_NEW = URL_LOCAL + "/logged/infoOrder/pay.do";// 支付订单（线上，线下）
+
 	// 获取订单中的日历
 	public static final String URL_GET_ORDER_CALENDAR = URL_LOCAL
 			+ "/logged/carpoolProgram/getDetail.do";
@@ -82,6 +92,11 @@ public class Constant {
 
 	public static final String URL_PUBLISH = URL_LOCAL + "/logged/info/addInfo.do";
 	public static final String URL_GET_PINCHE_BI = URL_LOCAL + "/logged/user/getUserCoin.do";
+	public static final String URL_GET_PINCHE_COIN_BALANCE = URL_LOCAL
+			+ "/logged/user/getUserCoinAndGold.do";// 获取拼车币和余额
+	public static final String URL_ORDER_PAY_NOW = URL_LOCAL
+			+ "/logged/recharge/addRecgServOrd4InfoOrd.do";// 立即支付新
+
 	public static final String URL_CHECKUSERACCOUNT = URL_LOCAL + "/user/checkUserAccount.do?";// 检查账号是否被使用
 	public static final String URL_SENDTELCODE = URL_LOCAL + "/common/sendTelCode.do?";// 检查账号是否被使用
 	public static final String URL_SETTINGPAYPSW = URL_LOCAL + "/logged/user/editPayPwd.do";// 设置支付密码
@@ -162,8 +177,10 @@ public class Constant {
 	public final static String GET_SHARE_PRISE = URL_LOCAL + "/logged/user/shareReward.do";// 获取获取分享奖励
 
 	public final static String URL_PAY = URL_LOCAL + "/logged/infoOrder/pay.do";// 付款
+																				// /logged/infoOrder/pay.do
+	public final static String GET_RECOMMEND_INFO = URL_LOCAL + "/logged/info/getRecommedInfos.do";// 获取推荐信息
 
-	public final static int EXCHANGERATE = 10;// 人民币对拼车币汇率
+	public final static int EXCHANGERATE = 100;// 人民币对拼车币汇率
 
 	public static boolean isGetLocation = false;// 是否已经定位成功
 	public static double TwoPoinstsDistances = 1000.0;// 上下班直线距离不能小于1000米
@@ -279,6 +296,11 @@ public class Constant {
 
 	public static final String END_LAT = "end_lat";// 终点纬度
 	public static final String END_LON = "end_lon";// 终点经度
+
+	/**
+	 * 拼车方式 长途或者上下班
+	 */
+	public static final String TRIP_MODE = "style";
 
 	public static final String CACHE = Environment.getExternalStorageDirectory().getAbsolutePath()
 			+ "/pinchebang/";

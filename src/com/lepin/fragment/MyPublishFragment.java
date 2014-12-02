@@ -27,17 +27,15 @@ import com.lepin.activity.MyPublishDetailsActivity;
 import com.lepin.activity.R;
 import com.lepin.activity.WorkFragmentActivity;
 import com.lepin.adapter.MyPublishAdapter;
-import com.lepin.adapter.MyPublishAdapter.StateCallBack;
 import com.lepin.entity.JsonResult;
 import com.lepin.entity.Page;
 import com.lepin.entity.Pinche;
 import com.lepin.inject.ViewInject;
 import com.lepin.inject.ViewInjectUtil;
 import com.lepin.util.Constant;
+import com.lepin.util.HttpRequestOnBackgrount;
 import com.lepin.util.Util;
 import com.lepin.util.Util.OnHttpRequestDataCallback;
-import com.lepin.widget.Loading;
-import com.lepin.widget.Loading.CallBack;
 import com.lepin.widget.PcbConfirmDialog;
 import com.lepin.widget.PcbConfirmDialog.OnOkOrCancelClickListener;
 
@@ -60,9 +58,8 @@ public class MyPublishFragment extends BaseFragment implements OnItemLongClickLi
 	private Page<Pinche> mPinchePage;// 拼车信息分页相关
 	private ArrayList<Pinche> mPincheList = new ArrayList<Pinche>();// 拼车信息
 	private MyPublishAdapter mAdapter;
-	private Loading loading;
 	private Util util = Util.getInstance();
-	private String URLINFO;// 开启，关闭，删除临时变量
+	private String operateUrl;// 开启，关闭，删除临时变量
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -93,6 +90,7 @@ public class MyPublishFragment extends BaseFragment implements OnItemLongClickLi
 								: LongFragmentActivity.class);
 			}
 		});
+		loadPublishInfo();
 	}
 
 	private void loadPublishInfo() {
@@ -138,17 +136,24 @@ public class MyPublishFragment extends BaseFragment implements OnItemLongClickLi
 	}
 
 	protected void setAdapter(ArrayList<Pinche> mPincheList) {
-		mAdapter = new MyPublishAdapter(getActivity(), mPincheList, new StateCallBack() {
-
-			@Override
-			public void execute(View v, int info_id, int objIndex, String state) {
-				showDialogMsg(info_id, state, objIndex);
-			}
-		});
+		mAdapter = new MyPublishAdapter(getActivity(), mPincheList, mOperateClickListener);
 		mPublishListView.setAdapter(mAdapter);
 		mPublishListView.setOnItemClickListener(this);
 		mPublishListView.setOnItemLongClickListener(this);
 	}
+
+	private OnClickListener mOperateClickListener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			int position = (Integer) v.getTag();
+			Pinche pinche = mPincheList.get(position);
+			Util.printLog("我的发布－点击按钮的对象:"+pinche.toString());
+			String stateString = pinche.getState().equals(Pinche.STATE_COLSE) ? Pinche.STATE_NORMAL
+					: Pinche.STATE_COLSE;
+			showDialogMsg(pinche.getInfo_id(), stateString, position);
+		}
+	};
 
 	private void showDialogMsg(final int info_id, final String state, final int objIndex) {
 
@@ -182,41 +187,52 @@ public class MyPublishFragment extends BaseFragment implements OnItemLongClickLi
 	public void changeState(int info_id, final String state, final int objIndex) {
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		if (state.equals(Pinche.STATE_NORMAL)) {
-			URLINFO = Constant.URL_OPENINFO;
+			operateUrl = Constant.URL_OPENINFO;
 		} else if (state.equals(Pinche.STATE_COLSE)) {
-			URLINFO = Constant.URL_CLOSEINFO;
+			operateUrl = Constant.URL_CLOSEINFO;
 		} else if (state.equals(Pinche.STATE_DELETE)) {
-			URLINFO = Constant.URL_DELINFO;
+			operateUrl = Constant.URL_DELINFO;
 		}
+
 		params.add(new BasicNameValuePair("infoId", String.valueOf(info_id)));
-		// 加载提示框
-		loading = Loading.getInstance();
-		loading.executePost(new CallBack() {
 
-			public void getResult(String result) {
-				TypeToken<JsonResult<String>> token = new TypeToken<JsonResult<String>>() {
-				};
-				Gson gson = new GsonBuilder().create();
-				JsonResult<String> jsonResult = gson.fromJson(result, token.getType());
-				if (jsonResult.isSuccess()) {
-					if (state.equals(Pinche.STATE_DELETE)) {
-						mPincheList.remove(objIndex);
-						Util.showToast(getActivity(), getString(R.string.delete_success));
-						if (mPincheList.size() == 0) {
-							mNoInfoLayout.setVisibility(View.VISIBLE);
-							mPublishListView.setVisibility(View.GONE);
+		HttpRequestOnBackgrount changeStateBackgrount = new HttpRequestOnBackgrount(
+				HttpRequestOnBackgrount.POST, new OnHttpRequestDataCallback() {
+
+					@Override
+					public void onSuccess(String result) {
+						JsonResult<String> jsonResult = Util.getInstance().getObjFromJsonResult(
+								result, new TypeToken<JsonResult<String>>() {
+								});
+
+						if (jsonResult.isSuccess()) {
+							if (state.equals(Pinche.STATE_DELETE)) {
+								mPincheList.remove(objIndex);
+								Util.showToast(getActivity(), getString(R.string.delete_success));
+								if (mPincheList.size() == 0) {
+									mNoInfoLayout.setVisibility(View.VISIBLE);
+									mPublishListView.setVisibility(View.GONE);
+								} else {
+
+								}
+							} else {
+								mPincheList.get(objIndex).setState(String.valueOf(state));
+							}
+							mAdapter.notifyDataSetChanged();
 						} else {
-
+							Util.showToast(getActivity(),
+									getString(R.string.publish_date_change_fault));
 						}
-					} else {
-						mPincheList.get(objIndex).setState(String.valueOf(state));
 					}
-					mAdapter.notifyDataSetChanged();
-				} else {
-					Util.showToast(getActivity(), getString(R.string.publish_date_change_fault));
-				}
-			}
-		}, params, URLINFO, getActivity());
+
+					@Override
+					public void onFail(String errorType, String errorMsg) {
+						// TODO Auto-generated method stub
+						super.onFail(errorType, errorMsg);
+					}
+				}, params, getActivity(), true);
+		changeStateBackgrount.execute(operateUrl);
+
 	}
 
 	public MyPublishFragment() {
@@ -273,6 +289,5 @@ public class MyPublishFragment extends BaseFragment implements OnItemLongClickLi
 	@Override
 	public void onResume() {
 		super.onResume();
-		loadPublishInfo();
 	}
 }

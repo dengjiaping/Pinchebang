@@ -234,7 +234,14 @@ public class FindPwdActivity extends BaseActivity {
 				}
 
 			}
-		}, params, Constant.URL_FINDPWDBYTEL, getString(R.string.find_back_pwd), false);
+
+			@Override
+			public void onFail(String errorType, String errorMsg) {
+				// TODO Auto-generated method stub
+				super.onFail(errorType, errorMsg);
+				Util.showToast(FindPwdActivity.this, errorMsg);
+			}
+		}, params, Constant.URL_FINDPWDBYTEL, getString(R.string.find_back_pwd), true);
 
 		// util.doPostRequest(FindPwdActivity.this, new OnDataLoadingCallBack()
 		// {

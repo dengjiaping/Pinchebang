@@ -325,14 +325,19 @@ public class LongFragment extends BaseFragment implements OnClickListener, Activ
 
 		@Override
 		public void onDateSet(DatePicker view, int year, int month, int day) {
-			strDate = year + "-" + (month + 1) + "-" + day;// 出发或者返回时间的年月日
-			setStrDate(TimeUtils.parseStr2Date(strDate, "yyyy-MM-dd").toString());
-			Util.getInstance().showDateSelectorDialog(getActivity(), new Date(), timeSetListener,
-					"1", "m");
-			myear = year;
-			mmonth = month;
-			mday = day;
 			days = Util.getInstance().calculteDate(year, month, day);
+			Util.printLog("days:" + days);
+			if (days > 90) {
+				Util.showToast(getActivity(), getString(R.string.start_time_must_3month));
+			} else {
+				strDate = year + "-" + (month + 1) + "-" + day;// 出发或者返回时间的年月日
+				setStrDate(TimeUtils.parseStr2Date(strDate, "yyyy-MM-dd").toString());
+				myear = year;
+				mmonth = month;
+				mday = day;
+				Util.getInstance().showDateSelectorDialog(getActivity(), new Date(),
+						timeSetListener, "1", "m");
+			}
 		}
 
 	};
@@ -347,13 +352,7 @@ public class LongFragment extends BaseFragment implements OnClickListener, Activ
 			String strHHss = "";
 			strHHss = (hourOfDay <= 9 ? "0" + hourOfDay : hourOfDay) + ":"
 					+ (minute <= 9 ? "0" + minute : minute);
-
-			if (days > 30) {
-				Util.showToast(getActivity(), getString(R.string.start_time_must_1month));
-				Util.getInstance().showDateSelectorDialog(getActivity(), new Date(),
-						dateSetListener);
-			} else if (!Util.getInstance()
-					.theTimeIsAfterNow(myear, mmonth, mday, hourOfDay, minute)) {
+			if (!Util.getInstance().theTimeIsAfterNow(myear, mmonth, mday, hourOfDay, minute)) {
 				Util.showToast(getActivity(), getString(R.string.start_time_must_after_publish));
 				Util.getInstance().showDateSelectorDialog(getActivity(), new Date(),
 						dateSetListener);

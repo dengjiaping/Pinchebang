@@ -37,6 +37,8 @@ import com.lepin.util.HttpRequestOnBackgrount;
 import com.lepin.util.TimeUtils;
 import com.lepin.util.Util;
 import com.lepin.util.Util.OnHttpRequestDataCallback;
+import com.lepin.widget.PcbConfirmDialog;
+import com.lepin.widget.PcbConfirmDialog.OnOkOrCancelClickListener;
 
 @Contextview(R.layout.personal_info_activity)
 public class PersonalInfoActivity extends BaseActivity implements OnClickListener {
@@ -179,13 +181,19 @@ public class PersonalInfoActivity extends BaseActivity implements OnClickListene
 		ViewInjectUtil.inject(this);
 		user = Util.getInstance().getUser(PersonalInfoActivity.this);
 		setOnClick();
+		drYearsArry = getResources().getStringArray(R.array.year);// 得到驾龄数据
+	}
+
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
 		genDer = getResources().getStringArray(R.array.gender);
-//		image = getResources().getStringArray(R.array.get_image_way);
+		// image = getResources().getStringArray(R.array.get_image_way);
 		if (user != null) {
 			birthdayDate = user.getBirthday(PersonalInfoActivity.this);
-			genderTemp = user.getGender();
+			genderTemp = user.getGender(this);
 		}
-		drYearsArry = getResources().getStringArray(R.array.year);// 得到驾龄数据
 	}
 
 	private void setData2View() {
@@ -243,11 +251,11 @@ public class PersonalInfoActivity extends BaseActivity implements OnClickListene
 			PersonalInfoActivity.this.finish();
 		} else if (v == mMoneyLayout) { // 提现账户
 			if (!user.isPayPwdSet()) {
-				Util.showToast(PersonalInfoActivity.this, getString(R.string.tip_unpay_psw));
-				return;
+				showDialog();
+			} else {
+				Util.getInstance().go2Activity(PersonalInfoActivity.this,
+						MyCashAccountSettingActivity.class);
 			}
-			Util.getInstance().go2Activity(PersonalInfoActivity.this,
-					MyCashAccountSettingActivity.class);
 		} else if (v == mNickName) {// 修改昵称
 			Intent intent = new Intent(PersonalInfoActivity.this, UpdatePersonalInfoActivity.class);
 			intent.putExtra("updateType", "name");
@@ -267,6 +275,23 @@ public class PersonalInfoActivity extends BaseActivity implements OnClickListene
 		} else if (v == mLogOutBtn) {// 退出登录
 			logout();
 		}
+	}
+
+	/**
+	 * 未设置支付密码情况 弹出框选择
+	 */
+	private void showDialog() {
+		util.showDialog(PersonalInfoActivity.this, "为了保障您的账户资金安全，您需要先设置支付密码才可以添加账户，是否立即添加？",
+				"立即添加", "稍后添加", new OnOkOrCancelClickListener() {
+
+					@Override
+					public void onOkClick(int type) {
+						if (type == PcbConfirmDialog.OK) {
+							util.go2Activity(PersonalInfoActivity.this,
+									MyPayPswSettingActivity.class);
+						}
+					}
+				});
 	}
 
 	@Override

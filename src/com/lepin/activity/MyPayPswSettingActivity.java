@@ -6,8 +6,6 @@ import java.util.List;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
-import u.aly.bu;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -21,6 +19,7 @@ import android.widget.TextView;
 
 import com.google.gson.reflect.TypeToken;
 import com.lepin.entity.JsonResult;
+import com.lepin.entity.User;
 import com.lepin.inject.Contextview;
 import com.lepin.inject.ViewInject;
 import com.lepin.inject.ViewInjectUtil;
@@ -155,6 +154,9 @@ public class MyPayPswSettingActivity extends Activity implements OnClickListener
 					if (isReturn) {
 						setResult(RESULT_OK);
 					}
+					User user = util.getLoginUser(MyPayPswSettingActivity.this);
+					user.setPayPwdSet(true);
+					util.updateUser(MyPayPswSettingActivity.this, user);
 					finish();
 				} else {
 					Util.showToast(MyPayPswSettingActivity.this, result);

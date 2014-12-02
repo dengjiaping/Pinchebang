@@ -60,18 +60,19 @@ public class RechargeMoneyActivity extends BaseActivity implements OnClickListen
 				Util.showToast(this, getString(R.string.input_recharge_num));
 			} else {
 				try {
-					if(money.startsWith("0")){
-						Util.showToast(RechargeMoneyActivity.this, "充值金额必须是1-999元");
-						return;
-					}
-					int rechargeMoney = Integer.parseInt(money);
-					if (rechargeMoney <= 0 || rechargeMoney > 999) {
+					if (money.startsWith("0")) {
 						Util.showToast(RechargeMoneyActivity.this, "充值金额必须是1-999元");
 					} else {
-						recharge(rechargeMoney);
+						int rechargeMoney = Integer.parseInt(money);
+						if (rechargeMoney <= 0) {
+							Util.showToast(RechargeMoneyActivity.this, "充值金额必须是1-999元");
+						} else if (rechargeMoney > 999) {
+							Util.showToast(RechargeMoneyActivity.this, "单次充值金额最大为999元");
+						} else {
+							recharge(rechargeMoney);
+						}
 					}
 				} catch (NumberFormatException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 					Util.printLog("RechargeMoneyActivity金额转换错误");
 				}

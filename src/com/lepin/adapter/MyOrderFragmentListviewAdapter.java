@@ -1,12 +1,12 @@
 package com.lepin.adapter;
 
 import java.util.ArrayList;
+
 import android.content.Context;
-import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckedTextView;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.lepin.activity.R;
 import com.lepin.entity.Book;
 import com.lepin.entity.Pinche;
+import com.lepin.util.Interfaces.ViewHolder;
 import com.lepin.util.Util;
 
 public class MyOrderFragmentListviewAdapter extends ArrayAdapter<Book> {
@@ -120,25 +121,6 @@ public class MyOrderFragmentListviewAdapter extends ArrayAdapter<Book> {
 		mConfirmButton.setText(mContext.getString(text));
 		mConfirmButton.setBackgroundResource(backgroundResource);
 		mConfirmButton.setTextColor(mContext.getResources().getColor(textColor));
-	}
-
-	public static class ViewHolder {
-
-		@SuppressWarnings("unchecked")
-		public static <T extends View> T get(View view, int id) {
-			SparseArray<View> viewHolder = (SparseArray<View>) view.getTag();
-			if (viewHolder == null) {
-				viewHolder = new SparseArray<View>();
-				view.setTag(viewHolder);
-			}
-			View childView = viewHolder.get(id);
-			if (childView == null) {
-				childView = view.findViewById(id);
-				viewHolder.put(id, childView);
-			}
-			return (T) childView;
-		}
-
 	}
 
 }

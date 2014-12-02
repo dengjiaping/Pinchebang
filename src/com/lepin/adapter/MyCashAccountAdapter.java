@@ -94,31 +94,33 @@ public class MyCashAccountAdapter extends BaseAdapter {
 	 * 输入支付密码对话框
 	 */
 	public void showDialog(final GoldBank goldBank, final int position) {
-		String payPsw;
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
-		builder.setTitle(context.getResources().getString(R.string.entry_pay_psw_title));
+		builder.setTitle(context.getString(R.string.entry_pay_psw_title));
 		View view = LayoutInflater.from(context).inflate(R.layout.dialog_edit, null);
 		builder.setView(view);
 		final EditText password = (EditText) view.findViewById(R.id.dialog_context);
-		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				String payPsw = password.getText().toString().trim();
-				if (!(null == payPsw || "" == payPsw)) {
-					DelectCashAccount(String.valueOf(goldBank.getGoldBankId()), payPsw, position);
-				}
-			}
-		});
-		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
+		builder.setPositiveButton(context.getString(R.string.confirm),
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						String payPsw = password.getText().toString().trim();
+						if (!(null == payPsw || "" == payPsw)) {
+							delectCashAccount(String.valueOf(goldBank.getGoldBankId()), payPsw,
+									position);
+						}
+					}
+				});
+		builder.setNegativeButton(context.getString(R.string.my_info_btn_cancel),
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
 
-			}
-		});
+					}
+				});
 		builder.show();
 	}
 
-	private void DelectCashAccount(String id, String psw, final int position) {
+	private void delectCashAccount(String id, String psw, final int position) {
 		// TODO Auto-generated method stub
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair("state", "DELETE"));

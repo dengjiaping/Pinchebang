@@ -17,25 +17,22 @@ import android.widget.TextView;
 import com.lepin.activity.R;
 import com.lepin.entity.Pinche;
 import com.lepin.entity.Point;
+import com.lepin.util.Interfaces.ViewHolder;
 import com.lepin.util.TimeUtils;
 
 public class MyPublishAdapter extends BaseAdapter {
 	private Context context;
 	private LayoutInflater layoutInflater;
 	private ArrayList<Pinche> mPincheDataList;
-	private StateCallBack callBack;// 回调函数，用户处理消息的开关和删除
+	private OnClickListener mClickListener;
 
 	public MyPublishAdapter(Context context, ArrayList<Pinche> mPincheDataList,
-			StateCallBack callBack) {
+			OnClickListener onClickListener) {
 		this.context = context;
 		this.mPincheDataList = mPincheDataList;
-		this.layoutInflater = LayoutInflater.from(this.context);
-		this.callBack = callBack;
-	}
-
-	public interface StateCallBack {
-		public void execute(View v, int info_id, int objIndex, String state);
-
+		this.layoutInflater = (LayoutInflater) context
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		mClickListener = onClickListener;
 	}
 
 	@Override
@@ -54,37 +51,49 @@ public class MyPublishAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder viewHolder = null;
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		final Pinche pinche = mPincheDataList.get(position);
-		if (convertView == null) {
-			convertView = this.layoutInflater.inflate(R.layout.new_item_mypublish, parent, false);
-			viewHolder = new ViewHolder();
-			viewHolder.start = (TextView) convertView.findViewById(R.id.item_mypublish_start);
-			viewHolder.end = (TextView) convertView.findViewById(R.id.item_mypublish_end);
-			viewHolder.btnimg = (ImageView) convertView.findViewById(R.id.item_mypublish_btn);
-			viewHolder.layout = (RelativeLayout) convertView
-					.findViewById(R.id.pathway_point_layout);
-			viewHolder.point1 = (TextView) convertView.findViewById(R.id.point1);
-			viewHolder.point2 = (TextView) convertView.findViewById(R.id.point2);
-			convertView.setTag(viewHolder);
+		final String stateString = pinche.getState();
+		if (convertView == null)
+			convertView = layoutInflater.inflate(R.layout.new_item_mypublish, parent, false);
+		TextView start = ViewHolder.get(convertView, R.id.item_mypublish_start);// 起点
+		TextView end = ViewHolder.get(convertView, R.id.item_mypublish_end);// 终点
+
+		ImageView operateImageViewBtn = ViewHolder.get(convertView, R.id.item_mypublish_btn);// 操作按钮
+
+		RelativeLayout pointsLayout = ViewHolder.get(convertView, R.id.pathway_point_layout);// 途经点布局
+		pointsLayout.setVisibility(View.GONE);
+
+		TextView point1 = ViewHolder.get(convertView, R.id.point1);// 途经点１
+		point1.setVisibility(View.GONE);
+		TextView point2 = ViewHolder.get(convertView, R.id.point2);// 途经点２
+		point2.setVisibility(View.GONE);
+
+		// 给view设置text
+		start.setText(pinche.getStart_name(context));// 起点
+		end.setText(pinche.getEnd_name(context));// 终点
+		operateImageViewBtn.setTag(position);
+		operateImageViewBtn.setEnabled(true);
+		if (pinche.getCarpoolType().equals(Pinche.CARPOOLTYPE_LONG_TRIP)
+				&& !isOverTime(new Date(1000 * TimeUtils.dateStrToSecond(pinche.getDepartureTime())))) {
+			operateImageViewBtn.setBackgroundResource(R.drawable.ic_overdate);
+			operateImageViewBtn.setEnabled(false);
 		} else {
-			viewHolder = (ViewHolder) convertView.getTag();
+			operateImageViewBtn
+					.setBackgroundResource(stateString.equals(Pinche.STATE_COLSE) ? R.drawable.pcb_sitting_off
+							: R.drawable.pcb_sitting_on);
+			operateImageViewBtn.setOnClickListener(mClickListener);
 		}
-		viewHolder.layout.setVisibility(View.GONE);
-		viewHolder.start.setText(pinche.getStart_name(context));// 起点
-		viewHolder.end.setText(pinche.getEnd_name(context));// 终点
-		viewHolder.point1.setVisibility(View.GONE);
-		viewHolder.point2.setVisibility(View.GONE);
 		Point[] points = pinche.getPoints();
-		if (null != points) {
+		if (null != points && points.length != 0) {
+
 			int length = points.length;
 			for (int i = 0; i < length; i++) {
 				TextView throuthPoinTextView = null;
 				if (i == 0) {
-					throuthPoinTextView = viewHolder.point1;
+					throuthPoinTextView = point1;
 				} else if (i == 1) {
-					throuthPoinTextView = viewHolder.point2;
+					throuthPoinTextView = point2;
 				}
 				if (length == 1) {
 					throuthPoinTextView.setText(context.getString(
@@ -95,58 +104,23 @@ public class MyPublishAdapter extends BaseAdapter {
 				}
 				throuthPoinTextView.setVisibility(View.VISIBLE);
 			}
-			viewHolder.layout.setVisibility(View.VISIBLE);
+			pointsLayout.setVisibility(View.VISIBLE);
 		}
 
-		if (pinche.getCarpoolType().equals(Pinche.CARPOOLTYPE_ON_OFF_WORK))// 上下班
-		{
-			if (pinche.getState().equals(Pinche.STATE_COLSE)) {
-				viewHolder.btnimg.setBackgroundResource(R.drawable.pcb_sitting_off);
-			} else if (pinche.getState().equals(Pinche.STATE_NORMAL)) {
-				viewHolder.btnimg.setBackgroundResource(R.drawable.pcb_sitting_on);
-			}
-			setOnClickListener(viewHolder.btnimg, pinche.getInfo_id(), pinche.getState(), position);
-		} else {// 长途
-			Calendar nowCalendar = Calendar.getInstance();
-			nowCalendar.setTimeInMillis(System.currentTimeMillis());
-			Calendar lCalendar = Calendar.getInstance();
-			lCalendar
-					.setTime(new Date(1000 * TimeUtils.dateStrToSecond(pinche.getDepartureTime())));
-			if (nowCalendar.before(lCalendar)) {// 没过期
-				if (pinche.getState().equals(Pinche.STATE_COLSE)) {// 关闭
-					viewHolder.btnimg.setBackgroundResource(R.drawable.pcb_sitting_off);
-				} else if (pinche.getState().equals(Pinche.STATE_NORMAL)) {
-					viewHolder.btnimg.setBackgroundResource(R.drawable.pcb_sitting_on);
-				}
-				setOnClickListener(viewHolder.btnimg, pinche.getInfo_id(), pinche.getState(),
-						position);
-			} else {// 已过期
-				viewHolder.btnimg.setBackgroundResource(R.drawable.ic_overdate);
-				viewHolder.btnimg.setEnabled(false);
-			}
-		}
-		viewHolder.btnimg.setTag(pinche);
 		return convertView;
 	}
 
-	public void setOnClickListener(View v, final int info_id, final String state, final int objIndex) {
-		v.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
+	/**
+	 * 产查当前路线是否过期
+	 * 
+	 * @param date
+	 * @return true:未过期 false:已经过期
+	 */
+	private boolean isOverTime(Date date) {
+		Calendar nowCalendar = Calendar.getInstance();
+		Calendar lCalendar = Calendar.getInstance();
+		lCalendar.setTime(date);
+		return nowCalendar.before(lCalendar);
 
-				callBack.execute(v, info_id, objIndex,
-						Pinche.STATE_COLSE.equals(state) ? Pinche.STATE_NORMAL : Pinche.STATE_COLSE);
-			}
-		});
-	}
-
-	public static class ViewHolder {
-		public TextView start;// 起点
-		public TextView end;// 终点
-		public ImageView btnimg;
-
-		public RelativeLayout layout; // 途经点布局
-		public TextView point1; // 途经点1
-		public TextView point2; // 途经点2
 	}
 }

@@ -28,7 +28,6 @@ import com.lepin.inject.ViewInjectUtil;
 import com.lepin.util.Constant;
 import com.lepin.util.Util;
 import com.lepin.util.Util.OnHttpRequestDataCallback;
-import com.lepin.util.Util.SERVICE_TYPE;
 import com.lepin.widget.CircleImageView;
 import com.lepin.widget.PcbCalender;
 import com.lepin.widget.PcbConfirmDialog;
@@ -165,23 +164,25 @@ public class CarpoolWithCalendarActivity extends BaseActivity implements OnClick
 	private void getPlanInfo() {
 		String url = Constant.URL_GET_ORDER_CALENDAR + "?carpoolProgramPassengerId="
 				+ carpoolProgramPassengerId;
-		Util.getInstance().doGetRequest(CarpoolWithCalendarActivity.this, new OnHttpRequestDataCallback() {
-			
-			@Override
-			public void onSuccess(String result) {
-				JsonResult<CarpoolProgramPassenger> carpooResult = Util.getInstance()
-						.getObjFromJsonResult(result,
-								new TypeToken<JsonResult<CarpoolProgramPassenger>>() {
-								});
-				if (carpooResult != null&& carpooResult.isSuccess()) {
-					carpoolProgramPassenger = carpooResult.getData();
-					mPincheInfo = carpoolProgramPassenger.getCarpoolProgram().getInfo();
-					setData();
-				}else {
-					Util.showToast(CarpoolWithCalendarActivity.this, getString(R.string.request_error));
-				}				
-			}
-		}, url, "获取拼车详情...", false);
+		Util.getInstance().doGetRequest(CarpoolWithCalendarActivity.this,
+				new OnHttpRequestDataCallback() {
+
+					@Override
+					public void onSuccess(String result) {
+						JsonResult<CarpoolProgramPassenger> carpooResult = Util.getInstance()
+								.getObjFromJsonResult(result,
+										new TypeToken<JsonResult<CarpoolProgramPassenger>>() {
+										});
+						if (carpooResult != null && carpooResult.isSuccess()) {
+							carpoolProgramPassenger = carpooResult.getData();
+							mPincheInfo = carpoolProgramPassenger.getCarpoolProgram().getInfo();
+							setData();
+						} else {
+							Util.showToast(CarpoolWithCalendarActivity.this,
+									getString(R.string.request_error));
+						}
+					}
+				}, url, "获取拼车详情...", false);
 	}
 
 	protected void setData() {
@@ -288,11 +289,13 @@ public class CarpoolWithCalendarActivity extends BaseActivity implements OnClick
 					@Override
 					public void onOkClick(int type) {
 						if (type == PcbConfirmDialog.OK) {
-							Util.getInstance().go2OnLinePay(CarpoolWithCalendarActivity.this,
-									money, "carpoolProgramPassengerId", carpoolProgramPassengerId,
-									mPincheInfo.getStart_name(CarpoolWithCalendarActivity.this),
-									mPincheInfo.getEnd_name(CarpoolWithCalendarActivity.this),
-									Constant.URL_CARPOOL_PAY, SERVICE_TYPE.CARPOOL_PROGRAM);
+							// Util.getInstance().go2OnLinePay(CarpoolWithCalendarActivity.this,
+							// money, "carpoolProgramPassengerId",
+							// carpoolProgramPassengerId,
+							// mPincheInfo.getStart_name(CarpoolWithCalendarActivity.this),
+							// mPincheInfo.getEnd_name(CarpoolWithCalendarActivity.this),
+							// Constant.URL_CARPOOL_PAY,
+							// SERVICE_TYPE.CARPOOL_PROGRAM);
 						} else {
 							pay();
 						}

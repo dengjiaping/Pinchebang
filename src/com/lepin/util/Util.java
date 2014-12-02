@@ -98,6 +98,7 @@ import com.lepin.activity.AddNewCarActivity;
 import com.lepin.activity.LoginActivity;
 import com.lepin.activity.MyOrderDetailActivity;
 import com.lepin.activity.PayActivity;
+import com.lepin.activity.PincheTrailActivity;
 import com.lepin.activity.R;
 import com.lepin.activity.SearchResultActivity;
 import com.lepin.activity.SearchWithMapActivity;
@@ -528,7 +529,7 @@ public class Util implements Serializable {
 	}
 
 	/**
-	 * 显示Dialog
+	 * 显示确认或者取消
 	 * 
 	 * @param mContext
 	 * @param titleInfo
@@ -550,6 +551,27 @@ public class Util implements Serializable {
 		mCustomerDialog.show();
 	}
 
+	/**
+	 * 显示确认或者取消
+	 * 
+	 * @param mContext
+	 * @param title
+	 * @param ok
+	 * @param cancel
+	 * @param listener
+	 * @param isCanCancel
+	 *            　是否可以通过back取消
+	 */
+	public void showDialogWithCanCancel(Context mContext, String title, String ok, String cancel,
+			OnOkOrCancelClickListener listener, boolean isCanCancel) {
+		if (Constant.is_comfirm_dialog_show) return;// 如果已经有一个在显示了就别再显示了
+		PcbConfirmDialog mCustomerDialog = PcbConfirmDialog.getInstance(mContext,
+				R.style.dialog_tran, isCanCancel);
+		mCustomerDialog.setText(title, ok, cancel);
+		mCustomerDialog.setCustomerListener(listener);
+		mCustomerDialog.show();
+	}
+
 	public void go2Activity(Context mContext, Class<?> cls) {
 		Intent mIntent = new Intent(mContext, cls);
 		mContext.startActivity(mIntent);
@@ -566,13 +588,9 @@ public class Util implements Serializable {
 	 * 
 	 * @param start
 	 * @param end
-	 * @return
+	 * @return 返回单位:米
 	 */
 	public Double get2PointsDistances(LatLng start, LatLng end) {
-		Util.printLog("计算距离-起点:" + start.latitude);
-		Util.printLog("计算距离-起点:" + start.longitude);
-		Util.printLog("计算距离-终点:" + end.latitude);
-		Util.printLog("计算距离-终点:" + end.longitude);
 		return DistanceUtil.getDistance(start, end);
 	}
 
@@ -792,6 +810,13 @@ public class Util implements Serializable {
 									+ mJsonResult.getErrorMsg());
 						}
 					}
+
+					@Override
+					public void onFail(String errorType, String errorMsg) {
+						// TODO Auto-generated method stub
+						super.onFail(errorType, errorMsg);
+						Util.showToast(mContext, errorMsg);
+					}
 				});
 
 	}
@@ -832,7 +857,7 @@ public class Util implements Serializable {
 	 * @param mContext
 	 */
 	public void share(Context mContext, UMSocialService Controller) {
- 
+
 		UMSharing share = new UMSharing(mContext, Controller);
 		share.init();
 		share.startShare();
@@ -878,17 +903,22 @@ public class Util implements Serializable {
 	 * 
 	 * @param context
 	 * @param userId
+	 *            如果为""则取消设置
 	 */
 	public void setPushEnable(Context context, User user) {
+		// null 此次调用不设置此值。（注：不是指的字符串"null"）
+		// "" （空字符串）表示取消之前的设置
 		String userId = "";
 		if (!isUserLoging(context) || getUser(context).getPushSwitch().equals(User.PUSH_CLOSED))
 			return;
+		// null 此次调用不设置此值。（注：不是指的字符串"null"）
+		// 空数组或列表表示取消之前的设置
 		Set<String> set = new HashSet<String>();
 		if (user != null) {
 			// 设置注销推送 ""表示注销
 			userId = String.valueOf(user.getUserId());
 			set.add("ANDROID");
-			set.add(user.getGender());
+			set.add(user.getGender(context));
 			// set.add("age_" + user.getBirthday());
 			set.add("AV_" + Constant.PCB_VERSION);
 		}
@@ -932,7 +962,7 @@ public class Util implements Serializable {
 	}
 
 	/**
-	 * 计算传入时间和当前时间差
+	 * 计算传入时间和当前时间天数差
 	 * 
 	 * @param year
 	 * @param month
@@ -940,10 +970,12 @@ public class Util implements Serializable {
 	 * @return
 	 */
 	public int calculteDate(int year, int month, int day) {
-		Calendar nowCalendar = Calendar.getInstance();// 当前时间
-		Calendar goCalendar = Calendar.getInstance();
-		goCalendar.set(year, month, day);
-		return goCalendar.get(Calendar.DAY_OF_MONTH) - nowCalendar.get(Calendar.DAY_OF_MONTH);
+		Calendar calendar = Calendar.getInstance();
+		long now = calendar.getTimeInMillis();
+		calendar.set(year, month, day);
+		long start = calendar.getTimeInMillis();
+		long cha = start - now;
+		return (int) (cha / (1000 * 60 * 60 * 24));
 	}
 
 	public long getTimeInSconds(int year, int month, int day, int hourOfDay, int minute) {
@@ -952,10 +984,21 @@ public class Util implements Serializable {
 		return calendar.getTimeInMillis() / 1000;
 	}
 
+	/**
+	 * 发布时:判断选择的时间是否在当前时间后面
+	 * 
+	 * @param year
+	 * @param month
+	 * @param day
+	 * @param hourOfDay
+	 * @param minute
+	 * @return
+	 */
 	public boolean theTimeIsAfterNow(int year, int month, int day, int hourOfDay, int minute) {
 		Calendar nowCalendar = Calendar.getInstance();// 当前时间
 		Calendar calendar = Calendar.getInstance();
-		calendar.set(year, month, day);
+		// calendar.set(year, month, day);
+		calendar.set(year, month, day, hourOfDay, minute);
 		return calendar.after(nowCalendar);
 	}
 
@@ -1053,11 +1096,6 @@ public class Util implements Serializable {
 	 * @return
 	 */
 	public <T> JsonResult<T> getObjFromJsonResult(String jsonString, TypeToken<JsonResult<T>> token) {
-		/*
-		 * GsonBuilder gb = new
-		 * GsonBuilder().registerTypeAdapter(PUSH_MSG_TYPE.class, new
-		 * PushMsgTypeDeserualizer()); Gson gson = gb.create();
-		 */
 		JsonResult<T> resultT = null;
 		try {
 			resultT = gson.fromJson(jsonString, token.getType());
@@ -1953,8 +1991,30 @@ public class Util implements Serializable {
 		return Constant.URL_RESOURCE + "/userImg/" + userId + ".png";
 	}
 
-	public void go2OnLinePay(Context mContext, int price, String idName, String bookId,
-			String startName, String endName, String url, SERVICE_TYPE type) {
+	/**
+	 * 跳转到支付界面
+	 * 
+	 * @param mContext
+	 * @param price
+	 *            订单价格
+	 * @param bookId
+	 *            订单号
+	 * @param startName
+	 *            　线路起点
+	 * @param endName
+	 *            　线路终点
+	 * @param mStartLat
+	 *            起点纬度
+	 * @param mStartLon起点经度
+	 * @param mEndLat
+	 *            　终点纬度
+	 * @param mEndLon
+	 *            　终点经度
+	 * @param mStyle
+	 *            　线路类型:长途，上下班
+	 */
+	public void go2OnLinePay(Context mContext, int price, String bookId, String startName,
+			String endName, int mStartLat, int mStartLon, int mEndLat, int mEndLon, String mStyle) {
 		if (price <= 0) {
 			showToast(mContext, mContext.getString(R.string.order_money_error));
 			return;
@@ -1965,9 +2025,11 @@ public class Util implements Serializable {
 		mBundle.putString(Constant.BOOK_ID, bookId);
 		mBundle.putString("start_name", startName);
 		mBundle.putString("end_name", endName);
-		mBundle.putString("id_name", idName);
-		mBundle.putString("url", url);
-		mBundle.putString("type", type.name());
+		mBundle.putInt(Constant.START_LAT, mStartLat);
+		mBundle.putInt(Constant.START_LON, mStartLon);
+		mBundle.putInt(Constant.END_LAT, mEndLat);
+		mBundle.putInt(Constant.END_LON, mEndLon);
+		mBundle.putString(Constant.TRIP_MODE, mStyle);
 		go2ActivityWithBundle(mContext, PayActivity.class, mBundle);
 
 	}
@@ -2038,7 +2100,7 @@ public class Util implements Serializable {
 	}
 
 	public void showLoginAgainDailog(final Context mContext) {
-		showDialog(mContext, mContext.getString(R.string.login_again),
+		showDialogWithCanCancel(mContext, mContext.getString(R.string.login_again),
 				mContext.getString(R.string.login_now), mContext.getString(R.string.logout),
 				new OnOkOrCancelClickListener() {
 
@@ -2058,7 +2120,7 @@ public class Util implements Serializable {
 							CarSharingApplication.Instance().exit(mContext);
 						}
 					}
-				});
+				}, false);
 	}
 
 	/**
@@ -2401,5 +2463,17 @@ public class Util implements Serializable {
 				}
 			}
 		}, params, Constant.GET_SHARE_PRISE, "获取分享奖励...", false);
+	}
+
+	/**
+	 * 跳转到线路详情界面
+	 * 
+	 * @param mContext
+	 * @param id
+	 */
+	public void go2PincheTrailActivity(Context mContext, int id) {
+		Bundle mBundle = new Bundle();
+		mBundle.putInt("PincheId", id);
+		go2ActivityWithBundle(mContext, PincheTrailActivity.class, mBundle);
 	}
 }
